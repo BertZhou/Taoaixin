@@ -22,8 +22,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'role:admin|auth', 'namespace
 
     Route::get('/', 'HomeController@index');
     Route::resource('user', 'UserController');
-    Route::resource('user.favorite', 'FavoriteController');
-    Route::resource('item', 'ItemController', ['only' => ['index', 'show']]);
+    Route::resource('user.favorite', 'FavoriteController', ['only' => ['index']]);
+    Route::resource('item', 'ItemController', ['only' => ['index', 'show', 'edit']]);
     Route::resource('item.rate', 'RateController', ['only' => ['index']]);
 
     Route::group(['namespace' => 'Misc'], function () {

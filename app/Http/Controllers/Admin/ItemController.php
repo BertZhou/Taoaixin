@@ -21,4 +21,11 @@ class ItemController extends Controller
 
         return view('admin.item.show', ['item' => $item]);
     }
+
+    public function edit($item_id)
+    {
+        $item = Item::find($item_id);
+
+        return view('admin.item.show', ['item' => $item]);
+    }
 }
