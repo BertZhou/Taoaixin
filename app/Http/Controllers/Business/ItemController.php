@@ -58,6 +58,7 @@ class ItemController extends Controller
         if (empty($item)) {
             return redirect()->back()->withErrors('Item not available.');
         }
+        
         $item->update([
             'name'      =>  $request->input('name'),
             'content'   =>  $request->input('content'),
@@ -71,7 +72,7 @@ class ItemController extends Controller
     public function destory(Request $request, $item_id)
     {
         $item = Item::where(['id' => $item_id, 'user_id' => $request->user()->id])->delete();
-        
+
         return redirect()->back();
     }
 }

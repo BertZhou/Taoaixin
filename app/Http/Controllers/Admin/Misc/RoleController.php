@@ -11,6 +11,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
         $roles = Role::all();
+
         return view('admin.role.index', ['roles' => $roles]);
     }
 
@@ -19,14 +20,15 @@ class RoleController extends Controller
         return view('admin.role.show');
     }
 
-    public function show($role_id = 0)
+    public function show($role_id)
     {
         return $this->edit($role_id);
     }
 
-    public function edit($role_id = 0)
+    public function edit($role_id)
     {
         $role = Role::findOrFail($role_id);
+
         return view('admin.role.show', ['role' => $role]);
     }
 
@@ -48,7 +50,7 @@ class RoleController extends Controller
         return redirect('admin/role');
     }
 
-    public function update(Request $request, $role_id = 0)
+    public function update(Request $request, $role_id)
     {
         $this->validate($request, [
             'name'  =>  'required|alpha_dash',
@@ -68,7 +70,7 @@ class RoleController extends Controller
         return redirect('admin/role');
     }
 
-    public function destroy($role_id = 0)
+    public function destroy($role_id)
     {
         $role = Role::findOrFail($role_id);
         \DB::table('role_user')->where('role_id', $role->id)->delete();

@@ -26,6 +26,13 @@ class ReportController extends Controller
         return view('user.report.show', ['report' => $report]);
     }
 
+    public function create()
+    {
+        $orders = Order::where('buyer_user_id', $request->user()->id)->where('type', '<>', 'pending')->get();
+
+        return view('user.report.show', ['orders' => $orders]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

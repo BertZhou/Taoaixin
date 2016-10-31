@@ -29,5 +29,4 @@ class ReportController extends Controller
 
         return view('business.report', ['report' => $report]);
     }
-
 }
