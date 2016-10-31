@@ -23,7 +23,7 @@ class ReportController extends Controller
             return redirect()->back()->withErrors('Report not available.');
         }
 
-        return view('user.report', ['report' => $report]);
+        return view('user.report.show', ['report' => $report]);
     }
 
     public function store(Request $request)

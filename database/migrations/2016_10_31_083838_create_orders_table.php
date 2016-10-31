@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->integer('item_id')->unsigned()->index();
             $table->integer('buyer_user_id')->unsigned()->index();
             $table->integer('seller_user_id')->unsigned()->index();
-            // $table->boolean('is_rated')->default(0);
+            $table->boolean('is_rated')->default(0);
             // $table->string('address_name');
             // $table->string('address_phone');
             // $table->string('address_district');

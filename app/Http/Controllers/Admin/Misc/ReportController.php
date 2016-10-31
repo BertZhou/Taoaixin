@@ -14,7 +14,7 @@ class ReportController extends Controller
     {
         $reports = Report::all();
 
-        return 'to be continue.';
+        return view('admin.report.index', ['reports' => $reports]);
     }
 
     public function show(Request $request, $report_id)
@@ -25,7 +25,7 @@ class ReportController extends Controller
             return redirect()->back()->withErrors('Report not available.');
         }
 
-        return view('admin.report', ['report' => $report]);
+        return view('admin.report.show', ['report' => $report]);
     }
 
     public function update(Request $request, $report_id)

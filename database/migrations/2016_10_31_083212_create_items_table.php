@@ -19,10 +19,11 @@ class CreateItemsTable extends Migration
             $table->string('content');
             $table->decimal('price', 5, 2);
             $table->integer('user_id')->unsigned();
-            $table->integer('view')->unsigned();
-            $table->integer('sold')->unsigned();
+            $table->integer('view')->unsigned()->default(0);
+            $table->integer('sold')->unsigned()->default(0);
             $table->integer('quantity')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

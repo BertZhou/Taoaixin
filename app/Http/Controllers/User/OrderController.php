@@ -14,6 +14,16 @@ class OrderController extends Controller
         return 'to be continue.';
     }
 
+    public function show(Request $request, $order_id)
+    {
+        $order = Order::find($order_id);
+        if (empty($order)) {
+            return redirect()->back()->withErrors('Order not available.');
+        }
+
+        return view('user.order.index', ['order' => $order]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -34,7 +44,8 @@ class OrderController extends Controller
             'buyer_user_id'     =>  $request->user()->id,
             'seller_user_id'    =>  $item->user_id,
             'price'             =>  $item->price,
-            'note'              =>  $request->input('note')
+            'note'              =>  $request->input('note'),
+            'is_rated'          =>  0
         ]);
 
         $item->decrement('quantity');
