@@ -54,17 +54,24 @@ class OrderController extends Controller
         if (empty($order)) {
             return redirect()->back()->withErrors('Order not available.');
         }
+        $item = Item::find($order->item_id);
 
         if ($order->type == 'pending' && $request->input('type') == 'cancel') {
             $order->update([
                 'type'  =>  'cancelled',
                 'note'  =>  $request->input('note')
             ]);
+            if (!empty($item)) {
+                $item->decrement('quantity');
+            }
         } elseif ($order->type == 'confirmed' && $request->input('type') == 'complete') {
             $order->update([
                 'type'  =>  'completed',
                 'note'  =>  $request->input('note')
             ]);
+            if (!empty($item)) {
+                $item->increment('sold');
+            }
         } else {
             return redirect()->back()->withErrors('Order can not be change now.');
         }

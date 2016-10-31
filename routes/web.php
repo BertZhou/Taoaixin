@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::auth();
 Route::get('test', 'HomeController@index');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin'], function () {
-    
+Route::group(['prefix' => 'admin', 'middleware' => 'role:admin|auth', 'namespace' => 'Admin'], function () {
+
     Route::get('/', 'HomeController@index');
     Route::resource('user', 'UserController');
     Route::resource('user.favorite', 'FavoriteController');
@@ -27,25 +27,25 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
 
     Route::group(['namespace' => 'Misc'], function () {
         Route::resource('role', 'RoleController');
-        Route::resource('report', 'ReportController');
+        Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'update']]);
     });
 });
 
 Route::group(['prefix' => 'business', 'middleware' => 'auth', 'namespace' => 'Business'], function () {
     Route::get('/', 'BusinessController@index');
     Route::resource('order', 'OrderController', ['only' => ['index', 'show', 'update']]);
-    Route::resource('order.report', 'ReportController');
+    Route::resource('report', 'ReportController', ['only' => ['index', 'show']]);
 });
 
 Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], function () {
     Route::get('/', 'UserController@index');
     Route::resource('order', 'OrderController', ['only' => ['index', 'show', 'store', 'update']]);
-    Route::resource('order.report', 'ReportController');
+    Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'store']]);
 });
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Portal'], function () {
     // Route::get('/', 'UserController@index');
     Route::resource('order', 'OrderController');
-    Route::resource('favorite', 'FavoriteController');
+    Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destory']]);
 
 });
