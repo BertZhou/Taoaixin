@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+composer.lock
+.env
+.DS_Store
+php_errors.log
+public/ErrorFiles/
+public/.uini
+public/u.php
+public/up-rewrite.conf
