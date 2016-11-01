@@ -20,7 +20,7 @@
       </a>
       <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
         <li class="list-group-item">
-          <a href="https://uqbu.com" class="animated animated-short fadeInUp">
+          <a href="#" class="animated animated-short fadeInUp">
             <span class="w20 fa fa-bell"></span> {{ trans('view.hp') }}</a>
         </li>
         <li class="list-group-item">

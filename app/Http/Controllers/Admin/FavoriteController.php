@@ -13,13 +13,8 @@ class FavoriteController extends Controller
     public function index($user_id = 0)
     {
         $user = User::findOrFail($user_id);
-        $folders = UserFavorite::where('user_id', $user->id)->get()->toArray();
-
-        if (!empty($folders)) {
-            $items = Item::whereIn('id', array_column($folders, 'item_id'))->get();
-        } else {
-            $items = [];
-        }
+        $folders = UserFavorite::where('user_id', $user->id)->get();
+        $items = Item::whereIn('id', $folders->pluck('item_id'))->get();
 
         return view('admin.user.favorite.index', ['user' => $user, 'items' => $items]);
     }

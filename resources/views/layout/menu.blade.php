@@ -9,21 +9,21 @@
         </a>
       </li>
       <li>
-        <a href="{{ url('feedback') }}">
-          <span class="glyphicon glyphicon-book"></span>
-          <span class="sidebar-title">{{trans('view.feedback')}}</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('news') }}">
-          <span class="fa fa-globe"></span>
-          <span class="sidebar-title">{{ trans('view.news') }}</span>
-        </a>
-      </li>
-      <li>
         <a href="{{ url('admin/role') }}">
           <span class="fa fa-male"></span>
           <span class="sidebar-title">角色</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ url('admin/item') }}">
+          <span class="glyphicon glyphicon-book"></span>
+          <span class="sidebar-title">商品</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ url('admin/report') }}">
+          <span class="fa fa-globe"></span>
+          <span class="sidebar-title">举报</span>
         </a>
       </li>
       <li>

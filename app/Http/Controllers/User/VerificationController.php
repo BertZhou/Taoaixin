@@ -45,9 +45,9 @@ class VerificationController extends Controller
 
         # deal img file
         $path = [
-            'license_image'         =>  public_path('verification/license/'.date('YmdHis').str_random(18).'.jpg'),
-            'idcard_front_image'    =>  public_path('verification/idcard/'.date('YmdHis').str_random(18).'.jpg'),
-            'idcard_back_image'     =>  public_path('verification/idcard/'.date('YmdHis').str_random(18).'.jpg')
+            'license_image'         =>  storage_path('verification/license/'.date('YmdHis').str_random(18).'.jpg'),
+            'idcard_front_image'    =>  storage_path('verification/idcard/'.date('YmdHis').str_random(18).'.jpg'),
+            'idcard_back_image'     =>  storage_path('verification/idcard/'.date('YmdHis').str_random(18).'.jpg')
         ];
 
         $idcard_front_image = $request->file('idcard_front_image');

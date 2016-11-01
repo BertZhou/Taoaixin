@@ -9,11 +9,21 @@ use App\Http\Controllers\Controller;
 
 class VerificationController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $verifications = UserVerification::paginate(10);
+        $this->validate($request, [
+            'type'  =>  'in:personal,enterprise'
+        ]);
+
+        $search = array_filter($request->only('type'), function($var){return !empty($var);} );
+
+        $verifications = new UserVerification;
+        if (isset($search['type'])) {
+            $verifications = $verifications->where('type', $search['type']);
+        }
+        $verifications = $verifications->paginate(10);
         
-        return view('admin.verification.index', ['verifications' => $verifications]);
+        return view('admin.verification.index', ['verifications' => $verifications, 'search' => $search]);
     }
 
     public function show($ver_id)

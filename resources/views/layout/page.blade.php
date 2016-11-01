@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{{ isset($title) ? $title : config('setting.site_name') }}</title>
+  <title>@yield('title')</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' type='text/css' href='//fonts.lug.ustc.edu.cn/css?family=Open+Sans:300,400,600,700'>
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/skin/default_skin/css/theme.min.css') }}">

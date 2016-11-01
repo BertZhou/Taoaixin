@@ -1,4 +1,5 @@
 @extends('layout.page')
+@section('title', !empty($item) ? '编辑用户' : '新建用户')
 
 @section('content')
 
@@ -8,7 +9,7 @@
      <div class="col-md-12">
        <div class="panel">
          <div class="panel-heading">
-           <span class="panel-title">{{ !empty($user) ? trans('view.edit').' user' : trans('view.create').' user' }}</span>
+           <span class="panel-title">{{ !empty($user) ? '编辑用户' : '新建用户' }}</span>
          </div>
          <div class="panel-body">
 

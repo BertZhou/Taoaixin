@@ -1,5 +1,5 @@
 @extends('layout.page')
-@section('title', !empty($item) ? '编辑角色' : '新建角色')
+@section('title', !empty($item) ? '编辑商品' : '新建商品')
 
 @section('content')
 
@@ -10,11 +10,11 @@
                  <!-- Input Fields -->
        <div class="panel">
          <div class="panel-heading">
-           <span class="panel-title">{{ !empty($role) ? '编辑角色' : '新建角色' }}</span>
+           <span class="panel-title">{{ !empty($item) ? '编辑商品' : '新建商品' }}</span>
          </div>
          <div class="panel-body">
 
-         <form class="form-horizontal" role="form" action="{{ !empty($role) ? url('admin/role/'.$role->id) : url('admin/role') }}" method="POST">
+         <form class="form-horizontal" role="form" action="{{ !empty($item) ? url('admin/item/'.$item->id) : url('admin/item') }}" method="POST">
             {!! csrf_field() !!}
             @if (count($errors) > 0)
               <div class="alert alert-danger alert-dismissable">
@@ -24,12 +24,12 @@
                   @endforeach
               </div>
             @endif
-            @if(!empty($role))
+            @if(!empty($item))
               <div class="form-group">
                   <label class="col-lg-3 control-label">ID</label>
                   <div class="col-lg-8">
                       <div class="bs-component">
-                          <p class="form-control-static text-muted">{{ $role->id }}</p>
+                          <p class="form-control-static text-muted">{{ $item->id }}</p>
                       </div>
                   </div>
               </div>
@@ -40,34 +40,34 @@
                <label for="name" class="col-lg-3 control-label">名称</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <input type="text" id="name" name="name" class="form-control" value="{{ !empty($role) ? $role->name : old('name') }}">
+                   <input type="text" id="name" name="name" class="form-control" value="{{ !empty($item) ? $item->name : old('name') }}">
                  </div>
                </div>
              </div>
 
              <div class="form-group">
-               <label for="slug" class="col-lg-3 control-label">标签</label>
+               <label for="price" class="col-lg-3 control-label">价格</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <input type="text" id="slug" name="slug" class="form-control" value="{{ !empty($role) ? $role->slug : old('slug') }}">
+                   <input type="text" id="price" name="price" class="form-control" value="{{ !empty($item) ? $item->price : old('price') }}">
                  </div>
                </div>
              </div>
 
              <div class="form-group">
-               <label class="col-lg-3 control-label" for="description">描述</label>
+               <label class="col-lg-3 control-label" for="content">介绍</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <textarea class="form-control" id="description" name="description" rows="3">{{ !empty($role) ? $role->description : old('description') }}</textarea>
+                   <textarea class="form-control" id="content" name="content" rows="3">{{ !empty($item) ? $item->content : old('content') }}</textarea>
                  </div>
                </div>
              </div>
 
              <div class="form-group">
-               <label for="level" class="col-lg-3 control-label">等级</label>
+               <label for="quantity" class="col-lg-3 control-label">库存</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <input type="text" id="level" name="level" class="form-control" value="{{ !empty($role) ? $role->level : old('level') }}">
+                   <input type="text" id="quantity" name="quantity" class="form-control" value="{{ !empty($item) ? $item->quantity : old('quantity') }}">
                  </div>
                </div>
              </div>

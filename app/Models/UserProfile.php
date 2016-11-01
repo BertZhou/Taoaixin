@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserVerification extends Model
+class UserProfile extends Model
 {
-    protected $table = 'user_verifications';
-    protected $primaryKey = 'user_id';
+    protected $table = 'user_profiles';
     protected $guarded = [];
+    public $primaryKey = 'user_id';
     public $timestamps = false;
 }

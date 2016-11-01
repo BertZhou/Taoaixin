@@ -1,13 +1,14 @@
 @extends('layout.page')
+@section('title', '用户列表')
 
 @section('content')
 <div id="content">
   <div class="panel">
     <div class="panel-heading">
-      <span class="panel-title">{{trans('view.search')}}</span>
+      <span class="panel-title">搜索</span>
     </div>
     <div class="panel-body">
-      <form class="form-horizontal" role="form" action="{{ url('user') }}" method="GET">
+      <form class="form-horizontal" role="form" action="{{ url('admin/user') }}" method="GET">
         @if (count($errors) > 0)
           <div class="alert alert-danger alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -59,7 +60,7 @@
           <span class="fa fa-table"></span>用户列表</span>
         <div class="pull-right hidden-xs">
           <ul class="nav panel-tabs-border panel-tabs">
-            <li><a href="{{ url('user/create') }}">{{ trans('view.add') }}{{ trans('view.user') }}</a></li>
+            <li><a href="{{ url('admin/user/create') }}">添加用户</a></li>
           </ul>
         </div>
       </div>
@@ -69,9 +70,9 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>{{ trans('view.name') }}</th>
-                <th>{{ trans('view.email') }}</th>
-                <th>{{ trans('view.action') }}</th>
+                <th>名称</th>
+                <th>邮箱</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody>

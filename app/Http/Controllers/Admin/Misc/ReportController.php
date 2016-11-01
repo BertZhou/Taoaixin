@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Misc;
 
-use App\Models\Item;
-use App\Models\Order;
+use App\Models\User;
 use App\Models\Report;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,9 +11,10 @@ class ReportController extends Controller
 {
     public function index(Request $request)
     {
-        $reports = Report::all();
+        $reports = Report::where('type', 'pending')->paginate(10);
+        $users = User::whereIn('id', $reports->pluck('reporter_id'))->get()->keyBy('id');
 
-        return view('admin.report.index', ['reports' => $reports]);
+        return view('admin.report.index', ['reports' => $reports, 'users' => $users]);
     }
 
     public function show(Request $request, $report_id)
@@ -35,7 +35,7 @@ class ReportController extends Controller
             'reason'    =>  'required|string'
         ]);
 
-        $report = Report::where('id', $report_id)->where('type', '<>', 'pending')->first();
+        $report = Report::where('id', $report_id)->where('type', 'pending')->first();
 
         if (empty($report)) {
             return redirect()->back()->withErrors('Report not available.');
