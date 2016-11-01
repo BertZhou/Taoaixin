@@ -28,7 +28,7 @@
                 <td>{{ !empty($report->content) ? str_limit($report->content, 50) : '-' }}</td>
                 <td>{{ $report->created_at }}</td>
                 <td>
-                  <a href="{{ url('admin/order/'.$report->order_id.'/edit') }}">查看订单</a>
+                  <a href="{{ url('admin/order/'.$report->order_id) }}">查看订单</a>
                   <a href="{{ url('admin/report/'.$report->id.'/edit') }}">编辑</a>
                 </td>
               </tr>

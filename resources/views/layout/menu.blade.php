@@ -27,9 +27,9 @@
         </a>
       </li>
       <li>
-        <a href="{{ url('report') }}">
+        <a href="{{ url('admin/verification') }}">
           <span class="fa fa-terminal"></span>
-          <span class="sidebar-title">{{ trans('view.report') }}</span>
+          <span class="sidebar-title">审核</span>
         </a>
       </li>
       <li>
