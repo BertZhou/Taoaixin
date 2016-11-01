@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $items = [
             [
                 'name'           => 'Vincent',
-                'email'          => '540836299@qq.com',
+                'email'          => 'test@test.com',
                 'password'       => '$2y$10$JM8vj4NcVj2ZwhxBSHfp6O5JKcBOSC.VPhZD.zsbUJm1qry1BZ97G',
                 'remember_token' => 'LkKzdCOWVDMJCmits8vXMcIhdpOEQezEL3bAfvN8UVCsoDqe4WxeZ8ndJy3I',
             ]

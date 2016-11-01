@@ -15,7 +15,7 @@ class ReportController extends Controller
         $orders = Order::where('seller_user_id', $request->user()->id)->get();
         $reports = Report::whereIn('order_id', $orders->lists('id'))->get();
 
-        return 'to be continue.';
+        return view('business.report.index', ['reports' => $reports]);
     }
 
     public function show(Request $request, $report_id)
@@ -27,6 +27,6 @@ class ReportController extends Controller
             return redirect()->back()->withErrors('Report not available.');
         }
 
-        return view('business.report', ['report' => $report]);
+        return view('business.report.show', ['report' => $report]);
     }
 }

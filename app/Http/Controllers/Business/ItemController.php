@@ -41,7 +41,7 @@ class ItemController extends Controller
             'sold'      =>  0
         ]);
 
-        return redirect()->back();
+        return redirect('business/item');
     }
 
     public function update(Request $request, $item_id)
@@ -66,13 +66,13 @@ class ItemController extends Controller
             'quantity'  =>  $request->input('quantity')
         ]);
 
-        return redirect()->back();
+        return redirect('business/item');
     }
 
     public function destory(Request $request, $item_id)
     {
         $item = Item::where(['id' => $item_id, 'user_id' => $request->user()->id])->delete();
 
-        return redirect()->back();
+        return redirect('business/item');
     }
 }

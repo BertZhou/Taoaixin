@@ -12,8 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        return 'to be continue.';
-        // return view('admin.home.index');
+        return view('user.index');
     }
 
     public function store(Request $request)

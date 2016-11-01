@@ -14,6 +14,6 @@ class RateController extends Controller
         $item = Item::where(['id' => $item_id, 'user_id' => $request->user()->id])->first();
         $rates = ItemRate::where('item_id', $item->id)->paginate(20);
 
-        return view('business.item.index', ['item' => $item, 'rates' => $rates]);
+        return view('business.item.rate.index', ['item' => $item, 'rates' => $rates]);
     }
 }

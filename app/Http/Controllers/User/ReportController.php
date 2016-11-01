@@ -12,7 +12,9 @@ class ReportController extends Controller
 {
     public function index(Request $request)
     {
-        return 'to be continue.';
+        $report = Report::where('reporter_id', $request->user()->id)->get();
+
+        return view('user.report.index', ['reports' => $reports]);
     }
 
     public function show(Request $request, $report_id)

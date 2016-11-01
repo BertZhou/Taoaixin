@@ -11,7 +11,9 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return 'to be continue.';
+        $orders = Order::where('buyer_user_id', $request->user()->id)->paginate(10);
+
+        return view('user.order.index', ['orders' => $orders]);
     }
 
     public function show(Request $request, $order_id)
@@ -21,7 +23,7 @@ class OrderController extends Controller
             return redirect()->back()->withErrors('Order not available.');
         }
 
-        return view('user.order.index', ['order' => $order]);
+        return view('user.order.show', ['order' => $order]);
     }
 
     public function store(Request $request)
