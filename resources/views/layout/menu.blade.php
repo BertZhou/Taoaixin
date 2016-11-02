@@ -1,7 +1,7 @@
 <aside id="sidebar_left" class="nano nano-light affix">  
   <div class="sidebar-left-content nano-content">
     <ul class="nav sidebar-menu">
-      <li class="sidebar-label pt15">{{trans('view.system')}}</li>
+      <li class="sidebar-label pt15">系统</li>
       <li>
         <a href="{{ url('admin/user') }}">
           <span class="fa fa-user"></span>
@@ -30,30 +30,6 @@
         <a href="{{ url('admin/verification') }}">
           <span class="fa fa-terminal"></span>
           <span class="sidebar-title">审核</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('slide') }}">
-          <span class="fa fa-columns"></span>
-          <span class="sidebar-title">{{ trans('view.slide') }}</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('server') }}">
-          <span class="fa fa-desktop"></span>
-          <span class="sidebar-title">{{ trans('view.server') }}</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('zone') }}">
-          <span class="fa fa-th"></span>
-          <span class="sidebar-title">{{ trans('view.zone') }}</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ url('log') }}">
-          <span class="glyphicon glyphicon-list-alt"></span>
-          <span class="sidebar-title">{{trans('view.log')}}</span>
         </a>
       </li>
     </ul>

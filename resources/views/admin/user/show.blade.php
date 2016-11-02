@@ -36,25 +36,25 @@
             @endif
 
              <div class="form-group">
-               <label for="username" class="col-lg-3 control-label">{{ trans('view.name') }}</label>
+               <label for="name" class="col-lg-3 control-label">名称</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <input type="text" id="username" name="name" class="form-control" value="{{ !empty($user) ? $user->name : old('name') }}">
+                   <input type="text" id="name" name="name" class="form-control" value="{{ !empty($user) ? $user->name : old('name') }}">
                  </div>
                </div>
              </div>
 
              <div class="form-group">
-               <label for="Email" class="col-lg-3 control-label">Email</label>
+               <label for="email" class="col-lg-3 control-label">Email</label>
                <div class="col-lg-8">
                  <div class="bs-component">
-                   <input type="text" id="Email" name="email" class="form-control" value="{{ !empty($user) ? $user->email : old('email') }}">
+                   <input type="text" id="email" name="email" class="form-control" value="{{ !empty($user) ? $user->email : old('email') }}">
                  </div>
                </div>
              </div>
 
              <div class="form-group">
-               <label for="password" class="col-lg-3 control-label">Password</label>
+               <label for="password" class="col-lg-3 control-label">密码</label>
                <div class="col-lg-8">
                  <div class="bs-component">
                    <input type="password" id="password" name="password" class="form-control">
@@ -63,7 +63,7 @@
              </div>
 
              <div class="form-group">
-               <label for="slug" class="col-lg-3 control-label">{{ trans('view.role') }}</label>
+               <label for="slug" class="col-lg-3 control-label">角色</label>
                <div class="col-lg-8">
                  <div class="bs-component">
                    <select class="form-control" name="slug">
@@ -76,7 +76,7 @@
              </div>
 
              <div class="text-right">
-               <button type="submit" class="btn btn-default ph25">{{ trans('view.submit') }}</button>
+               <button type="submit" class="btn btn-default ph25">提交</button>
              </div>
 
            </form>

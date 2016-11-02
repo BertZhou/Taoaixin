@@ -73,7 +73,7 @@
              </div>
 
              <div class="text-right">
-               <button type="submit" class="btn btn-default ph25">{{ trans('view.submit') }}</button>
+               <button type="submit" class="btn btn-default ph25">提交</button>
              </div>
              
            </form>

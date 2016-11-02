@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use Carbon;
 use App\Models\Item;
 use App\Models\Order;
 use Illuminate\Http\Request;
@@ -58,7 +59,7 @@ class OrderController extends Controller
     public function update(Request $request, $order_id)
     {
         $this->validate($request, [
-            'type'  =>  'required|in:complete, cancel',
+            'type'  =>  'required|in:payed,complete, cancel',
             'note'  =>  'string'
         ]);
 
@@ -71,20 +72,27 @@ class OrderController extends Controller
 
         if ($order->type == 'pending' && $request->input('type') == 'cancel') {
             $order->update([
-                'type'  =>  'cancelled',
-                'note'  =>  $request->input('note')
+                'type'          =>  'cancelled',
+                'note'          =>  $request->input('note'),
+                'cancelled_at'  =>  Carbon::now()->format('Y-m-d H:i:s')
             ]);
             if (!empty($item)) {
                 $item->decrement('quantity');
             }
         } elseif ($order->type == 'confirmed' && $request->input('type') == 'complete') {
             $order->update([
-                'type'  =>  'completed',
-                'note'  =>  $request->input('note')
+                'type'          =>  'completed',
+                'note'          =>  $request->input('note'),
+                'completed_at'  =>  Carbon::now()->format('Y-m-d H:i:s')
             ]);
             if (!empty($item)) {
                 $item->increment('sold');
             }
+        } elseif ($order->type == 'pending' && $request->input('type') == 'payed') {
+            $order->update([
+                'type'      =>  'payed',
+                'payed_at'  =>  Carbon::now()->format('Y-m-d H:i:s')
+            ]);
         } else {
             return redirect()->back()->withErrors('Order can not be change now.');
         }

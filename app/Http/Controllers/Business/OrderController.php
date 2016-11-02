@@ -44,14 +44,16 @@ class OrderController extends Controller
 
         if ($order->type == 'payed' && $request->input('type') == 'confirm') {
             $order->update([
-                'type'  =>  'confirmed'
+                'type'          =>  'confirmed',
+                'confirmed_at'  =>  Carbon::now()->format('Y-m-d H:i:s')
             ]);
         } elseif (in_array($order->type, ['pending', 'payed']) && $request->input('type') == 'cancel') {
             $order->update([
-                'type'  =>  'cancelled'
+                'type'          =>  'cancelled',
+                'cancelled_at'  =>  Carbon::now()->format('Y-m-d H:i:s')
             ]);
         } else {
-            return redirect()->back()->withErrors('Order can not be change now.');
+            return redirect()->back()->withErrors('Order can not be modify now.');
         }
 
         return redirect('business/order')->back();

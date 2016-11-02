@@ -25,7 +25,6 @@
               <tr>
                 <th>用户</th>
                 <th>类型</th>
-                <th>城市</th>
                 <th>证件号</th>
                 <th>证件名称</th>
                 <th>证件到期时间</th>
@@ -38,7 +37,6 @@
               <tr>
                 <td>{{ !empty($users[$verification->user_id]) ? $users[$verification->user_id]['name'] : $verification->user_id }}</td>
                 <td>{{ $verification->type }}</td>
-                <td>{{ !empty($cities[$verification->city_id]) ? $cities[$verification->city_id]['name'] : $verification->city_id }}</td>
                 <td>{{ $verification->license_no }}</td>
                 <td>{{ $verification->license_name }}</td>
                 <td>{{ $verification->license_expire_date }}</td>
