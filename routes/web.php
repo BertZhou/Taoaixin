@@ -53,6 +53,8 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
 });
 
-Route::group(['middleware' => 'auth', 'namespace' => 'Portal'], function () {
-    //
+Route::group(['namespace' => 'Portal'], function () {
+    Route::get('/', 'HomeController@index');
+    Route::get('item', 'ItemController@index');
+    Route::get('item/{id}', 'ItemController@show');
 });
