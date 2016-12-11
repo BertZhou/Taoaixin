@@ -1,7 +1,7 @@
 @extends('layout.auth')
 
 @section('content')
-<form method="POST" action="{{ url('login') }}" id="contact">
+<form method="POST" action="{{ url('admin/login') }}" id="contact">
   {!! csrf_field() !!}
   <div class="panel-body bg-light p30">
     @if (count($errors) > 0)

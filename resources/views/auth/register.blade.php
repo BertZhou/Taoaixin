@@ -1,7 +1,7 @@
 @extends('layout.auth')
 
 @section('content')
-<form method="POST" action="{{ url('register') }}" id="account2">
+<form method="POST" action="{{ url('admin/register') }}" id="account2">
   {!! csrf_field() !!}
   <div class="panel-body p25 bg-light">
   @if (count($errors) > 0)
