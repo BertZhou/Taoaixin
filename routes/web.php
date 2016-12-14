@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('test', 'HomeController@index');
 
@@ -49,7 +47,6 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('order.rate', 'RateController', ['only' => ['create', 'edit', 'store', 'update']]);
     Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'create', 'store']]);
     Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destory']]);
-
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
 });
 
@@ -57,4 +54,8 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('/', 'HomeController@index');
     Route::get('item', 'ItemController@index');
     Route::get('item/{id}', 'ItemController@show');
+});
+
+Route::get('signin',function() {
+   return view('signin');
 });
