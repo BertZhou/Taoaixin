@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘爱心注册</title>
-	<link type="text/css" rel="stylesheet" href="css/reset.css">
-	<link type="text/css" rel="stylesheet" href="css/main2.css">
+	{{--<link type="text/css" rel="stylesheet" href="css/reset.css">--}}
+	{{--<link type="text/css" rel="stylesheet" href="css/main2.css">--}}
+	<link type="text/css" rel="stylesheet" href="css/import.css">
 </head>
 
 
@@ -83,14 +84,13 @@
 		</div>
 	</div>
 
-<div class="reg_45">
+<div class="login_45">
 <p>Copyright&nbsp;&nbsp;&nbsp;2015&nbsp;&nbsp;taoaixin.com&nbsp;&nbsp;杭州电子科技大学版权所有</p>
 </div>
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="js/easypay.js"></script>
 	<script type="text/javascript" src="js/myjs.js"></script>
 	<script type="text/javascript" src="js/signup.js"></script>
-
 </body>
 </html>
 </body>

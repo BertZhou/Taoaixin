@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ url('assets/tao/css/import.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/import.css') }}">
     <title>淘爱心登录</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
     <div class="logoBar login_logo">
         <div class="comWidth clearfix">
             <div class="logo fl">
-                <a href="url{{'index'}}"> <img src="{{url('assets/tao/images/login/login.jpg')}}" alt=""></a>
+                <a href="url{{'index'}}"> <img src="img/login/login.jpg" alt=""></a>
             </div>
             <h3 class="welcome_title">欢迎登陆</h3>
         </div>
@@ -114,12 +114,13 @@
 <div class="login_45">
     <p>Copyright&nbsp;&nbsp;&nbsp;2016&nbsp;&nbsp;taoaixin.com&nbsp;&nbsp;杭州电子科技大学版权所有</p>
 </div>
-<script type="text/javascript" src="{{url('assets/tao/js/jquery-1.11.3.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/tao/js/angular.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/tao/js/angular-messages.min.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/tao/js/myangularjs.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/tao/js/easyPay.js')}}"></script>
-<script type="text/javascript" src="{{url('assets/tao/js/myjs.js')}}"></script>
+
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-messages.min.js"></script>
+<script type="text/javascript" src="js/myangularjs.js"></script>
+<script type="text/javascript" src="js/easyPay.js"></script>
+<script type="text/javascript" src="js/myjs.js"></script>
 
 </body>
 </html>

@@ -62,5 +62,8 @@ Route::get('signin',function() {
 Route::get("signup",function(){
     return view("signup");
 });
+Route::get("register",function(){
+    return view("register");
+});
 Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");

@@ -300,3 +300,44 @@
 	background-position: center;
 	border-radius: 50%;
 }
+
+@keyframes bubbleRotate {
+	    from {
+		     transform: rotate3d(0,0,0,360deg);
+	    }
+	    to {
+	         transform: rotate3d(0,0,1,360deg);
+	    }
+}
+@-webkit-keyframes   bubbleRotate {
+	    from {
+	         transform: rotate3d(0,0,0,360deg);
+	    }
+	    to {
+	         transform: rotate3d(0,0,1,360deg);
+	    }
+}
+@-moz-keyframes   bubbleRotate {
+	    from {
+	         transform: rotate3d(0,0,0,360deg);
+	    }
+	    to {
+             transform: rotate3d(0,0,1,360deg);
+	    }
+}
+@-o-keyframes   bubbleRotate {
+	    from {
+	         transform: rotate3d(0,0,0,360deg);
+	    }
+	    to {
+	         transform: rotate3d(0,0,1,360deg);
+	    }
+}
+@-ms-keyframes   bubbleRotate {
+	    from {
+	         transform: rotate3d(0,0,0,360deg);
+	    }
+	    to {
+	         transform: rotate3d(0,0,1,360deg);
+	    }
+}

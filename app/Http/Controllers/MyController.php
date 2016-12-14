@@ -16,7 +16,7 @@ class MyController extends Controller
     {
     	//$user=new \App\User();
     	$inputs["name"]=$request->get("username");
-    	$inputs["email"]=$request->get("contact");
+    	$inputs["email"]=$request->get("email");
     	$inputs["password"]=$request->get("password");
     	$results1=DB::table("users")->where("name",$inputs["name"])->first();
     	$results2=DB::table("users")->where("email",$inputs["email"])->first();

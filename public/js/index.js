@@ -116,3 +116,38 @@ function showAuto()
     $(".item a").eq(n).trigger('click');
 }
 
+//轮播
+var pointer = document.querySelectorAll('input[type="radio"]');
+var init;
+window.onload = function() {
+    for(var i = 0;i<pointer.length;i++){
+        pointer[i].index = i;  
+        //鼠标点击input切换图片
+        pointer[i].onclick = function() { 
+            for(var l = 0;l<pointer.length;l++){ 
+                pointer[l].checked = false; 
+            }   
+            this.checked = true;  
+        };
+    }  
+    //初始化自动轮播  
+    fnStop();  
+    fnStart(); 
+};        
+//启动自动轮播
+function fnStart() {  
+    init = setInterval('fnAuto()',6000); 
+}        
+//停止自动轮播
+function fnStop() {  
+    window.clearInterval(init); 
+}          //自动轮播
+function fnAuto() { 
+    var aa =document.querySelector('input[type="radio"]:checked').index; 
+    if(aa == 4) { 
+        aa=-1;  
+    } 
+    aa+=1; 
+    pointer[aa].checked = true;
+}
+

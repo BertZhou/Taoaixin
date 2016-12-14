@@ -42,7 +42,8 @@ $(function () {
     // $('#sign-success').html(json.user.username);
     // $('.sign-success').html(username);
     console.log(sessionStorage.getItem('username'));
-   var $agree = $('#agree');
+
+    var $agree = $('#agree');
     var $otherAgree = $('#other-agree');
     // var agree = $agree[0];
      $('.reg_btn').bind('click', function () {
@@ -77,11 +78,11 @@ $(function () {
               method : 'POST',
               dataType : 'json',
               success : function (json){
-                  if(!json.code || json.code == 200 && json.ok=="success"){
+                  if(!json.code || json.code == 200){
                       // location.href = 'indexLogin.html?username='+json.username + '&id=' + json.id;
                       sessionStorage.setItem('username',username);
                       // sessionStorage.setItem('id',json.user.id);
-                      location.href = 'signin';
+                      //location.href = 'signin';
                   }
               }
           });

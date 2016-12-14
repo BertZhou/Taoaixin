@@ -33,20 +33,20 @@ gulp.task('mainJs', function() {
 
 //Taoaixin
 gulp.task('taoStyle', function () {
-    gulp.src('public/assets/tao/less/*.less')
+    gulp.src('public/less/*.less')
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(sourcemaps.write())
         .pipe(minifycss())
         .pipe(concat('main.min.css'))
-        .pipe(gulp.dest('public/assets/tao/css/'))
+        .pipe(gulp.dest('public/css/'))
 });
 
 //任务监听
 gulp.task('watch', function () {
     gulp.watch('web/main.less',['less']);
     gulp.watch('web/main.js',['js']);
-    gulp.watch('public/assets/tao/less/*.less',['taoStyle']);
+    gulp.watch('/less/*.less',['taoStyle']);
 });
 
 //less任务
