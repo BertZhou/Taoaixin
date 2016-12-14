@@ -1,0 +1,50 @@
+  .fs {
+        width: 250px;
+        margin: 5px 0px;
+        height: 300px;
+    }
+    div.jqZoomPup {
+    z-index  : 999;
+    visibility  : hidden;
+    position  : absolute;
+    top:0px;
+    left:0px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    background: #ffffff url(../images/pro_img/zoomlens.gif) 50% top  no-repeat;;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    filter: alpha(Opacity=50);
+}
+div.zoomdiv {
+    z-index: 999;
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    border:1px solid #CCCCCC;
+    display:none;
+    text-align: center;
+    overflow: hidden;
+}
+.pro_detail_left .jqzoom{
+    /*border:1px solid #BBB;*/
+    float:left;
+    position:relative;
+    padding:0px;
+    cursor:pointer;
+}
+.pro_detail_left ul.des_smimg li img {
+    width: 60px;
+    height: 60px;
+    padding: 1px;
+    background: #eee;
+    cursor: pointer;
+}
+ul.des_smimg li {
+    margin-right: 5px;
+}

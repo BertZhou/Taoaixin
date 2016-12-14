@@ -1,0 +1,23 @@
+.loginBox .row{
+	margin-top: 32px;
+}
+.login_partners {
+	margin-left: 60px;
+}
+.btn-primary {
+    font-weight: bold;
+}
+.ng-active {
+    /*display: none;*/
+    color: red;
+}
+/*input.ng-invalid {
+    border: 1px solid red;
+}*/
+.error small {
+    color: red;
+    font-size: 14px;
+}
+.forget-password {
+    padding-top: 7px;
+}

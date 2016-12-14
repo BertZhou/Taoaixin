@@ -14,7 +14,7 @@ $(function () {
         var username = $('.username').val();
         var password = $('.password').val();
         $.ajax({
-            url : 'http://120.27.131.127:12450/auth',
+            url : 'signin_check',
             data : {
                 username : username,
                 password : password
@@ -49,8 +49,9 @@ $(function () {
      $('.reg_btn').bind('click', function () {
         var username = $('.username')[0].value;
         var password = $('.password')[0].value;
+        var contact=$('.contact')[0].value;
           if($agree.is(':checked')) {
-              registerFetch(username, password);
+              registerFetch(username, password,contact);
           }else {
             alert('请同意用户注册协议');
           }
@@ -59,18 +60,20 @@ $(function () {
           if($otherAgree.is(':checked')) {
             var username = $('.username')[1].value;
             var password = $('.password')[1].value;
-              registerFetch(username, password);
+            var contact=$('.contact')[1].value;
+              registerFetch(username, password,contact);
           }else {
             alert('请同意用户注册协议');
           }
         });
 
-      var registerFetch = function (username, password) {
+      var registerFetch = function (username, password,contact) {
         $.ajax({
-              url : 'http://120.27.131.127:12450/register',
+              url : 'signup_check',
               data : {
                   username : username,
-                  password : password
+                  password : password,
+                  contact  : contact
               },
               method : 'POST',
               dataType : 'json',
@@ -79,7 +82,7 @@ $(function () {
                       // location.href = 'indexLogin.html?username='+json.username + '&id=' + json.id;
                       sessionStorage.setItem('username',username);
                       // sessionStorage.setItem('id',json.user.id);
-                      location.href = 'indexLogin.html';
+                      //location.href = 'signin';
                   }
               }
           });

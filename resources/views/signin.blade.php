@@ -109,7 +109,7 @@
 
     </div>
 
-    <a class="reg_link" href="signup.html"></a>
+    <a class="reg_link" href="{{url('signup')}}"></a>
 </div>
 <div class="login_45">
     <p>Copyright&nbsp;&nbsp;&nbsp;2016&nbsp;&nbsp;taoaixin.com&nbsp;&nbsp;杭州电子科技大学版权所有</p>
