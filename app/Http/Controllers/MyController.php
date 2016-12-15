@@ -27,7 +27,8 @@ class MyController extends Controller
     	else
     	{
     		User::create($inputs);
-    		return response()->json(["ok"=>"success"]);
+//    		return response()->json(["ok"=>"success"]);
+            return view('home.index');
     	}
     }
 }

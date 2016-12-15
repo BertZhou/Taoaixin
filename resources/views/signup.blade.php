@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>淘爱心注册</title>
-	{{--<link type="text/css" rel="stylesheet" href="css/reset.css">--}}
-	{{--<link type="text/css" rel="stylesheet" href="css/main2.css">--}}
 	<link type="text/css" rel="stylesheet" href="css/import.css">
+	<link rel="shortcut icon" href="img/logo/tax-logo.ico" />
 </head>
 
 

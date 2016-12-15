@@ -20,7 +20,8 @@ class ItemController extends Controller
         $items = Item::skip($request->input('offset', 0))->take($request->input('limit', 10))->get();
         $sellers = User::whereIn('id', $items->pluck('user_id'))->get()->keyBy('id');
 
-        return response()->json(['items' => $items, 'sellers' => $sellers]);
+//        return response()->json(['items' => $items, 'sellers' => $sellers]);
+        return view('home.item',['items' => $items, 'sellers' => $sellers]);
     }
 
     public function show(Request $request, $item_id)

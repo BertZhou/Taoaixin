@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url('css/import.css') }}">
+    <link rel="shortcut icon" href="img/logo/tax-logo.ico" />
+
     <title>淘爱心登录</title>
 </head>
 <body>
@@ -109,7 +111,7 @@
 
     </div>
 
-    <a class="reg_link" href="{{url('signup')}}"></a>
+    <a class="reg_link" href="{{url('register')}}"></a>
 </div>
 <div class="login_45">
     <p>Copyright&nbsp;&nbsp;&nbsp;2016&nbsp;&nbsp;taoaixin.com&nbsp;&nbsp;杭州电子科技大学版权所有</p>
@@ -117,8 +119,8 @@
 
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="js/angular-messages.min.js"></script>
-<script type="text/javascript" src="js/myangularjs.js"></script>
+{{--<script type="text/javascript" src="js/angular-messages.min.js"></script>--}}
+{{--<script type="text/javascript" src="js/myangularjs.js"></script>--}}
 <script type="text/javascript" src="js/easyPay.js"></script>
 <script type="text/javascript" src="js/myjs.js"></script>
 

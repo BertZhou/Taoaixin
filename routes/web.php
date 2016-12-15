@@ -56,14 +56,21 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('item/{id}', 'ItemController@show');
 });
 
+//登录、注册
 Route::get('signin',function() {
    return view('signin');
-});
-Route::get("signup",function(){
-    return view("signup");
 });
 Route::get("register",function(){
     return view("register");
 });
+//Route::get("/",function(){
+//    return view("home/index");
+//});
+//登录、注册成功跳转
 Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
+
+//测试blade模板路由
+Route::get("blade",function(){
+    return view("home/test");
+});
