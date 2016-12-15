@@ -306,7 +306,7 @@
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                @include('home.item')
+                @include('item.item')
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >
@@ -325,82 +325,7 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/gaoshu.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/siji.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/cyuyan.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/kuaiji.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('item.product')
                 </div>
             </div>
             <div class="row clearfix love-list-message">

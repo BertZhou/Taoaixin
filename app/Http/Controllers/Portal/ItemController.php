@@ -19,9 +19,9 @@ class ItemController extends Controller
 
         $items = Item::skip($request->input('offset', 0))->take($request->input('limit', 10))->get();
         $sellers = User::whereIn('id', $items->pluck('user_id'))->get()->keyBy('id');
-
+        $count = count($items);
 //        return response()->json(['items' => $items, 'sellers' => $sellers]);
-        return view('home.index',['items' => $items, 'sellers' => $sellers]);
+        return view('home.index',['items' => $items, 'sellers' => $sellers, 'count' => $count]);
     }
 
     public function show(Request $request, $item_id)
