@@ -26,6 +26,6 @@
     @include('layout.tao.footer')
     <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="js/myjs.js"></script>
-    {{--<script type="text/javascript" src="js/index.js"></script>--}}
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -53,6 +53,7 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
 Route::group(['namespace' => 'Portal'], function () {
 //    Route::get('/', 'HomeController@index');
     Route::get('/', 'ItemController@index');
+    Route::get('item', 'ItemController@show');
     Route::get('item/{id}', 'ItemController@show');
 });
 

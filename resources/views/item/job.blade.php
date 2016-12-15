@@ -5,7 +5,7 @@
         </div>
     </div>
     @foreach ($items as $item)
-        @if($item->type == 1)
+    @if($item->type == 2)
         <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
             <div class="product-item">
                 <div class="product-img">
@@ -20,7 +20,7 @@
                     <p class="text-double"></p>
                     <div class="metas clearfix">
                         <span class="price">￥{{$item->price}}</span>
-                        <span class="num">{{$item->sold}}人已付款</span>
+                        <span class="num">{{$item->sold}}人已申请</span>
                     </div>
                 </div>
             </div>

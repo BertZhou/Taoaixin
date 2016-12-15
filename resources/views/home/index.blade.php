@@ -306,7 +306,7 @@
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                @include('item.item')
+                @include('item.recommend')
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >
@@ -318,15 +318,7 @@
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="row clearfix love-more">
-                        <div class="col-md-12 column">
-                            <a href="products.html" class="more">更多&gt;&gt;</a>
-
-                        </div>
-                    </div>
                     @include('item.product')
-                </div>
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >

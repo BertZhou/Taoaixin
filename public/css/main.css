@@ -60,11 +60,18 @@ body {
 	/*background: #ccc;*/
 
 }
-.nav a:hover {
+.nav li a:hover {
 	color: #fff !important;
-	/*background: #AF1B21 !important;*/
+	background: #AF1B21 !important;
 }
-.nav a{height:35px; display:block;  color:#000;text-align: center;padding: 0px !important}
+.nav a{
+	height:35px;
+	display:block;
+	color:#000;
+	text-align: center;
+	padding: 0px !important;
+	font-size:14px;
+}
 /*1000px 商品筛选*/
 .snav.shopClass h3{font-family:"Microsoft YaHei", "微软雅黑";}
 .snav{line-height:35px;}

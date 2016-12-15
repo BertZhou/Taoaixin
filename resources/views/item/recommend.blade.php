@@ -5,8 +5,7 @@
         </div>
     </div>
     @foreach ($items as $item)
-        {{--{{$type}}--}}
-{{--    @if($items->type === 0)--}}
+    @if($item->type == 0)
         <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
             <div class="product-item">
                 <div class="product-img">
@@ -26,6 +25,6 @@
                 </div>
             </div>
         </div>
-        {{--@endif--}}
+        @endif
     @endforeach
 </div>
