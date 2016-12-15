@@ -10,11 +10,11 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $orders = Order::where('buyer_user_id', $request->user()->id)->paginate(10);
 
-        return view('user.order.index', ['orders' => $orders]);
+        return view('signin', ['orders' => $orders]);
     }
 
     public function show(Request $request, $order_id)

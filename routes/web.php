@@ -51,8 +51,8 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
 });
 
 Route::group(['namespace' => 'Portal'], function () {
-    Route::get('/', 'HomeController@index');
-    Route::get('item', 'ItemController@index');
+//    Route::get('/', 'HomeController@index');
+    Route::get('/', 'ItemController@index');
     Route::get('item/{id}', 'ItemController@show');
 });
 
@@ -72,5 +72,5 @@ Route::post("signup_check","MyController@signup_check");
 
 //测试blade模板路由
 Route::get("blade",function(){
-    return view("home/test");
+    return view("home.test");
 });

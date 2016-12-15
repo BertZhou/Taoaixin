@@ -4,9 +4,7 @@
 @section('midBar')
     @parent
 @show
-{{--<div class="headerBar">--}}
 
-{{--</div>--}}
 @section('content')
 <div class="product container clearfix index">
     <div class="row clearfix">
@@ -308,90 +306,7 @@
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="row clearfix love-more">
-                        <div class="col-md-12 column">
-                            <a href="products.html" class="more">更多&gt;&gt;</a>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/qiyiguo.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥2</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/dongzao.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥5</span>
-                                    <span class="num">43人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/putao.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥3</span>
-                                    <span class="num">532人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/huyou.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥10</span>
-                                    <span class="num">453人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('home.item')
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >

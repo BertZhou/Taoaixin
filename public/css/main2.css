@@ -18,11 +18,11 @@
 
 @font-face {
     font-family: accountFont;
-    src: url(../font/shopping/iconfont.eot);
-    src: url(../font/shopping/iconfont.eot?#iefix) format('embedded-opentype'),
-    url(../font/shopping/iconfont.woff) format('woff'),
-    url(../font/shopping/iconfont.ttf) format('truetype'),
-    url(../font/shopping/iconfont.svg#iconfont) format('svg');
+    src: url(../fonts/shopping/iconfont.eot);
+    src: url(../fonts/shopping/iconfont.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/shopping/iconfont.woff) format('woff'),
+    url(../fonts/shopping/iconfont.ttf) format('truetype'),
+    url(../fonts/shopping/iconfont.svg#iconfont) format('svg');
 }
 
 @keyframes hover {
@@ -34,62 +34,6 @@
     } 
 }
 
-/*登录*/
-.login_logo .comWidth{width:500px;}
-.welcome_title{font-size: 24px;line-height: 80px;font-family: "Microsoft YaHei","微软雅黑";
-		padding-left: 20px;float: left;font-weight: bold;}/*将字体设为浮动，padding才有效果*/
-
-.loginBox{width: 500px;height:366px;border:1px solid #ccc;margin:0 auto;margin-top:10px;position: relative;}
-.login_cont{padding:40px 100px;}
-.login_input{border:1px solid #999;height: 34px;width:100%;line-height: 34px;padding:0 5px;}
-.l_tit{color:#666;line-height: 20px;}
-.user_icon{background: url(../images/login/user_icon.jpg) right center no-repeat;}
-.user_icon2{background: url(../images/login/user_icon2.jpg) right  center no-repeat;}
-.mb_10{margin-bottom: 10px;}
-.aotoLogoin{padding-top: 27px;float:left;}
-.f_pwd{padding-bottom: 28px;float:right;padding-top: 27px;}
-.checked{position: relative;top:3px;margin-right: 3px;}
-.login_btn{width:310px;height:39px;background: url(../images/login/login_btn2.jpg) left top no-repeat;}
-.login_partners{padding-top: 34px;}
-.login_list li{float: left;line-height: 20px;}
-.login_list span{color: #999;margin: 0 2px;}
-.reg_link{width: 120px;height: 30px;background: url(../images/login/reg_link.jpg) left top no-repeat;
-		position: absolute;right:30px;top:365px;}
-.footer{margin-top: 50px;}
-
-/*注册*/
-.reg_logo .comWidth{width:500px;position: relative;}
-.header .logo{margin:0 auto;}
-.regBox1{border:1px solid #ccc;width:650px;margin:0 auto;margin-top:10px;/*height:700px;*/}
-.reg_item{font:14px/34px "宋体";width:110px;text-align: right;float:left;} /*regbox1分成两部分 一个是字体 一个是input*/
-.reg_item i{color: red;font-style: normal;margin-right: 5px;}
-.input_item{width:270px;float: left;}
-.regBox1 li{height:60px;vertical-align:top;}/*垂直对齐*/
-.regBox1 .sc{line-height:34px;}
-.reg_btn ,.reg_btn_other{width:305px;height:39px;/**/background:url(../images/Register/reg_03.jpg) right no-repeat;}
-.regBox1 a{color:blue;}
-.regBox1 a:hover{color:red;}
-.regBox1 .d1{text-align:center;}
-
-#reg_student2 .aotoLogoin{height:40px;padding-top: 6px;}
-#reg_student2 .check{height:40px;}
-
-#reg_other2 .aotoLogoin{padding-top:3px;height:40px;}
-.regBox {width:500px;height:80px;margin-left: 10px;
-		font:20px/40px "Microsoft YaHei";border-bottom:2px solid red; margin-left:auto;margin-right: auto;}
-.regBox span{font:20px/40px "Microsoft YaHei";width:150px;text-align:left;}
-.studentReg{float:left;padding:0;}
-
-.regBox .reg_item2{
-    width:150px;
-    line-height:78px;
-    float:left;
-    position: relative;
-}
-.regBox .reg_item3{line-height:80px;float:right;}
-.reg_current {
-    border-bottom: 3px solid black;
-}
 .line {
     position: absolute;
     left: 0%;
@@ -158,7 +102,7 @@
 .fav-search{width:200px;height: 30px;
 	border:1px solid #ccc;padding:0 5px;color:#ccc;margin-top:10px;background: #fff}
 .fav-search-right{width:26px;height:32px;border:1px solid #ccc;margin-top:10px;
-			background:url(../images/favourite/search.jpg) right center no-repeat;cursor:pointer;}
+			background:url(../img/favourite/search.jpg) right center no-repeat;cursor:pointer;}
 
 .right-manage li{font:14px/30px "Microsoft YaHei", "微软雅黑";color:#5B3C3C;width:80px;height:30px;border:1px solid #ccc;
 	margin-right:5px;margin-top:10px;text-align:center;}
@@ -269,7 +213,7 @@
 /*.Main_Userbar .discount{height:20px;}*/
 
 /*购物车*/
-/*.topBar .comWidth .myshop a{display: block;background: url(../images/shopping/shopping.png) left center no-repeat;
+/*.topBar .comWidth .myshop a{display: block;background: url(../img/shopping/shopping.png) left center no-repeat;
 		padding-left: 28px;}*/
 .shopping-icon {
     font-family: accountFont;

@@ -1,10 +1,10 @@
 @font-face {
     font-family: goTop;
-    src: url(../font/shopping/iconfont.eot);
-    src: url(../font/shopping/iconfont.eot?#iefix) format('embedded-opentype'),
-    url(../font/shopping/iconfont.woff) format('woff'),
-    url(../font/shopping/iconfont.ttf) format('truetype'),
-    url(../font/shopping/iconfont.svg#iconfont) format('svg');
+    src: url(../fonts/shopping/iconfont.eot);
+    src: url(../fonts/shopping/iconfont.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/shopping/iconfont.woff) format('woff'),
+    url(../fonts/shopping/iconfont.ttf) format('truetype'),
+    url(../fonts/shopping/iconfont.svg#iconfont) format('svg');
 }
 
 /*商品遮罩*/
@@ -206,31 +206,31 @@
 
 /*轮播图*/
 #carousel input[type='radio']:nth-of-type(1):after {
-	background-image: url("../images/banner/taxlb-1.jpg");
+	background-image: url("../img/banner/taxlb-1.jpg");
 }
 #carousel input[type='radio']:nth-of-type(2) {
 	top: 20%;
 }
 #carousel input[type='radio']:nth-of-type(2):after {
-	background-image: url("../images/banner/taxlb-2.jpg");
+	background-image: url("../img/banner/taxlb-2.jpg");
 }
 #carousel input[type='radio']:nth-of-type(3) {
 	top: 40%;
 }
 #carousel input[type='radio']:nth-of-type(3):after {
-	background-image: url("../images/banner/taxlb-4.jpg");
+	background-image: url("../img/banner/taxlb-4.jpg");
 }
 #carousel input[type='radio']:nth-of-type(4) {
 	top: 60%;
 }
 #carousel input[type='radio']:nth-of-type(4):after {
-	background-image: url("../images/banner/mac.jpg");
+	background-image: url("../img/banner/mac.jpg");
 }
 #carousel input[type='radio']:nth-of-type(5) {
 	top: 80%;
 }
 #carousel input[type='radio']:nth-of-type(5):after {
-	background-image: url("../images/banner/taxlb-3.jpg");
+	background-image: url("../img/banner/taxlb-3.jpg");
 }
 
 #carousel {

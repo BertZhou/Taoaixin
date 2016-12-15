@@ -21,7 +21,7 @@ class ItemController extends Controller
         $sellers = User::whereIn('id', $items->pluck('user_id'))->get()->keyBy('id');
 
 //        return response()->json(['items' => $items, 'sellers' => $sellers]);
-        return view('home.item',['items' => $items, 'sellers' => $sellers]);
+        return view('home.index',['items' => $items, 'sellers' => $sellers]);
     }
 
     public function show(Request $request, $item_id)
