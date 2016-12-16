@@ -15,7 +15,7 @@
     <li class="dropdown menu-merge">
       <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
         <img src="#" alt="avatar" class="mw30 br64">
-        <span class="hidden-xs pl15"> {{ !empty(Auth::user()) ? Auth::user()->name : '' }} </span>
+        <span class="hidden-xs pl15"> {{ !empty(Session::get("name")) ? Session::get("name"): '' }} </span>
         <span class="caret caret-tp hidden-xs"></span>
       </a>
       <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">

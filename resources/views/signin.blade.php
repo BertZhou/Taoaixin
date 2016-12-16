@@ -26,13 +26,13 @@
 <div class="loginBox">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" role="form" name="signin" ng-controller="userInfoController">
+            <form class="form-horizontal" role="form" name="signin" ng-controller="userInfoController" method="post" action="signin_check">
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="username">
                         用户名
                     </label>
                     <div class="col-md-7">
-                        <input type="text" id="username" class="form-control username" placeholder="邮箱/用户名/已验证手机" ng-model="userInfo.username" ng-minlength="8" ng-maxlength="20" required>
+                        <input type="text" id="username" class="form-control username" placeholder="邮箱/用户名/已验证手机" ng-model="userInfo.username" ng-minlength="8" ng-maxlength="20" required name="username">
                     </div>
                 </div>
                 <div class="form-group">
@@ -64,7 +64,7 @@
                         密码
                     </label>
                     <div class="col-md-7">
-                        <input class="form-control password" id="password" type="password" placeholder="密码" ng-model="userInfo.password" ng-minlength="3" ng-maxlength="20" required>
+                        <input class="form-control password" id="password" type="password" placeholder="密码" ng-model="userInfo.password" ng-minlength="3" ng-maxlength="20" required name="password">
                     </div>
                 </div>
                 <div class="form-group">
@@ -103,14 +103,13 @@
                         <label class="forget-password">忘记密码？</label>
                     </div>
                 </div>
-                <button type="button" class="login_btn btn btn-primary col-md-4 col-md-offset-4"
+                <button type="submit" class="login_btn btn btn-primary col-md-4 col-md-offset-4"
                         ng-disabled="!(userInfo.password && userInfo.username)"
                         class="">登 &nbsp 录</button>
             </form>
         </div>
 
     </div>
-
     <a class="reg_link" href="{{url('register')}}"></a>
 </div>
 <div class="login_45">
@@ -121,7 +120,7 @@
 <script type="text/javascript" src="js/angular.min.js"></script>
 {{--<script type="text/javascript" src="js/angular-messages.min.js"></script>--}}
 {{--<script type="text/javascript" src="js/myangularjs.js"></script>--}}
-<script type="text/javascript" src="js/easyPay.js"></script>
+<!--<script type="text/javascript" src="js/easyPay.js"></script>!-->
 <script type="text/javascript" src="js/myjs.js"></script>
 
 </body>

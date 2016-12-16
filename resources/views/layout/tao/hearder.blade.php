@@ -1,18 +1,18 @@
 
-@if(!empty(Auth::user()))
-<div class="topBar">
+ @if(Session::get('name'))
+ <div class="topBar">
     <div class="comWidth">
         <div class="leftArea">
             <!-- <a href="#" class="collection">收藏淘爱心</a> -->
             <div class="account fl" id="account">
-                <a href="#"><span class="sign-success"></span></a>
+                <a href="#"><span>{{Session::get("name")}}</span></a>
                 <div class="mune" class="account_mune" id="account_mune">
                     <div class="shangmian">
                         <div class="leftArea">
                             <a href="details.html"><img src="img/logo/taxyh-3.jpg" alt=""></a>
                         </div>
                         <div class="account_mang rightArea">
-                            <div class="fr qingfu"><a class="manage">账号管理</a><a class="exit" href="{{url('')}}">退出</a></div>
+                            <div class="fr qingfu"><a class="manage">账号管理</a><a class="exit" href="{{url('login_out')}}">退出</a></div>
                             <div class="fl qingfu"><a href="#"><img src="img/icon/huiyuan4.jpg"></a></div>
                             <div class="fl qingfu"> <a href="#">我可尊享15项特权</a></div>
                         </div>

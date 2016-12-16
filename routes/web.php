@@ -75,3 +75,4 @@ Route::post("signup_check","MyController@signup_check");
 Route::get("blade",function(){
     return view("home.test");
 });
+Route::get("login_out","MyController@login_out");
