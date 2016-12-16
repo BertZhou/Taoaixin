@@ -28,12 +28,12 @@
                 <img src="{{ url('assets/img/logos/logo_white.png') }}" title="AdminDesigns Logo" class="img-responsive w250">
               </a>
             </div>
-
             <div class="col-xs-6 text-right va-b pr5">
               <div class="login-links">
-                <a href="{{ url('login') }}" class="active" title="Sign In">Sign In</a>
+               <a href="{{ url('login') }}" class="active" title="Sign In">Sign In</a>
                 <span class="text-white"> | </span>
                 <a href="{{ url('register') }}" class="" title="Register">Register</a>
+
               </div>
             </div>
           </div>

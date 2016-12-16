@@ -31,7 +31,7 @@ $(function () {
                     sessionStorage.setItem('id',json.user.id);
                     sessionStorage.setItem('token',json.token);
                     sessionStorage.setItem('money',json.user.money);
-                    location.href = 'indexLogin.html';
+                   // location.href = 'indexLogin.html';
                 }
 
             }
