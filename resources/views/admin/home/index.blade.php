@@ -131,6 +131,4 @@
         <!-- end: .tray-center -->
 
       </section>
-      
-
 @endsection

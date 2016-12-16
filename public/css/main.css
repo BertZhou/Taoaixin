@@ -205,16 +205,25 @@ a.hided{display:none;}
 	text-align: center;
 	display: block;
 }
-.description .rightArea{width:688px; border-left:#CCC solid 1px;}
+.description .rightArea{
+	width:70%;
+	border-left:#CCC solid 1px;
+}
 /*图片展示*/
 .description_imgs .big{height:340px; text-align:center;}
 .des_smimg{padding-left:1px; width:265px; margin:0 auto;}
 .des_smimg li{float:left; margin-left:-1px;}
 .des_smimg img{border:#CCC solid 1px;}
 .des_smimg .active{border-color:#317EE7; position:relative;}
-.des_content{padding:10px;}
+.des_content{
+	padding-top:50px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
 .des_content_tit{font:bold 16px/22px "Microsoft YaHei", "微软雅黑"; padding:13px 25px;}
-.des_content .dl{margin-bottom:8px;}
+.des_content .dl{
+	margin:10px 0px ;
+}
 .des_content .dt{width:75px; float:left; position:relative; color:#666; text-indent:17px; line-height:25px;}
 .des_content .dd{padding-left:75px; *padding-left:0;}
 .des_money{font-size:18px; color:#F30; font-family:Verdana;}
@@ -238,14 +247,18 @@ a.hided{display:none;}
 .reduction{border-right:#CCC solid 1px;}
 .plus{border-left:#CCC solid 1px;}
 .des_input{width:42px; background:url(../img/icon/des_input_bg.jpg) left top no-repeat; padding:0 4px; overflow:hidden;}
-.des_input input{width:100%; height:32px; line-height:32px\9; text-align:center;}
+.des_input input{
+	width:42px; height:32px; line-height:32px\9; text-align:center;}
 .xg{line-height:32px;  float:left; padding-left:10px; font-weight:bold; color:#656565;}
 .xg em{color:#FB7700; font-style:normal;}
 .des_content .des_num{line-height:32px;}
 /*已选择*/
 .des_select{font-weight:bold; margin:22px 0 12px; text-indent:17px;}
 .des_select span{color:#0479C9;}
-.shop_buy{text-align:center;}
+.shop_buy{
+	text-align:center;
+	margin:50px;
+}
 .shopping_btn {display:inline-block; width:194px; height:56px; background:url(../img/icon/Plus_shopcar.jpg) left top no-repeat;}
 .buy_btn {
 	display: inline-block;
@@ -294,7 +307,10 @@ a.hided{display:none;}
 /*详细介绍*/
 .des_infoContent{border:#CCC solid 1px; background-color:#FFF;}
 .des_tit{height:39px; border-bottom: #CCC solid 1px; background:url(../img/icon/des_title.jpg) left top repeat-x;}
-.des_tit li{float:left; width:33%; font:14px/39px "宋体"; text-align:center; border-left:solid 1px #ccc; margin-left:-1px;}
+.des_tit li{float:left; width:33.33%; font:14px/39px "宋体"; text-align:center; border-left:solid 1px #ccc; margin-left:-1px;}
+.des_tit li:hover {
+	cursor: pointer;
+}
 .des_tit .active{background-color:#AF1B21; font-weight:bold; color:#FFF; position:relative;}
 .des_tit span{background:url(../img/icon/des_title_icon.png) left center no-repeat; padding-left:32px; display:inline-block; line-height:39px;}
 .ad1{padding:20px 0px 0px 0px; text-align:center;}

@@ -20,4 +20,6 @@
             <p>&nbsp;</p>
         </div>
     </div>
+    @include('item.productshow')
+    @include('item.details')
 @endsection

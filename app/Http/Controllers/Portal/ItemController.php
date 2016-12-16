@@ -24,7 +24,7 @@ class ItemController extends Controller
         return view('home.index',['items' => $items, 'sellers' => $sellers, 'count' => $count]);
     }
 
-    public function show(Request $request, $item_id=1)
+    public function show(Request $request, $item_id)
     {
         $this->validate($request, [
             'offset'    =>  'integer|min:0',
@@ -36,6 +36,8 @@ class ItemController extends Controller
         $rates = ItemRate::where('item_id', $item->id)->skip($request->input('offset', 0))->take($request->input('limit', 0))->get();
 
 //        return response()->json(['item' => $item, 'seller' => $seller, 'rates' => $rates]);
-        return view('item.show');
+//        var_dump($rates);
+//        exit(0);
+        return view('item.show',['item' => $item, 'seller' => $seller, 'rates' => $rates]);
     }
 }
