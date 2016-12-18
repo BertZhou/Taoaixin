@@ -56,7 +56,8 @@
                                 <div class="des_number">
                                     <div class="reduction">-</div>
                                     <div class="des_input">
-                                        <input type="text">                                    </div>
+                                        <input type="text" value="1" name="amount">
+                                    </div>
                                     <div class="plus">+</div>
                                 </div>
                                 {{--<span class="xg">限购<em>9</em>件</span>--}}
@@ -66,7 +67,8 @@
                     <div class="shop_buy">
                         <a href="" class="btn btn-danger">加入购物车</a>
                         <span class="line"></span>
-                        <a href="{{url('buy')}}" class="btn btn-warning">立即购买</a>                    </div>
+                        <a href="{{url('buy',$item->id)}}" class="btn btn-warning btn-buy">立即购买</a>
+                    </div>
                     <div class="notes">
                         <span class="icon-fav detail-icon">&#xe610;
                         <a href="{{url('my/favorite')}}">添加到收藏夹</a></span>
