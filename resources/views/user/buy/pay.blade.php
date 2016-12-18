@@ -19,15 +19,15 @@
 @endsection
 @section('content')
     <div class="zhifu_chuangkou1">
-        <div class="zhifu_tupian"><a href="#" class="zhifu_tupian1"><img src="/img/details/taxxq-1.jpg" alt="" ></a></div>
+        <div class="zhifu_tupian"><a href="#" class="zhifu_tupian1"><img src="{{$items->url}}" alt="" ></a></div>
         <div class="zhifu_maijia">
                 <span>
-                    订单详情：<a href="#"><span class="maijia_dingdan">iPad mini2 Apple/苹果 配备Retina显示屏的iPad mini</span></a><br/><br/>
-                    卖家昵称：<a href="#"><span class="maijia_dianming">apple旗舰店</span></a>
+                    订单详情：<a href="#"><span class="maijia_dingdan">{{$items->content}}</span></a><br/><br/>
+                    卖家昵称：<a href="#"><span class="maijia_dianming">{{$seller->name}}</span></a>
                 </span>
         </div>
         <div class="zhifu_daifu"><a href="#">找人代付</a>&nbsp;&nbsp;<a href="#">联系客服</a></div>
-        <div class="zhifu_jiage1"><span >1450.00</span>元</div>
+        <div class="zhifu_jiage1"><span >{{$items->price}}</span>元</div>
         <div class="zhifu_xiangqing" ><a href="#"><span class="xianshi">查看详情</span></a></div>
         <div class="zhifu_xiangqingye" id="xianshi_" style="display:none">
 
@@ -47,7 +47,7 @@
                 <label>
                     <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"><img src="/img/pay/tax-logo.jpg" alt="" style="height: 30px">淘爱心账户
                 </label>
-                <div class="zhifu_jiage2">支付<span>1450.00</span>元</div>
+                <div class="zhifu_jiage2">支付<span>{{$items->price}}</span>元</div>
             </div>
         </div>
         <div class="zhifu_mima">

@@ -71,4 +71,15 @@ class MyController extends Controller
         Session::flush();
         return redirect("/");
     }
+     public function buy($id)
+    {
+        $gets=DB::table('items')->where('id',$id)->first();
+        return view("user.buy.buy",["items"=>$gets]);
+    }
+    public function pay($id)
+    {
+        $gets=DB::table('items')->where('id',$id)->first();
+        $seller=DB::table("users")->where("id",$gets->user_id)->first();
+        return view("user.buy.pay",["items"=>$gets,"seller"=>$seller]);
+    }
 }

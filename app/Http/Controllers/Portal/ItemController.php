@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\ItemRate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
