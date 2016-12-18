@@ -4,17 +4,20 @@ namespace App\Http\Controllers\User;
 
 use Carbon;
 use App\Models\Item;
+use App\Models\User;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::where('buyer_user_id', $request->user()->id)->paginate(10);
-
-        return view('user.my.order', ['orders' => $orders]);
+        $orders = Order::where('buyer_user_id', Session::get('userid'))->paginate(10);
+        $user = User::find(Session::get("userid"));
+//        $item = Item::find()
+        return view('user.my.order', ['orders' => $orders, 'user' => $user]);
     }
 
     public function show(Request $request, $order_id)

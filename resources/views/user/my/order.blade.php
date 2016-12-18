@@ -17,17 +17,19 @@
             <div class="col-md-2">实付款</div>
             <div class="col-md-2">评价</div>
         </div>
+        @foreach ($orders as $order)
         <div class="panel panel-default">
             <div class="panel-heading">
-                2016-12-5
+                {{$order->created_at}}
             </div>
-            <div class="panel-body row">
+            <div class="panel-body row nav-content">
                 <div class="col-md-4">22</div>
                 <div class="col-md-2">33</div>
                 <div class="col-md-2">44</div>
-                <div class="col-md-2">55</div>
-                <div class="col-md-2">66</div>
+                <div class="col-md-2">￥{{$order->price}}</div>
+                <div class="col-md-2">{{$order->rate}}</div>
             </div>
         </div>
+        @endforeach
     </div>
 @endsection

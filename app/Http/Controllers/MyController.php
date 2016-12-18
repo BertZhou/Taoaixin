@@ -31,8 +31,6 @@ class MyController extends Controller
                 $id=$get->id;
                 Session::put("userid",$id);
                 Session::put("name",$username);
-//                Session::put("id",$id);
-//                dd(Session::get("name"));
                 return view('home.index',["items"=>$items]);
                 //return "ok";
             }

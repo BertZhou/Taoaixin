@@ -54,7 +54,7 @@
             <span style="font-size:14px">淘爱心支付密码：</span><br/><br/>
             <input type="password" class="zhifu_mimabox " tabindex="1" id="payPassword_rsainput" placeholder="密码" name="payPassword_rsainput" oncontextmenu="return false" onpaste="return false" oncopy="return false" oncut="return false" autocomplete="off" value="">&nbsp;&nbsp;
             <a href="#" target="_blank"><span class="zhifu_forget">忘记密码？</span></a><br/><br/>
-            <a href ="paymentSuccess.html" class="myButton btn-confirm-pay">确认付款</a>
+            <a href ="{{url('paysuccess')}}" class="myButton btn-confirm-pay">确认付款</a>
         </div>
     </div>
 @endsection

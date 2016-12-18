@@ -121,7 +121,7 @@
                         <i>总计：</i><span>￥1450.00</span>
                     </div>
                     <div class="cart_btnBox">
-                        <a href="pay.html">
+                        <a href="{{url('pay')}}">
                             <input type="button" class="btn btn-danger btn-submit" value="提交订单"></a>
                     </div>
                 </div>

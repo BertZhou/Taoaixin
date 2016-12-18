@@ -14,7 +14,7 @@
 <body>
     @include('layout.tao.hearder')
     @include('user.buy.menu')
-    <div class="smallcomWidth order bought ">
+    <div class="smallcomWidth order bought pay">
         @section('topbar')
         <ol class="tb-rate-nav-steps">
             <li class="zhifufukuan">
