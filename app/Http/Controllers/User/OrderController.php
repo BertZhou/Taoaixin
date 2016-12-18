@@ -7,13 +7,12 @@ use App\Models\Item;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::where('buyer_user_id', Session::get('id'))->paginate(10);
+        $orders = Order::where('buyer_user_id', $request->user()->id)->paginate(10);
 
         return view('user.my.order', ['orders' => $orders]);
     }
