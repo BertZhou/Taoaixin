@@ -600,12 +600,13 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
 .cart_cont .t_price,
 .cart_cont .t_return,
 .cart_cont .t_num,
-.cart_cont .t_subtotal{line-height:37px;}
+.cart_cont .t_subtotal{line-height:92px;}
 .cart_shopInfo img{width:90px; height:100px; display:block; float:left;}
 .cart_shopInfo_cont{padding-left:90px; font-size:12px;}
-.cart_link{line-height:37px; margin-bottom:30px;}
+.cart_link{line-height:37px;}
 .cart_link a:hover{text-decoration:underline;}
-.cart_info{color:#000;}
+.cart_info{color:#000;
+	margin:20px;}
 .cart_message{line-height:40px; padding-left:30px; margin-bottom:10px;}
 .cart_prompt{line-height:40px; padding-left:30px; color:red;}
 .cart_prompt_icon{width:12px; height:12px; display:inline-block; background-position:0 -19px; margin-right:11px;}
@@ -621,11 +622,14 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
 /*支付*/
 /*支付窗口*/
 .zhifu_chuangkou1{margin-bottom: 10px;background: #efffe3;border: 1px solid #6bb30c;height:150px;}
-.zhifu_tupian{width:80px;height:100px;float:left;margin:20px;padding-left:30px;}
-.zhifu_tupian1 img{height: 100px;}
+.zhifu_tupian{width:90px;height:100px;float:left;margin:20px;}
+.zhifu_tupian1 img{
+	width:100%;
+	height:100%;
+}
 #zhifu_tupian_fangda{position:absolute;border:1px solid #ccc;background:#333;padding:1px;color:#fff;width: 140px;height: 200px;z-index: 10;margin-left:140px;}
 #zhifu_tupian_fangda img{height:200px;width:140px;}
-.zhifu_maijia{width:600px;height:80px;float:left;padding-top:50px ;padding-left:40px;}
+.zhifu_maijia{width:600px;height:80px;float:left;padding-top:50px ;}
 /*.maijia_dingdan:hover{font-size:14px;color:red;}
 .maijia_dianming:hover{font-size:14px;color:red;}*/
 .zhifu_daifu{width:150px;height:40px;padding-top:20px;float:right;}

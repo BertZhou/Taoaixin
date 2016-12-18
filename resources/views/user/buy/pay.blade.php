@@ -34,7 +34,7 @@
                     <span >
                         <span class="xiangqing1">货物寄送至：</span><br/> <a href="#"><span class="xiangqing2">浙江省 杭州市 江干区 白杨街道 杭州电子科技大学 <br/>周玲杰 收<br>13750898266<br></span></a>
                         <a href="#" target="_blank"><span class="xiangqing3">设置默认地址</span></a>
-                        </span>
+                    </span>
 
             </span>
         </div>

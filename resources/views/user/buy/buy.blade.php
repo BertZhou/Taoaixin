@@ -68,9 +68,9 @@
             <div class="shopping_cont pb_10">
                 <div class="cart_inner">
                     <div class="cart_head clearfix">
-                        <div class="cart_item t_name">商品名称</div>
+                        <div class="cart_item t_name">淘爱心宝贝</div>
+                        <div class="cart_item t_return">商品名</div>
                         <div class="cart_item t_price">单价</div>
-                        <div class="cart_item t_return">返现</div>
                         <div class="cart_item t_num">数量</div>
                         <div class="cart_item t_subtotal">小计</div>
                     </div>
@@ -79,33 +79,33 @@
                             <div class="cart_shopInfo clearfix">
                                 <img src="{{$items->url}}" alt="">
                                 <div class="cart_shopInfo_cont">
-                                    <p class="cart_link"><a href="#">{{$items->name}}</a></p>
-                                    <p class="cart_info">[详情]：{{$items->content}}</p>
+                                    {{--<p class="cart_link"><a href="#">{{$items->name}}</a></p>--}}
+                                    <p class="cart_info"><a href="{{url('item',$items->id)}}">{{$items->content}}</a></p>
                                 </div>
                             </div>
                         </div>
+                        <div class="cart_item t_return">{{$items->name}}</div>
                         <div class="cart_item t_price">
                             {{$items->price}}
                         </div>
-                        <div class="cart_item t_return">10</div>
                         <div class="cart_item t_num">1</div>
                         <div class="cart_item t_subtotal t_red">{{$items->price}}</div>
                     </div>
-                    <div class="cart_message">
-                        若有问题请留言，若有问题请留言
-                    </div>
-                    <div class="cart_prompt"><i class="cart_prompt_icon"></i>抱歉，以下商品已失效，无法购买。</div>
-                    <div class="cart_cont cart_no_bor clearfix">
-                        <div class="cart_item t_name">
-                            <div class="cart_shopInfo clearfix">
-                                <img src="/img/details/taxxq-2.jpg" alt="">
-                                <div class="cart_shopInfo_cont">
-                                    <p class="cart_link"><a href="#">iPad mini2 Apple/苹果 配备Retina显示屏的iPad mini</a></p>
-                                    <p class="cart_info">1450.00［无货］</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="cart_message">--}}
+                        {{--若有问题请留言，若有问题请留言--}}
+                    {{--</div>--}}
+                    {{--<div class="cart_prompt"><i class="cart_prompt_icon"></i>抱歉，以下商品已失效，无法购买。</div>--}}
+                    {{--<div class="cart_cont cart_no_bor clearfix">--}}
+                        {{--<div class="cart_item t_name">--}}
+                            {{--<div class="cart_shopInfo clearfix">--}}
+                                {{--<img src="/img/details/taxxq-2.jpg" alt="">--}}
+                                {{--<div class="cart_shopInfo_cont">--}}
+                                    {{--<p class="cart_link"><a href="#">iPad mini2 Apple/苹果 配备Retina显示屏的iPad mini</a></p>--}}
+                                    {{--<p class="cart_info">1450.00［无货］</p>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
             <div class="shopping_cont padding_shop clearfix">
                 <div class="cart_count fr">
                     <div class="cart_rmb">
-                        <i>总计：</i><span>{{$items->price}}</span>
+                        <i>总计：</i><span>￥{{$items->price}}</span>
                     </div>
                     <div class="cart_btnBox">
                         <a href="{{url('pay',$items->id)}}">
