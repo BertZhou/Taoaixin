@@ -28,6 +28,8 @@ class MyController extends Controller
             if($password==$check_password)                
             {
 
+                $id=$get->id;
+                Session::put("userid",$id);
                 Session::put("name",$username);
 //                Session::put("id",$id);
 //                dd(Session::get("name"));
@@ -57,6 +59,10 @@ class MyController extends Controller
     	else
     	{
     		User::create($inputs);
+            $user=DB::table("users")->where("name",$inputs["name"])->first();
+            $id=$user->id;
+            //dd($id);
+            Session::put("userid",$id);
             Session::put("name",$inputs["name"]);
 //    		return response()->json(["ok"=>"success"]);
             return view('home.index',["items"=>$items]);

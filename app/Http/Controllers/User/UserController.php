@@ -13,7 +13,10 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $user = User::where('name', Session::get('name'))->first();
+        //$user = User::where('name', Session::get('name'))->first();
+        //dd(Session::get("name"));
+        //dd(Session::get("userid"));
+        $user=User::find(Session::get("userid"));
         return view('user.my.index', ['user' => $user]);
     }
 
