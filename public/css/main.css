@@ -241,14 +241,16 @@ a.hided{display:none;}
 .des_item_sm{padding:3px 7px; margin-bottom:8px;}
 .des_content .des_select_more{line-height:55px;}
 /*数量*/
-.des_number{border:#B2B2B2 solid 1px; height:32px; width:82px; float:left;}
-.des_number div{height:100%; float:left;}
+.des_number{border:#B2B2B2 solid 1px; height:32px; float:left;}
+.des_number div{height:100%; float:left;
+	cursor: pointer;}
 .reduction,.plus{width:15px; line-height:32px; text-align:center; color:#333;}
 .reduction{border-right:#CCC solid 1px;}
-.plus{border-left:#CCC solid 1px;}
+.plus{border-left:#CCC solid 1px;
+	cursor: pointer;}
 .des_input{width:42px; background:url(../img/icon/des_input_bg.jpg) left top no-repeat; padding:0 4px; overflow:hidden;}
 .des_input input{
-	width:42px; height:32px; line-height:32px\9; text-align:center;}
+	width:40px; height:32px; line-height:32px\9; text-align:center;}
 .xg{line-height:32px;  float:left; padding-left:10px; font-weight:bold; color:#656565;}
 .xg em{color:#FB7700; font-style:normal;}
 .des_content .des_num{line-height:32px;}

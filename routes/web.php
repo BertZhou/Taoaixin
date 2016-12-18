@@ -71,6 +71,8 @@ Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
 Route::get("login_out","MyController@login_out");
 
+
+
 Route::get('buy',function() {
     return view('user.buy.buy');
 });

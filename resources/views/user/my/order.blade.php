@@ -15,7 +15,7 @@
             <div class="col-md-2">单价</div>
             <div class="col-md-2">数量</div>
             <div class="col-md-2">实付款</div>
-            <div class="col-md-2">评价</div>
+            <div class="col-md-2">交易状态</div>
         </div>
         @foreach ($orders as $order)
         <div class="panel panel-default">
