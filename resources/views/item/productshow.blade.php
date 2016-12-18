@@ -70,7 +70,8 @@
                         <a href="order.html" class="btn btn-warning">立即购买</a>
                     </div>
                     <div class="notes">
-                        注意：此商品可提供普通发票，不提供增值税发票。
+                        <span class="icon-fav detail-icon">&#xe610;
+                        <a href="{{url('my/favorite')}}">添加到收藏夹</a></span>
                     </div>
                 </div>
             </div>

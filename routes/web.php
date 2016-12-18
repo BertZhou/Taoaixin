@@ -48,6 +48,8 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'create', 'store']]);
     Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destory']]);
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
+    Route::get('shopping','ShoppingController@index');
+
 });
 
 Route::group(['namespace' => 'Portal'], function () {
@@ -64,15 +66,11 @@ Route::get('signin',function() {
 Route::get("register",function(){
     return view("register");
 });
-//Route::get("/",function(){
-//    return view("home/index");
-//});
 //登录、注册成功跳转
 Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
-
-//测试blade模板路由
-Route::get("blade",function(){
-    return view("home.test");
-});
 Route::get("login_out","MyController@login_out");
+
+Route::get('item',function() {
+    return view('item.items');
+});

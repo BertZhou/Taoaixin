@@ -14,7 +14,7 @@ class OrderController extends Controller
     {
         $orders = Order::where('buyer_user_id', $request->user()->id)->paginate(10);
 
-        return view('signin', ['orders' => $orders]);
+        return view('user.my.order', ['orders' => $orders]);
     }
 
     public function show(Request $request, $order_id)

@@ -15,7 +15,7 @@ $(function () {
     // fetch(function(data) {
     //     processData(data);
     // });
-    productInfoFetch();
+    // productInfoFetch();
 
 /*
 * ① 搜索滚动

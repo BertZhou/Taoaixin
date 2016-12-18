@@ -10,9 +10,10 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('user.index');
+
+        return view('user.my.index');
     }
 
     public function store(Request $request)
@@ -21,7 +22,7 @@ class UserController extends Controller
             'name'      =>  'required|alpha_dash',
             'password'  =>  'required|min:8',
             'email'     =>  'required|email|unique:users,email',
-            'mobile'    =>  'zh_mobile',
+//            'mobile'    =>  'zh_mobile',
             'address'   =>  'string'
         ]);
 
@@ -45,10 +46,10 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name'          =>  'required|alpha_dash',
-            'email'         =>  "required|email|unique:users,email,$user_id",
+            'email'         =>  "required|email|unique:users,email,user_id",
             'new_password'  =>  'alpha_dash|min:8',
             'old_password'  =>  'required_with:new_password|alpha_dash|min:8',
-            'mobile'        =>  'zh_mobile',
+//            'mobile'        =>  'zh_mobile',
             'address'       =>  'string'
         ]);
 

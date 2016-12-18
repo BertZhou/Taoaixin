@@ -138,7 +138,7 @@ a.hided{display:none;}
 /*footer*/
 .hr_25{
 	height:45px;
-	background-color:#2C3840; 
+	/*background-color:#2C3840; */
 	clear:both;
 }
 .hr_26 {
@@ -257,7 +257,7 @@ a.hided{display:none;}
 .des_select span{color:#0479C9;}
 .shop_buy{
 	text-align:center;
-	margin:50px;
+	margin:30px;
 }
 .shopping_btn {display:inline-block; width:194px; height:56px; background:url(../img/icon/Plus_shopcar.jpg) left top no-repeat;}
 .buy_btn {
@@ -344,7 +344,11 @@ a.hided{display:none;}
 .review .active{color:#317DE6; font-weight:bold; border-bottom:#317DE6 solid 2px; margin-bottom:-2px; position:relative;}
 .review_sort{padding:5px 5px 0 0;}
 .review_sort a{display:inline-block; line-height:20px; height:20px; border:solid 1px #ccc; padding:0 20px 0 6px; background:url(../img/icon/down.png) 58px center no-repeat;}
-.review_list{padding-top:18px; margin-bottom:10px;}
+.review_list{
+	padding-top:18px;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc;
+}
 .review_userHead{width:170px;}
 .review_user{width:60px; text-align:center; margin-left:40px;}
 .review_user img{width:60px; height:60px; display:block;}
@@ -469,13 +473,13 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
 
 
 /*店铺信息*/
-.shopdetail {position: relative;color: #404040;padding: 18px 0;background: url(../img/evaluation/taxpjcs-1.png) 0 -18px repeat-x #f1f5f8;height: 72px;border: 1px solid #C4D5DF;
+.shopdetail {position: relative;color: #404040;padding: 18px 0;background: url(../img/evaluation/taxpjcs-1.png) 0 -18px repeat-x #f1f5f8;height: 110px;border: 1px solid #C4D5DF;
 }
 .shopdetail a{ color:#36c;}
 .shopdetail a:hover{ color:red;}
 .tb-rate-mb-m {margin-bottom: 15px;}
 .shopdetail .hd {position: absolute;left: 0;top: 0;height: 110px;width: 39px;line-height: 1.2em;background-image:url(../img/evaluation/taxpjcs-1.png);background-repeat: no-repeat;background-position: 24px -159px;}
-.shopdetail .hd h3 {width: 1em;padding-top: 25px;margin-left: 10px;color: #666;font-weight: 400;}
+.shopdetail .hd p {width: 1em;padding-top: 25px;margin-left: 10px;color: #666;font-weight: 400;}
 .shopdetail .bd {padding-left: 100px;margin-left: 39px;}
 .shopdetail .bd .shop-logo {float: left;width: 70px;height: 70px;margin-left: -80px;}
 .c-value-no {margin-top: 3px;margin-right: 5px;}
@@ -788,7 +792,9 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
     padding-left: 30px;
     height: 28px;
 }
-
+.mt-menu-tree .mt-menu-item a:hover {
+	color: #ff552e;
+}
 /*卖家中心*/
 .selllogo{ height:73px;}
 .selllogo a{font:20px "Microsoft YaHei", "微软雅黑";color:#fff;}
@@ -1350,3 +1356,26 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
 .fbsty{ width:712px; margin:20px auto;}
 /*爱心时间页面*/
 .timeselect{ margin-top:6px;}
+
+
+.icon-fav {
+	padding-left: 5px;
+	font-family: accountFont;
+	font-size: 12px;
+	color: #9C9C9C;
+	vertical-align: top;
+	font-weight: 100;
+	margin-right: -18px;
+}
+.icon-fav:hover {
+	color: #c51929;
+}
+
+@font-face {
+	font-family: accountFont;
+	src: url(../fonts/shopping/iconfont.eot);
+	src: url(../fonts/shopping/iconfont.eot?#iefix) format('embedded-opentype'),
+	url(../fonts/shopping/iconfont.woff) format('woff'),
+	url(../fonts/shopping/iconfont.ttf) format('truetype'),
+	url(../fonts/shopping/iconfont.svg#iconfont) format('svg');
+}

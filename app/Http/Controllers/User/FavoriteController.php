@@ -11,8 +11,9 @@ class FavoriteController extends Controller
 {
     public function index(Request $request)
     {
+
         $folders = UserFavorite::where('user_id', $request->user()->id)->get();
-        $items = Item::whereIn('id', $folders->lists('item_id'))->get();
+        $items = Item::whereIn('id', $folders->pluck('item_id'))->get();
 
         return view('user.favorite.index', ['items' => $items]);
     }
