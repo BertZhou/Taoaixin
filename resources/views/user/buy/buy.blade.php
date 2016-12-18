@@ -77,19 +77,19 @@
                     <div class="cart_cont clearfix">
                         <div class="cart_item t_name">
                             <div class="cart_shopInfo clearfix">
-                                <img src="/img/details/taxxq-2.jpg" alt="">
+                                <img src="{{$items->url}}" alt="">
                                 <div class="cart_shopInfo_cont">
-                                    <p class="cart_link"><a href="#">iPad mini2 Apple/苹果 配备Retina显示屏的iPad mini</a></p>
-                                    <p class="cart_info">[赠品]：真皮保护套</p>
+                                    <p class="cart_link"><a href="#">{{$items->name}}</a></p>
+                                    <p class="cart_info">[详情]：{{$items->content}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="cart_item t_price">
-                            1450.00
+                            {{$items->price}}
                         </div>
                         <div class="cart_item t_return">10</div>
                         <div class="cart_item t_num">1</div>
-                        <div class="cart_item t_subtotal t_red">1450.00</div>
+                        <div class="cart_item t_subtotal t_red">{{$items->price}}</div>
                     </div>
                     <div class="cart_message">
                         若有问题请留言，若有问题请留言
@@ -118,10 +118,10 @@
             <div class="shopping_cont padding_shop clearfix">
                 <div class="cart_count fr">
                     <div class="cart_rmb">
-                        <i>总计：</i><span>￥1450.00</span>
+                        <i>总计：</i><span>{{$items->price}}</span>
                     </div>
                     <div class="cart_btnBox">
-                        <a href="{{url('pay')}}">
+                        <a href="{{url('pay',$items->id)}}">
                             <input type="button" class="btn btn-danger btn-submit" value="提交订单"></a>
                     </div>
                 </div>

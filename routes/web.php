@@ -69,14 +69,10 @@ Route::get("register",function(){
 //登录、注册成功跳转
 Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
-Route::get("login_out","MyController@login_out");
+Route::get("login_out","Portal/MyController@login_out");
 
-Route::get('buy',function() {
-    return view('user.buy.buy');
-});
-Route::get('pay',function() {
-    return view('user.buy.pay');
-});
+Route::get('buy/{id}','MyController@buy');
+Route::get('pay/{id}','MyController@pay');
 Route::get('paysuccess',function() {
     return view('user.buy.paySuccess');
 });
