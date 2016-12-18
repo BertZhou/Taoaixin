@@ -5,7 +5,7 @@
         <div class="leftArea">
             <!-- <a href="#" class="collection">收藏淘爱心</a> -->
             <div class="account fl" id="account">
-                <a href="#"><span>{{Session::get("name")}}</span></a>
+                <a href="{{url('my')}}"><span>{{Session::get("name")}}</span></a>
                 <div class="mune" class="account_mune" id="account_mune">
                     <div class="shangmian">
                         <div class="leftArea">
@@ -30,7 +30,7 @@
             <div class="wdtax fl" id="wdtax">
                 <a href="{{url('my')}}">我的淘爱心</a>
                 <ul class="mune" id="wdtax_mune">
-                    <li><a href="#">已淘到的爱心</a></li>
+                    <li><a href="{{url('my/order')}}">已淘到的爱心</a></li>
                     <li><a href="#">我的足迹</a></li>
                     <li><a href="#">爱公益</a></li>
                     <li><a href="#">新欢</a></li>

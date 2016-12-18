@@ -10,9 +10,10 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item">会员名: <span>qq191995762</span></li>
-                        <li class="list-group-item">登录邮箱: <span>xrg****@163.com</span><span class="fr"><a href="#" class="badge">修改邮箱</a></span></li>
-                        <li class="list-group-item">绑定手机: <span>13878888888</span> <span class="fr"><a href="#" class="badge">修改手机</a></span></li>
+                        <li class="list-group-item">会员名: <span>{{$user->name}}</span></li>
+                        <li class="list-group-item">注册时间: <span>{{$user->created_at}}</span></li>
+                        <li class="list-group-item">登录邮箱: <span>{{$user->email}}</span><span class="fr"><a href="#" class="badge">修改邮箱</a></span></li>
+                        {{--<li class="list-group-item">绑定手机: <span>13878888888</span> <span class="fr"><a href="#" class="badge">修改手机</a></span></li>--}}
                     </ul>
                 </div>
             </div>

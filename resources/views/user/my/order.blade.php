@@ -4,7 +4,7 @@
     @include('user.my.left')
     <div class="col-md-10 p-right">
         <div class="row nav-top">
-            <div class="col-md-2"><a href="" class="active">所有订单</a></div>
+            <div class="col-md-2"><a href="" class="active">所有订单{{count($orders)}}</a></div>
             <div class="col-md-2"><a href="">代付款</a></div>
             <div class="col-md-2"><a href="">代发货</a></div>
             <div class="col-md-2"><a href="">待收货</a></div>

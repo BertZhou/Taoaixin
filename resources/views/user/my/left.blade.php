@@ -6,7 +6,7 @@
         <dl class="mt-menu-item mt-account-manage no-decoration">
             <dt>个人账户</dt>
             {{--<dd><a href="#">安全设置</a></dd>--}}
-            <dd><a href="#">个人资料</a></dd>
+            <dd><a href="{{url('my')}}">个人资料</a></dd>
             {{--<dd><a href="#">隐私设置</a></dd>--}}
             <dd><a href="#">个人成长信息</a></dd>
             <dd><a href="#">我的认证</a></dd>

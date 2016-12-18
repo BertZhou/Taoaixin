@@ -16,6 +16,7 @@ class MyController extends Controller
         $items=DB::select("select * from items");
         $get= DB::table("users")->where("email",$username)
                                 ->orwhere("name",$username)->first();
+//        $id = DB::select('select id from users where name = :name',['name' => $username]);
         if(!$get)
         {
             return view("signin",["fail1"=>"用户名不存在"]);
@@ -28,7 +29,8 @@ class MyController extends Controller
             {
 
                 Session::put("name",$username);
-                //dd(Session::get("name"));
+//                Session::put("id",$id);
+//                dd(Session::get("name"));
                 return view('home.index',["items"=>$items]);
                 //return "ok";
             }
@@ -55,7 +57,7 @@ class MyController extends Controller
     	else
     	{
     		User::create($inputs);
-             Session::put("name",$inputs["name"]);
+            Session::put("name",$inputs["name"]);
 //    		return response()->json(["ok"=>"success"]);
             return view('home.index',["items"=>$items]);
     	}

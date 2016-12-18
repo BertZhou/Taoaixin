@@ -7,13 +7,14 @@ use App\Models\User;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
-
-        return view('user.my.index');
+        $user = User::where('name', Session::get('name'))->first();
+        return view('user.my.index', ['user' => $user]);
     }
 
     public function store(Request $request)
