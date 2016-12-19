@@ -46,7 +46,8 @@
                 $('.fav-list').each(function(index, val) {
                     if($(this).find('span').hasClass('changeIconColor')){
                         // $(this).remove();
-						deleteFetch();
+						var favoritedId = $(this).find('input[name="favorite_id"]').val();
+						deleteFetch(favoritedId);
                     }
                 });
     			break;
@@ -63,10 +64,18 @@
         $(this).addClass('current');
     });
 })();
-var deleteFetch = function () {
-	var id =
+var deleteFetch = function (favoritedId) {
+	var id = favoritedId;
+	debugger
 	$.ajax({
-		url:'/my/favorite/'+id,
+		url:'/my/favorite/'+ id,
+		method: 'DELETE',
+		success: function () {
+			window.location.reload();
+		},
+		error: function () {
+			debugger
+		}
 	})
 };
 

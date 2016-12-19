@@ -45,6 +45,7 @@
     <div class="fav-item clearfix">
         @foreach($items as $item)
             <div class="fav-list">
+                <input type="hidden" name="favorite_id" value="{{$item['favorite_id']}}">
                 <div class="list-mask">
                     <div class="mask"></div>
                     <span class="icon-choose">&#xe612;</span>
@@ -52,7 +53,7 @@
                 <a href="{{url('item',$item['id'])}}"><img src="{{url($item['url'])}}" alt="taoaixin">
                     <h3>{{$item['content']}}</h3>
                     <p class="xianjia fl">￥{{$item['price']}}</p>
-                    <input type="hidden" name="favorite_id" value="{{$item['favorite_id']}}">
+
                 </a>
             </div>
         @endforeach

@@ -41,7 +41,7 @@ $(function () {
     // var url = location2obj(location.href);
     // $('#sign-success').html(json.user.username);
     // $('.sign-success').html(username);
-    console.log(sessionStorage.getItem('username'));
+    // console.log(sessionStorage.getItem('username'));
 
     var $agree = $('#agree');
     var $otherAgree = $('#other-agree');
@@ -88,21 +88,21 @@ $(function () {
           });
       }
 
-        $.ajax({
-            url : 'http://120.27.131.127:12450/user/' + userId,
-            data : {
-                userId : userId
-            },
-            method : 'get',
-            dataType : 'json',
-            success : function (json){
-                if(!json.code || json.code == 200){
-                    sessionStorage.setItem('username',username);
-                    sessionStorage.setItem('id',json.id);
-                    sessionStorage.setItem('money',json.money);
-                }
-            }
-        });
+        // $.ajax({
+        //     url : 'http://120.27.131.127:12450/user/' + userId,
+        //     data : {
+        //         userId : userId
+        //     },
+        //     method : 'get',
+        //     dataType : 'json',
+        //     success : function (json){
+        //         if(!json.code || json.code == 200){
+        //             sessionStorage.setItem('username',username);
+        //             sessionStorage.setItem('id',json.id);
+        //             sessionStorage.setItem('money',json.money);
+        //         }
+        //     }
+        // });
 
 
         //  $.ajax({
@@ -114,38 +114,38 @@ $(function () {
 
         //     }
         //  });
-          $.ajax({
-            url : 'http://120.27.131.127:12450/trade',
-            data : {
-                token : token,
-                receiver : userId,
-                money : money
-            },
-            method : 'post',
-            dataType : 'json',
-            success : function (json){
-                if(!json.code || json.code == 200){
-                    sessionStorage.setItem('pay_id',json.pay_user_id);//支付用户的id
-                    sessionStorage.setItem('receive_id',json.receive_user_id);//接收用户的id
-                    sessionStorage.setItem('trade_pay',json.trade_py);//交易金额
-                    sessionStorage.setItem('jiaoyi_id',json.id);//本次交易id
-                    sessionStorage.setItem('created_time',json.created_at);//交易时间
-                }
-            }
-          });
+        //   $.ajax({
+        //     url : 'http://120.27.131.127:12450/trade',
+        //     data : {
+        //         token : token,
+        //         receiver : userId,
+        //         money : money
+        //     },
+        //     method : 'post',
+        //     dataType : 'json',
+        //     success : function (json){
+        //         if(!json.code || json.code == 200){
+        //             sessionStorage.setItem('pay_id',json.pay_user_id);//支付用户的id
+        //             sessionStorage.setItem('receive_id',json.receive_user_id);//接收用户的id
+        //             sessionStorage.setItem('trade_pay',json.trade_py);//交易金额
+        //             sessionStorage.setItem('jiaoyi_id',json.id);//本次交易id
+        //             sessionStorage.setItem('created_time',json.created_at);//交易时间
+        //         }
+        //     }
+        //   });
 
-          $.ajax({
-                url : 'http://120.27.131.127:12450/recharge',
-                data : {
-                    userId : userId,
-                    money : money  //之后改成topUP
-                },
-                method : 'post',
-                dataType : 'json',
-                success : function (json){
-                    console.log('recharge');
-            }
-          });
+          // $.ajax({
+          //       url : 'http://120.27.131.127:12450/recharge',
+          //       data : {
+          //           userId : userId,
+          //           money : money  //之后改成topUP
+          //       },
+          //       method : 'post',
+          //       dataType : 'json',
+          //       success : function (json){
+          //           console.log('recharge');
+          //   }
+          // });
 
      function location2obj(url) {
         url = url || window.location.href;

@@ -14,7 +14,6 @@
 		})
 	});
 
-
     //数量控件的增加、删除
 	$('.des_number').bind('click',function (e) {
 		var cls = e.target.classList[0];
@@ -23,10 +22,12 @@
 		switch (cls){
 			case 'plus':
 				$amountInput.val(++amount);
+				setURL(amount);
 				break;
 			case 'reduction':
 				if($amountInput.val() != $amountInput[0].defaultValue){
 					$amountInput.val(--amount);
+					setURL(amount);
 				}
 				break;
 			default :
@@ -35,17 +36,20 @@
 	});
 
 //	传递数量这个数据给后台
-	$('.btn-buy').bind('click',function () {
-		var amount = $('input[name="amount"]').val();
-		var lastIndex = window.location.href.lastIndexOf('/') + 1;
-		var id = window.location.href.substr(lastIndex);
-		$.ajax({
-			url:'/buy/' + id + '?amount='+ amount,
-			success: function () {
-				debugger
-			}
-		})
-	});
+// 	$('.btn-buy').bind('click',function () {
+// 		var amount = $('input[name="amount"]').val();
+// 		var lastIndex = window.location.href.lastIndexOf('/') + 1;
+// 		var id = window.location.href.substr(lastIndex);
+// 		var URL = '/buy/' + id + '?amount='+ amount;
+// 		$.ajax({
+// 			url: URL,
+// 			success: function () {
+// 				debugger
+// 				window.location.href = window.location.host + URL;
+// 				// $('.btn-buy').attr('href',window.location.host + URL);
+// 			}
+// 		})
+// 	});
 
 //	详情页事件:产品介绍、产品评价、月成交记录切换
 	$('.des_tit').on('click','li' ,function (e) {
@@ -65,3 +69,14 @@
 		}
 	});
 });
+
+var getId = function () {
+	var amount = $('input[name="amount"]').val();
+	var lastIndex = window.location.href.lastIndexOf('/') + 1;
+	return window.location.href.substr(lastIndex);
+};
+var setURL = function (amount) {
+	var id = getId();
+	var url = '/buy/'+ id + '?amount=' + amount;
+	$('.btn-buy').attr('href', url);
+};

@@ -35,10 +35,10 @@ class FavoriteController extends Controller
         return redirect()->back();
     }
 
-    public function destory(Request $request, $favorite_id)
+    public function destroy(Request $request, $favorite_id)
     {
         $favorite = UserFavorite::where(['id' => $favorite_id, 'user_id' => Session::get("userid")])->delete();
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 }

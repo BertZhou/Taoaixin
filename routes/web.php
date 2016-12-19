@@ -43,10 +43,10 @@ Route::group(['prefix' => 'business', 'middleware' => 'auth', 'namespace' => 'Bu
 
 Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], function () {
     Route::resource('/', 'UserController', ['only' => ['index', 'store', 'update']]);
-    Route::resource('order', 'OrderController', ['except' => ['destory']]);
+    Route::resource('order', 'OrderController', ['except' => ['destroy']]);
     Route::resource('order.rate', 'RateController', ['only' => ['create', 'edit', 'store', 'update']]);
     Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'create', 'store']]);
-    Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destory']]);
+    Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destroy']]);
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
     Route::get('shopping','ShoppingController@index');
 
