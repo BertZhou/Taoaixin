@@ -67,11 +67,13 @@
                     <div class="shop_buy">
                         <a href="" class="btn btn-danger">加入购物车</a>
                         <span class="line"></span>
-                        <a href="{{url('buy',$item->id)}}" class="btn btn-warning btn-buy">立即购买</a>
+                        {{--{{url('buy',$item->id)}}--}}
+                        <a href="" class="btn btn-warning btn-buy">立即购买</a>
                     </div>
                     <div class="notes">
                         <span class="icon-fav detail-icon">&#xe610;
-                        <a href="{{url('my/favorite')}}">添加到收藏夹</a></span>
+                        <a href="javascript:;">添加到收藏夹</a></span>
+                        <input type="hidden" name="itemID" value="{{$item->id}}">
                     </div>
                 </div>
             </div>
@@ -79,8 +81,22 @@
         </div>
     </div>
 </div>
-{{--<script type="text/javascript" src="/js/jquery-1.11.3.js"></script>--}}
-{{--<script type="text/javascript" src="/js/jquery.livequery.js"></script>--}}
-{{--<script type="text/javascript" src="/js/jquery.jqzoom.js"></script>--}}
-{{--<script type="text/javascript" src="/js/jquery.thickbox.js"></script>--}}
-{{--<script type="text/javascript" src="/js/details.js"></script>--}}
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">淘爱心收藏</h4>
+            </div>
+            <div class="modal-body">
+                <p class="status">爱心宝贝收藏成功</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn  btn-fav" data-dismiss="modal">Close</button>
+                {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -49,10 +49,10 @@
                     <div class="mask"></div>
                     <span class="icon-choose">&#xe612;</span>
                 </div>
-                <a href=""><img src="{{url($item->url)}}" alt="taoaixin">
-                    <h3>{{$item->content}}</h3>
-                    <p class="xianjia fl">￥{{$item->price}}</p>
-                    {{--<p class="yuanjia fl"><del>￥3000</del></p>--}}
+                <a href="{{url('item',$item['id'])}}"><img src="{{url($item['url'])}}" alt="taoaixin">
+                    <h3>{{$item['content']}}</h3>
+                    <p class="xianjia fl">￥{{$item['price']}}</p>
+                    <input type="hidden" name="favorite_id" value="{{$item['favorite_id']}}">
                 </a>
             </div>
         @endforeach
@@ -70,24 +70,25 @@
             </ul>
             <a href="#" class="more fr">更多</a>
         </div>
-        @foreach($items as $item)
-        <div class="fav-item2 ">
-            <div class="fav-list2">
-                <a href="#"><img src="{{url($item->url)}}" alt="taoaixin">
-                </a>
-                <div class="pro-message">
-                    <div class=""><span class="pro-price"><strong>￥{{$item->price}}</strong></span></div>
-                    <span><a href="">{{$item->name}}</a></span>
-                    <div class="pro-detail">
-                        <p>{{$item->content}}</p>
+    </div>
+        <div class="fav-item clearfix  ">
+            @foreach($items as $item)
+                <div class="fav-list2">
+                    <a href="#"><img src="{{url($item['url'])}}" alt="taoaixin">
+                    </a>
+                    <div class="pro-message">
+                        <div class=""><span class="pro-price"><strong>￥{{$item['price']}}</strong></span></div>
+                        <span><a href="">{{$item['name']}}</a></span>
+                        <div class="pro-detail">
+                            <p>{{$item['content']}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
             @endforeach
-    </div>
-    <div class="fav-bottom clearfix">
-        <div class="fav-var3-top fl">
+        </div>
+
+        {{--<div class="fav-bottom clearfix">--}}
+        <div class="fav-var-top">
             <div class="var3-top">
                 <ul>
                     <li><a href="#" class="var2-left fl">猜你喜欢</a></li>
@@ -96,25 +97,25 @@
                     <li><a href="#" class="var2-left fr">根据你最近的浏览发现</a></li>
                 </ul>
             </div>
-            <div class="fav-item3 fl">
-                @foreach($items as $item)
-                    <div class="fav-list3">
-                        <a href="#"><img src="{{url($item->url)}}"  alt="taoaixin">
-                        </a>
-                        <div class="list3-guess">
-                            <div class="list3-line"></div>
-                            <div class="list3-price">
-                                ￥{{$item->price}}
-                            </div>
-                            <div class="pro-detail">
-                                <p>{{$item->content}}</p>
-                            </div>
+        </div>
+        <div class="fav-item">
+            @foreach($items as $item)
+                <div class="fav-list3">
+                    <a href="#"><img src="{{url($item['url'])}}"  alt="taoaixin">
+                    </a>
+                    <div class="list3-guess">
+                        <div class="list3-line"></div>
+                        <div class="list3-price">
+                            ￥{{$item['price']}}
+                        </div>
+                        <div class="pro-detail">
+                            <p>{{$item['content']}}</p>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
 
     </div>
-    </div>
+    {{--</div>--}}
 @endsection

@@ -62,7 +62,7 @@
     </div>
     <div class="panel panel-default address-order">
         <div class="panel-heading">
-            <h3 class="shopping_tit">送货清单<a href="shopping.html" class="backCar">返回购物车修改</a></h3>
+            <h3 class="shopping_tit">送货清单<a href="{{url('my/shopping')}}" class="backCar">返回购物车修改</a></h3>
         </div>
         <div class="shopping_item">
             <div class="shopping_cont pb_10">
@@ -86,10 +86,10 @@
                         </div>
                         <div class="cart_item t_return">{{$items->name}}</div>
                         <div class="cart_item t_price">
-                            {{$items->price}}
+                            ￥{{$items->price}}
                         </div>
                         <div class="cart_item t_num">1</div>
-                        <div class="cart_item t_subtotal t_red">{{$items->price}}</div>
+                        <div class="cart_item t_subtotal t_red">￥{{$items->price}}</div>
                     </div>
                     {{--<div class="cart_message">--}}
                         {{--若有问题请留言，若有问题请留言--}}
@@ -122,7 +122,8 @@
                     </div>
                     <div class="cart_btnBox">
                         <a href="{{url('pay',$items->id)}}">
-                            <input type="button" class="btn btn-danger btn-submit" value="提交订单"></a>
+                            <input type="button" class="btn btn-danger btn-submit" value="提交订单">
+                        </a>
                     </div>
                 </div>
             </div>

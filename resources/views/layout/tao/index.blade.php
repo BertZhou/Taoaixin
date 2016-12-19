@@ -27,5 +27,6 @@
     <script type="text/javascript" src="/js/myjs.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" src="/js/product.js"></script>
+    <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
 </body>
 </html>

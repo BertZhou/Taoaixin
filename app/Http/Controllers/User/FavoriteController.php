@@ -6,15 +6,18 @@ use App\Models\Item;
 use App\Models\UserFavorite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class FavoriteController extends Controller
 {
     public function index(Request $request)
     {
+        $folders = UserFavorite::where('user_id', Session::get("userid"))->get();
+        $items = Item::whereIn('id', $folders->pluck('item_id'))->get()->keyBy('id')->toArray();
 
-        $folders = UserFavorite::where('user_id', $request->user()->id)->get();
-        $items = Item::whereIn('id', $folders->pluck('item_id'))->get();
-
+        foreach ($folders as $folder) {
+            $items[$folder['item_id']]['favorite_id'] = $folder->id;
+        }
         return view('user.favorite.index', ['items' => $items]);
     }
 
@@ -26,7 +29,7 @@ class FavoriteController extends Controller
 
         $favorite = UserFavorite::create([
             'item_id'   =>  $request->input('item_id'),
-            'user_id'   =>  $request->user()->id
+            'user_id'   =>  Session::get("userid")
         ]);
 
         return redirect()->back();
@@ -34,7 +37,7 @@ class FavoriteController extends Controller
 
     public function destory(Request $request, $favorite_id)
     {
-        $favorite = UserFavorite::where(['id' => $favorite_id, 'user_id' => $request->user()->id])->delete();
+        $favorite = UserFavorite::where(['id' => $favorite_id, 'user_id' => Session::get("userid")])->delete();
 
         return redirect()->back();
     }

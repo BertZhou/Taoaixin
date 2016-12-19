@@ -45,7 +45,8 @@
     		case 'deleteManage' :
                 $('.fav-list').each(function(index, val) {
                     if($(this).find('span').hasClass('changeIconColor')){
-                        $(this).remove();
+                        // $(this).remove();
+						deleteFetch();
                     }
                 });
     			break;
@@ -62,4 +63,10 @@
         $(this).addClass('current');
     });
 })();
+var deleteFetch = function () {
+	var id =
+	$.ajax({
+		url:'/my/favorite/'+id,
+	})
+};
 

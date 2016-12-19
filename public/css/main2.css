@@ -128,9 +128,16 @@
     margin-top:20px;
     background: #fff
 }
+/*.fav-item2{*/
+    /*width:1100px;*/
+    /*margin:0 auto;*/
+    /*height:250px;*/
+    /*margin-top:20px;*/
+    /*background: #fff*/
+/*}*/
 .fav-list {
     width:15%;
-    /*height:250px;*/
+    height:250px;
     float:left;
     margin-left:14px;
     cursor:pointer;
@@ -139,6 +146,7 @@
 }
 .fav-list img {
     width:100%;
+    height:150px;
     border:1px solid #ccc;
 }
 .fav-list img:hover {
@@ -157,9 +165,11 @@
 .var2-left{font:14px/50px "Microsoft YaHei", "微软雅黑";width:155px;height:50px;text-align:center;font-weight:bold;}
 .var2-right li{float:left;margin-left:5px;width:80px;font:12px/50px "Microsoft YaHei", "微软雅黑";}
 .more{font:12px/50px "Microsoft YaHei", "微软雅黑";color:red;}
-.fav-list2{width:235px;float:left;margin: 20px 0 0 30px;border:1px solid #fff;background: #fff}
+.fav-list2{width:21%;float:left;margin: 20px 0 0 30px;border:1px solid #fff;background: #fff;
+   }
 .fav-list2 img {
     width:100%;
+    height:200px;
 }
 .fav-list2:hover{border:1px solid #ccc;}
 .fav-list2 .xianjia{text-align:center;color:red;margin-left:44px;}
@@ -168,6 +178,10 @@
 .var3-top {margin-top:40px;height:50px;border-top:2px solid #E5E5E5;border-bottom:2px solid #E5E5E5;}
 .fav-bottom{width:1100px;margin:0 auto;background: #fff;}
 .fav-list3{float:left;width:21%;margin:20px 0 0 30px;border:1px solid #fff;background: #fff}
+.fav-list3 img {
+    width:100%;
+    height:200px;
+}
 .fav-list3:hover{border:1px solid #ccc;}
 .fav-var-right li:hover{border-color:#C8192A;}
 .fav-item3  {
