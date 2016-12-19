@@ -4,6 +4,7 @@
 
         @include('user.my.left')
         <div class="col-md-10 p-right">
+            <input type="hidden" id="selectedMenu" value="index">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     您的基本资料

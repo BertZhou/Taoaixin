@@ -9,15 +9,22 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
     public function index(Request $request)
     {
-        $orders = Order::where('buyer_user_id', Session::get('userid'))->paginate(10);
-        $user = User::find(Session::get("userid"));
-//        $item = Item::find()
-        return view('user.my.order', ['orders' => $orders, 'user' => $user]);
+        $orders = Order::where('buyer_user_id', Session::get('userid'))->get()->keyBy('id');
+        $items = Item::whereIn('id', $orders->pluck('item_id'))->get();
+        $orders = $orders->toArray();
+        foreach ($items as $item) {
+            $orders[$item['id']]['url'] = $item->url;
+            $orders[$item['id']]['content'] = $item->content;
+            $orders[$item['id']]['item_id'] = $item->id;
+            $orders[$item['id']]['price'] = $item->price;
+        }
+        return view('user.my.order', ['orders' => $orders]);
     }
 
     public function show(Request $request, $order_id)

@@ -74,16 +74,16 @@
                     <div class="review_userHead fl">
                         <div class="review_user">
                             <img src="/img/logo/taxyh-2.jpg" alt="">
-                            <p>61***42</p>
+                            <p>{{$rate['name']}}</p>
                             <p>爱心会员</p>
                         </div>
                     </div>
                     <div class="review_cont">
                         <div class="review_t clearfix">
                             <div class="starsBox fl"><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span></div>
-                            <span class="stars_text fl">{{$rate->stars}}分 满意</span>
+                            <span class="stars_text fl">{{$rate['stars']}}分 满意</span>
                         </div>
-                        <p>{{$rate->content}}</p>
+                        <p>{{$rate['content']}}</p>
                         <p><a href="#" class="ding">顶(0)</a><a href="#" class="cai">踩(0)</a></p>
                     </div>
                 </div>

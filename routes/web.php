@@ -49,7 +49,6 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destroy']]);
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
     Route::get('shopping','ShoppingController@index');
-
 });
 
 Route::group(['namespace' => 'Portal'], function () {

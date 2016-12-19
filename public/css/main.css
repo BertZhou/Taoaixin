@@ -787,7 +787,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
     line-height: 28px;
     color: #555;
 }
-.mt-menu-tree .mt-menu-item a:link, .mt-menu-tree .mt-menu-item a:visited {
+ .mt-menu-item a:link, .mt-menu-item a:visited {
     display: block;
     overflow: hidden;
     text-decoration: none;

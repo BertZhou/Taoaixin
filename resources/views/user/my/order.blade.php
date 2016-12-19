@@ -17,17 +17,28 @@
             <div class="col-md-2">实付款</div>
             <div class="col-md-2">交易状态</div>
         </div>
+        <input type="hidden" id="selectedMenu" value="order">
         @foreach ($orders as $order)
         <div class="panel panel-default">
             <div class="panel-heading">
-                {{$order->created_at}}
+                {{$order['created_at']}}
             </div>
             <div class="panel-body row nav-content">
-                <div class="col-md-4">22</div>
-                <div class="col-md-2">33</div>
+                <div class="col-md-4">
+                    <img src="{{$order['url']}}" alt="taoaixin">
+                        <a class="content" href="{{url('item',$order['item_id'])}}">{{$order['content']}}</a>
+                </div>
+                <div class="col-md-2">￥{{$order['price']}}</div>
                 <div class="col-md-2">44</div>
-                <div class="col-md-2">￥{{$order->price}}</div>
-                <div class="col-md-2">{{$order->rate}}</div>
+                <div class="col-md-2">￥{{$order['price']}}</div>
+                <div class="col-md-2">
+                    @if($order['type'] == 'payed')
+                        <p>交易关闭</p>
+                        @else
+                        <p>等待买家付款</p>
+                        <a href="{{url('buy',$order['item_id'])}}">订单详情</a>
+                    @endif
+                </div>
             </div>
         </div>
         @endforeach

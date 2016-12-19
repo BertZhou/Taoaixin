@@ -35,8 +35,14 @@ class ItemController extends Controller
         $seller = User::findOrFail($item->user_id);
         $rates = ItemRate::where('item_id', $item->id)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get();
         $buyers = User::whereIn('id', $rates->pluck('buyer_user_id'))->get();
+        $rates = $rates -> toArray();
+        foreach ($buyers as $buyer) {
+            $rates[$buyer['id']]['name'] = $buyer->name;
+        }
+        var_dump($rates);
+        exit(0);
 //        return response()->json(['item' => $item, 'seller' => $seller, 'rates' => $rates]);
-        return view('item.show',['item' => $item, 'seller' => $seller, 'rates' => $rates, 'buyers' => $buyers]);
+//        return view('item.show',['item' => $item, 'seller' => $seller, 'rates' => $rates]);
     }
     public function showAll(Request $request, $item_id)
     {
