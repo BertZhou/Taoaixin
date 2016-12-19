@@ -88,8 +88,8 @@
                         <div class="cart_item t_price">
                             ￥{{$items->price}}
                         </div>
-                        <div class="cart_item t_num">1</div>
-                        <div class="cart_item t_subtotal t_red">￥{{$items->price}}</div>
+                        <div class="cart_item t_num">{{$number}}</div>
+                        <div class="cart_item t_subtotal t_red">￥{{$sum}}</div>
                     </div>
                     {{--<div class="cart_message">--}}
                         {{--若有问题请留言，若有问题请留言--}}
@@ -118,7 +118,7 @@
             <div class="shopping_cont padding_shop clearfix">
                 <div class="cart_count fr">
                     <div class="cart_rmb">
-                        <i>总计：</i><span>￥{{$items->price}}</span>
+                        <i>总计：</i><span>￥{{$sum}}</span>
                     </div>
                     <div class="cart_btnBox">
                         <a href="{{url('pay',$items->id)}}">

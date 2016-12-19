@@ -71,15 +71,20 @@ class MyController extends Controller
         Session::flush();
         return redirect("/");
     }
-     public function buy($id)
+     public function buy(Request $request,$id)
     {
+        $number=$request->get("amount");
+        Session::put("number",$number);
         $gets=DB::table('items')->where('id',$id)->first();
-        return view("user.buy.buy",["items"=>$gets]);
+        $sum=$gets->price*$number;
+        return view("user.buy.buy",["items"=>$gets,"number"=>$number,"sum"=>$sum]);
     }
     public function pay($id)
-    {
+    {   
+        $number=Session::get("number");
         $gets=DB::table('items')->where('id',$id)->first();
+        $sum=$number*$gets->price;
         $seller=DB::table("users")->where("id",$gets->user_id)->first();
-        return view("user.buy.pay",["items"=>$gets,"seller"=>$seller]);
+        return view("user.buy.pay",["items"=>$gets,"seller"=>$seller,"sum"=>$sum]);
     }
 }
