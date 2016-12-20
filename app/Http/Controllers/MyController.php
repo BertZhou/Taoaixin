@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Support\Facades\Session;
 class MyController extends Controller
 {
@@ -75,9 +76,11 @@ class MyController extends Controller
     {
         $number=$request->get("amount");
         Session::put("number",$number);
+        $path=$_SERVER['HTTP_HOST'];
+        //dd(Session::get("number"));
         $gets=DB::table('items')->where('id',$id)->first();
         $sum=$gets->price*$number;
-        return view("user.buy.buy",["items"=>$gets,"number"=>$number,"sum"=>$sum]);
+        return view("user.buy.buy",["items"=>$gets,"number"=>$number,"sum"=>$sum,"path"=>$path]);
     }
     public function pay($id)
     {   
@@ -93,7 +96,9 @@ class MyController extends Controller
         $gets=DB::table('items')->where('id',$id)->first();
         $sum=$number*$gets->price;
         $seller=DB::table("users")->where("id",$gets->user_id)->first();
-        return view("user.buy.paySuccess",["items"=>$gets,"seller"=>$seller,"sum"=>$sum]);
+        $phone=Session::get("mobile");
+        $info=DB::table("user_profiles")->where("mobile",$phone)->first();
+        return view("user.buy.paySuccess",["items"=>$gets,"seller"=>$seller,"sum"=>$sum,"info"=>$info]);
     }
     public function trade(Request $request,$id)
     {
