@@ -426,9 +426,14 @@ a.hided{display:none;}
 .popinfo{display:none;position:absolute;top:30px;background:url(../img/comment/infobox-bg.gif) no-repeat;padding-top:8px;width:192px;margin-left:-14px;}
 .popinfo .info-box{border:1px solid #f00;border-top:0;padding:0 5px;color:#F60;background:#FFF;}
 .popinfo .info-box div{color:#333;}
-.rater-click-tips{font:12px/25px;color:#333;margin-left:10px;background:url(../img/comment/infobox-bg-l.gif) no-repeat 0 0;width:125px;height:34px;padding-left:16px;overflow:hidden;}
-.rater-click-tips span{display:block;background:#FFF9DD url(../img/comment/infobox-bg-l-r.gif) no-repeat 100% 0;height:34px;line-height:34px;padding-right:5px;}
-.rater-star-item-tips{background:url(../img/comment/star-tips.gif) no-repeat 0 0;height:41px;overflow:hidden;}
+.rater-click-tips{font:12px/25px;color:#333;margin-left:10px;background:url(../img/comment/infobox-bg-l.gif) no-repeat 0 0;
+	width:150px;height:34px;padding-left:16px;overflow:hidden;}
+.rater-click-tips span{display:block;background:#FFF9DD url(../img/comment/infobox-bg-l-r.gif) no-repeat 100% 0;height:34px;line-height:34px;}
+.rater-star-item-tips{
+	/*background:url(../img/comment/star-tips.gif) no-repeat 0 0;*/
+	height:41px;
+	overflow:hidden;
+}
 .cur.rater-star-item-tips{display:block;}	
 .rater-star-result{color:#FF6600;font-weight:bold;padding-left:10px;float:left;}
 

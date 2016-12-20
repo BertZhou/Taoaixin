@@ -20,35 +20,20 @@
         </ol>
 @endsection
 @section('content')
-            <div class="shopdetail tb-rate-mb-m">
-                <div class="hd">
-                    <p>店铺优惠</p>
-                </div>
-                <div class="bd">
-                    <a class="shop-logo"><img width="70" height="70" src="/img/evaluation/taxpj-1.png"></a>
-                    <dl>
-                        <dt>
-                        <p>
-                            <a href="#"> 淘爱心二手书专营店</a>
-                        </p>
-                        </dt>
-                        <dd>
-                            被评卖家：<a class="remark-to" href="#">淘爱心二手书专营店</a>
-                        </dd>
-                        <dd>
-                            宝贝与描述相符：
-                            <span class="c-value-no c-value-4d9">
-               	<em></em>
-               </span>
-                            4.9
-                        </dd>
-
-                    </dl>
-                </div>
-            </div>
+            {{--<div class="shopdetail tb-rate-mb-m">--}}
+                {{--<div class="hd"><p>店铺优惠</p></div>--}}
+                {{--<div class="bd">--}}
+                    {{--<a class="shop-logo"><img width="70" height="70" src="/img/evaluation/taxpj-1.png"></a>--}}
+                    {{--<dl>--}}
+                        {{--<dt><p><a href="#"> 淘爱心二手书专营店</a></p></dt>--}}
+                        {{--<dd>被评卖家：<a class="remark-to" href="#">淘爱心二手书专营店</a></dd>--}}
+                        {{--<dd>宝贝与描述相符：<span class="c-value-no c-value-4d9"><em></em></span>4.9</dd>--}}
+                    {{--</dl>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="itemlist tb-rate-mb-m" style="border: 1px solid #DDD;">
                 <div class="listhd">
-                    <h3>店铺动态评分</h3>
+                    <h3>宝贝评价</h3>
                     <ul class="act">
                         <li>
                             <input type="checkbox" id="annoy-all" name="annoy-all">
@@ -67,10 +52,10 @@
                         <li class="rate-box st-show-msg-box">
                             <div class="item-rate-info">
                                 <div class="item-detail">
-                                    <a class="item-d-img" href="#"><img  width="60" height="60" src="/img/evaluation/taxpj-2.jpg"></a>
+                                    <a class="item-d-img" href="#"><img  width="60" height="60" src="{{$item->url}}"></a>
                                     <h3>
-                                        <a href="#">
-                                            最好看的书，值得一看，让你从容面对人生，人生向导
+                                        <a href="{{url('item',$item->id)}}">
+                                            {{$item->content}}
                                         </a>
                                     </h3>
                                 </div>

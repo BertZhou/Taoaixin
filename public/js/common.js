@@ -1,20 +1,4 @@
 $(function () {
-        // $.ajax({
-        //     url : 'http://120.27.131.127:12450/trade',
-        //     data : {
-        //         token : token,
-        //         receiver : userId,
-        //         money : money
-        //     },
-        //     method : 'post',
-        //     dataType : 'json',
-        //     success : function (json){
-        //         if(!json.code || json.code == 200){
-        //             console.log('trade');
-        //         }            
-        //     }
-        //   });
-
     //收藏夹
     
     $("#favorites").hover(function(){

@@ -87,4 +87,37 @@ class MyController extends Controller
         $seller=DB::table("users")->where("id",$gets->user_id)->first();
         return view("user.buy.pay",["items"=>$gets,"seller"=>$seller,"sum"=>$sum]);
     }
+    public function paySuccess($id)
+    {
+        $number=Session::get("number");
+        $gets=DB::table('items')->where('id',$id)->first();
+        $sum=$number*$gets->price;
+        $seller=DB::table("users")->where("id",$gets->user_id)->first();
+        return view("user.buy.paySuccess",["items"=>$gets,"seller"=>$seller,"sum"=>$sum]);
+    }
+    public function trade(Request $request,$id)
+    {
+        $number=Session::get("number");
+        $gets=DB::table('items')->where('id',$id)->first();
+        $sum=$number*$gets->price;
+        $seller=DB::table("users")->where("id",$gets->user_id)->first();
+        return view("user.buy.trade",["item"=>$gets,"seller"=>$seller,"sum"=>$sum]);
+    }
+    public function tradeSuccess($id)
+    {
+        $number=Session::get("number");
+        $gets=DB::table('items')->where('id',$id)->first();
+        $sum=$number*$gets->price;
+        $seller=DB::table("users")->where("id",$gets->user_id)->first();
+        return view("user.buy.tradeSuccess",["items"=>$gets,"seller"=>$seller,"sum"=>$sum]);
+    }
+    public function rate(Request $request,$id)
+    {
+        $number=$request->get("number");
+        Session::put("number",$number);
+        $gets=DB::table('items')->where('id',$id)->first();
+        $sum=$gets->price*$number;
+        return view("user.buy.rate",["item"=>$gets,"number"=>$number,"sum"=>$sum]);
+    }
+
 }

@@ -8,7 +8,7 @@
         <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
             <div class="product-item">
                 <div class="product-img">
-                    <a href="{{url("item",$item->id)}}" class="link-dark">
+                    <a href="{{url('item',$item->id)}}" class="link-dark">
                         <img src="{{$item->url}}" class="img-responsive">
                     </a>
                 </div>

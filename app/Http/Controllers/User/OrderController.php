@@ -16,15 +16,16 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $orders = Order::where('buyer_user_id', Session::get('userid'))->get()->keyBy('id');
-        $items = Item::whereIn('id', $orders->pluck('item_id'))->get();
+        $items = Item::whereIn('id', $orders->pluck('item_id'))->get()->keyBy('id');
         $orders = $orders->toArray();
-        foreach ($items as $item) {
-            $orders[$item['id']]['url'] = $item->url;
-            $orders[$item['id']]['content'] = $item->content;
-            $orders[$item['id']]['item_id'] = $item->id;
-            $orders[$item['id']]['price'] = $item->price;
+        $items = $items->toArray();
+
+        foreach ($orders as $order) {
+            $items[$order['item_id']]['type'] = $order['type'];
+            $items[$order['item_id']]['created'] = $order['created_at'];
+            $items[$order['item_id']]['price'] = $order['price'];
         }
-        return view('user.my.order', ['orders' => $orders]);
+        return view('user.my.order', ['items' => $items]);
     }
 
     public function show(Request $request, $order_id)

@@ -38,6 +38,8 @@
     <script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="/js/myjs.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/comment.js"></script>
+    <script type="text/javascript" src="/js/rate.js"></script>
     <script type="text/javascript" src="/js/jquery-ui/jquery.citys.js"></script>
     <script type="text/javascript">
         $('.select-address').citys({province:'浙江',city:'杭州市',area:'江干区'});

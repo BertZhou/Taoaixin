@@ -80,8 +80,9 @@ Route::get('pay',function() {
 });
 Route::get('buy/{id}','MyController@buy');
 Route::get('pay/{id}','MyController@pay');
+Route::get('trade/{id}','MyController@trade');
+Route::get('paysuccess/{id}','MyController@paySuccess');
+Route::get('tradesuccess/{id}','MyController@tradeSuccess');
+Route::get('rate/{id}','MyController@rate');
 
-Route::get('paysuccess',function() {
-    return view('user.buy.paySuccess');
-});
 

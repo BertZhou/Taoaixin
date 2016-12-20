@@ -23,7 +23,7 @@
             <p class="status">
                 您已成功付款
                 <em class="highlight">
-                    1450
+                    {{$sum}}
                 </em>元
             </p>
             <div class="delivery">

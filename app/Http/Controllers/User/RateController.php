@@ -41,7 +41,7 @@ class RateController extends Controller
             'is_rated'  =>  1
         ]);
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 
     public function update(Request $request, $order_id, $rate_id)

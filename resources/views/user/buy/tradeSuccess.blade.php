@@ -24,7 +24,7 @@
                 交易成功！宝贝等您评价
             </p>
             <div class="message">
-                <span>为了帮助更多的小伙伴，了解商品，请您 <a href="evaluation.html">【立即评价】</a></span>
+                <span>为了帮助更多的小伙伴，了解商品，请您 <a href="{{url('rate', $items->id)}}">【立即评价】</a></span>
             </div>
             <div class="trade-info-center">
             </div>
