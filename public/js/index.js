@@ -39,7 +39,7 @@ $(function () {
     $('.go-top').bind('click', function() {
         $(document.body).animate({
             scrollTop : 0
-        },1000);
+        },500);
     });
 
     $('.nav li').hover(function(){

@@ -55,7 +55,7 @@ class OrderController extends Controller
             'type'              =>  'pending',
             'item_id'           =>  $item->id,
             'name'              =>  $item->name,
-            'buyer_user_id'     =>  $request->user()->id,
+            'buyer_user_id'     =>  Session::get('userid'),
             'seller_user_id'    =>  $item->user_id,
             'price'             =>  $item->price,
             'note'              =>  $request->input('note'),
@@ -64,7 +64,7 @@ class OrderController extends Controller
 
         $item->decrement('quantity');
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 
     public function update(Request $request, $order_id)
@@ -108,6 +108,6 @@ class OrderController extends Controller
             return redirect()->back()->withErrors('Order can not be change now.');
         }
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 }

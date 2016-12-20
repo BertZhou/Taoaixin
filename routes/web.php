@@ -85,4 +85,7 @@ Route::get('paysuccess/{id}','MyController@paySuccess');
 Route::get('tradesuccess/{id}','MyController@tradeSuccess');
 Route::get('rate/{id}','MyController@rate');
 
+Route::get('create',function() {
+    return view('user.create.product');
+});
 

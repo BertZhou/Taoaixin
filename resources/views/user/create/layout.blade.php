@@ -25,8 +25,8 @@
 <div class="midBar">
     <div class="fav-tab">
         <div class="selllogo fl">
-            <img src="/img/seller center/logo.gif">
-            <span class="seller-lianjie fr"><a href="#">商品上架</a></span>
+            <img src="/img/seller center/logo2.jpg">
+            {{--<span class="seller-lianjie fr"><a href="#">商品上架</a></span>--}}
         </div>
     </div>
 </div>

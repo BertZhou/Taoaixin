@@ -18,7 +18,7 @@ class ItemController extends Controller
             'limit'     =>  'integer|min:0'
         ]);
 
-        $items = Item::skip($request->input('offset', 0))->take($request->input('limit', 10))->get();
+        $items = Item::skip($request->input('offset', 0))->take($request->input('limit', 16))->get();
         $sellers = User::whereIn('id', $items->pluck('user_id'))->get()->keyBy('id');
 //        return response()->json(['items' => $items, 'sellers' => $sellers]);
         return view('home.index',['items' => $items, 'sellers' => $sellers]);

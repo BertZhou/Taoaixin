@@ -44,7 +44,6 @@
                                 </dl>
                             </div>
 
-
                             <h3 class="subNav"><a href="#">数码产品</a></h3>
                             <div class="index_daohang">
                                 <dl>
@@ -282,15 +281,15 @@
                         <div class="boxer">
                             <div id="carousel">
                                 <input type="radio" name="carousel" checked="">
-                                <a href="#"><img src="img/banner/taxlb-1.jpg" alt="轮播图片"></a>
+                                <a href="#"><img src="img/banner/1.jpg" alt="轮播图片"></a>
                                 <input type="radio" name="carousel">
-                                <a href="#"><img src="img/banner/taxlb-2.jpg" alt="轮播图片"></a>
+                                <a href="#"><img src="img/banner/2.jpg" alt="轮播图片"></a>
                                 <input type="radio" name="carousel">
-                                <a href="#"><img src="img/banner/taxlb-4.jpg" alt="轮播图片"></a>
+                                <a href="#"><img src="img/banner/3.jpg" alt="轮播图片"></a>
                                 <input type="radio" name="carousel">
-                                <a href="#"><img src="img/banner/mac1.jpg" alt="轮播图片"></a>
+                                <a href="#"><img src="img/banner/4.jpg" alt="轮播图片"></a>
                                 <input type="radio" name="carousel">
-                                <a href="#"><img src="img/banner/taxlb-3.jpg" alt="轮播图片"></a>
+                                <a href="#"><img src="img/banner/5.jpg" alt="轮播图片"></a>
                             </div>
                         </div>
                     </div>
@@ -313,7 +312,7 @@
                     <div class="like">
                         <h5>爱心商品</h5>
                     </div>
-                    <a href="#"><img src="img/index/mangguo.jpg" alt=""></a>
+                    <a href="#"><img src="http://o7jajeu9a.bkt.clouddn.com/fengyi.jpg" alt=""></a>
                     <div class="click-detail">
                         <a href="">点击了解详情</a>
                     </div>
@@ -325,190 +324,24 @@
                     <div class="like">
                         <h5>爱心时间</h5>
                     </div>
-                    <a href="details.html"><img src="img/index/mangguo.jpg" alt=""></a>
+                    <a href="details.html"><img src="/img/index/time.jpg" alt=""></a>
                     <div class="click-detail">
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="row clearfix love-more">
-                        <div class="col-md-12 column">
-                            <a href="products.html" class="more">更多&gt;&gt;</a>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/images_12_34.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/qidao.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/xinxiankongqi.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/index/fengyi.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('item.time')
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >
                     <div class="like">
                         <h5>爱心岗位</h5>
                     </div>
-                    <a href="details.html"><img src="img/index/mangguo.jpg" alt=""></a>
+                    <a href="details.html"><img src="img/index/yi.jpg" alt=""></a>
                     <div class="click-detail">
                         <a href="">点击了解详情</a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
-                    <div class="row clearfix love-more">
-                        <div class="col-md-12 column">
-                            <a href="products.html" class="more">更多&gt;&gt;</a>
-
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/products/9.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/products/8.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/products/7.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6" style="padding: 0px;">
-                        <div class="product-item">
-                            <div class="product-img">
-                                <a href="details.html" class="link-dark">
-                                    <img src="img/products/6.jpg" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="product-info">
-                                <div class="title">
-                                    <a href="" class="link-dark">这事儿还真得说道说道</a>
-                                </div>
-                                <p class="text-double"></p>
-                                <div class="metas clearfix">
-                                    <span class="price">￥1100</span>
-                                    <span class="num">53人已付款</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @include('item.job')
             </div>
 
         </div>
@@ -523,45 +356,45 @@
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="details.html"><img src="img/banner/mac.jpg" alt=""></a>
+                                <a href="details.html"><img src="img/banner/library-1.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥8888</p>
-                            <p><a href="#">全新MACBook程序猿必备高端奢华</a></p>
+                            <p class="money">图书馆提供</p>
+                            <p><a href="#"></a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/iphone6s.jpg" alt=""></a>
+                                <a href="img/banner/mac.jpg"><img src="img/banner/iphone6s-1.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥5888</p>
-                            <p><a href="#"> IPhone6s 3DTouch不容错过</a></p>
+                            <p class="money">￥2500</p>
+                            <p><a href="#"> 二手iPhone6s 不容错过</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/iwatch.jpg" alt=""></a>
+                                <a href="、img/banner/mac.jpg"><img src="img/banner/dinner-1.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥2888</p>
-                            <p><a href="#">IWatch 极致体验</a></p>
+                            <p class="money">￥10/小时</p>
+                            <p><a href="#">第三餐厅提供</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/ipad.jpg" alt=""></a>
+                                <a href="img/banner/mac.jpg"><img src="img/banner/school.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥1888</p>
-                            <p><a href="#">IPad办公看片必备</a></p>
+                            <p class="money">￥1000/月</p>
+                            <p><a href="#">展示你的魅力</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/apple.jpg" alt=""></a>
+                                <a href=""><img src="img/banner/apple.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥88</p>
+                            <p class="money">￥8/斤</p>
                             <p><a href="#">晶莹剔透 酸甜爽口</a></p>
                         </div>
                     </div>

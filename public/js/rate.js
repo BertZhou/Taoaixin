@@ -1,4 +1,5 @@
 $(function () {
+   //点击发表评论按钮
    $('.btm').bind('click', function () {
       var content = $('textarea').val();
       var stars = $('.rater-star-result').text().substr(0,1);
@@ -19,4 +20,23 @@ $(function () {
          }
       })
    });
+
+//   点击提交订单按钮
+   $('.btn-submit').bind('click', function () {
+      var itemID = $('input[name="itemID"]').val();
+      var note = $('input[name="note"]').val();
+      var url = '/pay/' + itemID;
+      $.ajax({
+         url: '/my/order',
+         method: 'POST',
+         data: {
+            item_id: itemID,
+            note: note
+         },
+         success: function () {
+            debugger
+            $('.order-link').attr('href', url);
+         }
+      })
+   })
 });

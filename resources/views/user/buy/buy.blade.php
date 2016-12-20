@@ -75,6 +75,7 @@
                         <div class="cart_item t_subtotal">小计</div>
                     </div>
                     <div class="cart_cont clearfix">
+                        <input type="hidden" name="itemID" value="{{$items->id}}">
                         <div class="cart_item t_name">
                             <div class="cart_shopInfo clearfix">
                                 <img src="{{$items->url}}" alt="">
@@ -90,6 +91,13 @@
                         </div>
                         <div class="cart_item t_num">{{$number}}</div>
                         <div class="cart_item t_subtotal t_red">￥{{$sum}}</div>
+
+                    </div>
+                    <div class="panel panel-default address-order">
+                        <div class="panel-body">
+                            给卖家留言
+                            <input type="text" placeholder="选填：对本次交易的说明" maxlength="25" class="form-control" name="note">
+                        </div>
                     </div>
                     {{--<div class="cart_message">--}}
                         {{--若有问题请留言，若有问题请留言--}}
@@ -121,7 +129,7 @@
                         <i>总计：</i><span>￥{{$sum}}</span>
                     </div>
                     <div class="cart_btnBox">
-                        <a href="{{url('pay',$items->id)}}">
+                        <a href="javascript:;" class="order-link">
                             <input type="button" class="btn btn-danger btn-submit" value="提交订单">
                         </a>
                     </div>

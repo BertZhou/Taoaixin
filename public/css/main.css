@@ -291,7 +291,10 @@ a.hided{display:none;}
 .des_info .leftArea{width:190px;}
 .des_info .rightArea{width:790px;}
 .recommend{border:#CCC solid 1px; background-color:#FFF; padding-bottom:15px;}
-.recommend .tit{height:39px; border-bottom:solid 1px #ccc; line-height:39px; text-indent:15px; font-size:14px; background-color:#F3F3F3;}
+.recommend .tit{height:39px; border-bottom:solid 1px #ccc; line-height:39px;
+	text-indent:15px; font-size:14px; background-color:#ff552e;
+	font-weight:bold;
+	color: #fff;}
 .recommend .tjitem{float:none; height:auto; margin-bottom: 10px;padding: 5px;}
 .recommend .money{padding-top:0;}
 .tjitem img {

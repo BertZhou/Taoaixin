@@ -40,7 +40,7 @@
 }
 .scrollSearch .scrollBox {
 	position: relative;
-	left: 50%;
+	left: 36%;
 	top: 21%;
 	transform: translateX(-50%);
 }
@@ -206,31 +206,31 @@
 
 /*轮播图*/
 #carousel input[type='radio']:nth-of-type(1):after {
-	background-image: url("../img/banner/taxlb-1.jpg");
+	background-image: url("../img/banner/1.jpg");
 }
 #carousel input[type='radio']:nth-of-type(2) {
 	top: 20%;
 }
 #carousel input[type='radio']:nth-of-type(2):after {
-	background-image: url("../img/banner/taxlb-2.jpg");
+	background-image: url("../img/banner/2.jpg");
 }
 #carousel input[type='radio']:nth-of-type(3) {
 	top: 40%;
 }
 #carousel input[type='radio']:nth-of-type(3):after {
-	background-image: url("../img/banner/taxlb-4.jpg");
+	background-image: url("../img/banner/3.jpg");
 }
 #carousel input[type='radio']:nth-of-type(4) {
 	top: 60%;
 }
 #carousel input[type='radio']:nth-of-type(4):after {
-	background-image: url("../img/banner/mac.jpg");
+	background-image: url("../img/banner/4.jpg");
 }
 #carousel input[type='radio']:nth-of-type(5) {
 	top: 80%;
 }
 #carousel input[type='radio']:nth-of-type(5):after {
-	background-image: url("../img/banner/taxlb-3.jpg");
+	background-image: url("../img/banner/5.jpg");
 }
 
 #carousel {
