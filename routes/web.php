@@ -68,9 +68,7 @@ Route::get("register",function(){
 //登录、注册成功跳转
 Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
-Route::get("login_out","Portal/MyController@login_out");
-
-
+Route::get("login_out","MyController@login_out");
 
 Route::get('buy',function() {
     return view('user.buy.buy');
@@ -84,8 +82,4 @@ Route::get('trade/{id}','MyController@trade');
 Route::get('paysuccess/{id}','MyController@paySuccess');
 Route::get('tradesuccess/{id}','MyController@tradeSuccess');
 Route::get('rate/{id}','MyController@rate');
-
-Route::get('create',function() {
-    return view('user.create.product');
-});
-
+Route::get("info_check","InfoController@info_check");

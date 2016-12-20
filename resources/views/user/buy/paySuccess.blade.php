@@ -29,9 +29,9 @@
             <div class="delivery">
                 <em>货物寄送至：</em>
                 <span class="address">
-                    	浙江省 杭州市 江干区 白杨街道 杭州电子科技大学 谢仁淦 收
+                    	{{$info->province}} {{$info->city}} {{$info->area}} {{$info->address}} {{$info->name}}收
                         <span class="phone">
-                            18657192133
+                            {{$info->mobile}}
                         </span>
                         <span class="sign">
                             默认地址

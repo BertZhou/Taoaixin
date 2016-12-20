@@ -12,7 +12,7 @@
         <!--<div class="panel-body">-->
         <ul class="list-group">
             <li class="list-group-item">
-                <form role="form">
+                <form role="form" action="http://{{$path}}/info_check" method="get">
                     <div class="form-group select-address">
                         <em>*</em>选择地区
                         <select class="form-control select-control" style="margin-left: 22px;" name="province">
@@ -22,20 +22,21 @@
                         <select class="form-control select-control" name="area">
                         </select>
                     </div>
-                </form>
-            </li>
+           
             <li class="list-group-item"><em>*</em>详细地址
                 <input type="text" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"
-                       maxlength="20" class="form-control" style="margin-left: 22px;">
+                       maxlength="20" class="form-control" style="margin-left: 22px;" name="address">
             </li>
             <li class="list-group-item"><em>*</em>收货人姓名
-                <input type="text" placeholder="长度不超过25个字符" maxlength="25" class="form-control">
+                <input type="text" placeholder="长度不超过25个字符" maxlength="25" class="form-control" name="name">
             </li>
             <li class="list-group-item"><em>*</em>手机
-                <input type="text" placeholder="长度不超过11个字符" maxlength="11" class="form-control" style="margin-left: 46px;">
+                <input type="text" placeholder="长度不超过11个字符" maxlength="11" class="form-control" style="margin-left: 46px;" name="mobile">
             </li>
         </ul>
-        <button class="btn btn-danger col-md-offset-10 btn-address">确认收货地址</button>
+        <button type="submit" class="btn btn-danger col-md-offset-10 btn-address">确认收货地址</button>
+         </form>
+          </li>
         <!--</div>-->
     </div>
     <div class="panel panel-default address-order">
