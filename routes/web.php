@@ -54,7 +54,7 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
 Route::group(['namespace' => 'Portal'], function () {
 //    Route::get('/', 'HomeController@index');
     Route::get('/', 'ItemController@index');
-//    Route::get('item', 'ItemController@show');
+    Route::get('item', 'ItemController@showAll');
     Route::get('item/{id}', 'ItemController@show');
 });
 
@@ -83,3 +83,8 @@ Route::get('paysuccess/{id}','MyController@paySuccess');
 Route::get('tradesuccess/{id}','MyController@tradeSuccess');
 Route::get('rate/{id}','MyController@rate');
 Route::get("info_check","InfoController@info_check");
+
+
+Route::get('create',function() {
+    return view('user.create.product');
+});

@@ -1,7 +1,7 @@
 <div class="logoBar">
     <div class="comWidth clearfix">
         <div class="logo fl">
-            <a href=""><img src="/img/logo/1.jpg" alt="淘爱心"></a>
+            <a href="{{url('')}}"><img src="/img/logo/1.jpg" alt="淘爱心"></a>
         </div>
         <div class="search_box fl">
             <span>

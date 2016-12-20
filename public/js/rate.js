@@ -1,3 +1,10 @@
+/* Created by GaoTing 2016/12/20
+*  点击评论按钮
+*  点击提交订单按钮
+*
+* */
+
+
 $(function () {
    //点击发表评论按钮
    $('.btm').bind('click', function () {
@@ -34,8 +41,7 @@ $(function () {
             note: note
          },
          success: function () {
-            debugger
-            $('.order-link').attr('href', url);
+            window.location.href = url;
          }
       })
    })

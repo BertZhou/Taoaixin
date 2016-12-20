@@ -20,7 +20,11 @@
                             <span>{{$item->content}}</span>
                         </li>
                         <li class="list-group-item">售价：
-                            <span>￥{{$item->price}}</span>
+                            @if($item->type == 2 || $item->type == 3)
+                                <span>￥{{$item->price}}/小时</span>
+                            @else
+                                <span>￥{{$item->price}}</span>
+                            @endif
                         </li>
                         <li class="list-group-item">销售量：
                             <span>{{$item->sold}}</span>

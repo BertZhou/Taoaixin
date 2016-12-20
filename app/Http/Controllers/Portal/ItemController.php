@@ -43,18 +43,14 @@ class ItemController extends Controller
 //        return response()->json(['item' => $item, 'seller' => $seller, 'rates' => $rates]);
         return view('item.show',['item' => $item, 'seller' => $seller, 'rates' => $rates]);
     }
-    public function showAll(Request $request, $item_id)
+    public function showAll(Request $request)
     {
+        $type = $request->get("type");
         $this->validate($request, [
             'offset'    =>  'integer|min:0',
             'limit'     =>  'integer|min:0'
         ]);
-
-        $item = Item::findOrFail($item_id);
-        $seller = User::findOrFail($item->user_id);
-        $rates = ItemRate::where('item_id', $item->id)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get();
-        $buyers = User::whereIn('id', $rates->pluck('buyer_user_id'))->get();
-//        return response()->json(['item' => $item, 'seller' => $seller, 'rates' => $rates]);
-        return view('item.items',['item' => $item, 'seller' => $seller, 'rates' => $rates, 'buyers' => $buyers]);
+        $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get()->keyBy('id');
+        return view('item.items',['items' => $items]);
     }
 }

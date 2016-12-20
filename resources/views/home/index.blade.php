@@ -272,10 +272,10 @@
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-9 product-list">
                     <ul class="product-nav-bar clearfix">
-                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="products.html">爱心推荐</a></li>
-                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="products.html">爱心商品</a></li>
-                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="products.html">爱心岗位</a></li>
-                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="products.html">爱心时间</a></li>
+                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="{{url('item?type=0')}}">爱心推荐</a></li>
+                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="{{url('item?type=1')}}">爱心商品</a></li>
+                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="{{url('item?type=3')}}">爱心岗位</a></li>
+                        <li class="col-lg-3 col-md-3 col-sm-6"><a href="{{url('item?type=2')}}">爱心时间</a></li>
                     </ul>
                     <div class="banner  clearfix">
                         <div class="boxer">
@@ -300,9 +300,9 @@
                     <div class="like">
                         <h5>爱心推荐</h5>
                     </div>
-                    <a href="details.html"><img src="img/index/mangguo.jpg" alt=""></a>
+                    <a href="{{url('item/25')}}"><img src="img/index/mangguo.jpg" alt=""></a>
                     <div class="click-detail">
-                        <a href="">点击了解详情</a>
+                        <a href="{{url('item/25')}}">点击了解详情</a>
                     </div>
                 </div>
                 @include('item.recommend')
@@ -312,9 +312,9 @@
                     <div class="like">
                         <h5>爱心商品</h5>
                     </div>
-                    <a href="#"><img src="http://o7jajeu9a.bkt.clouddn.com/fengyi.jpg" alt=""></a>
+                    <a href="{{url('item/24')}}"><img src="/img/index/fengyi.jpg" alt=""></a>
                     <div class="click-detail">
-                        <a href="">点击了解详情</a>
+                        <a href="{{url('item/24')}}">点击了解详情</a>
                     </div>
                 </div>
                     @include('item.product')
@@ -322,26 +322,26 @@
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >
                     <div class="like">
-                        <h5>爱心时间</h5>
+                        <h5>爱心岗位</h5>
                     </div>
-                    <a href="details.html"><img src="/img/index/time.jpg" alt=""></a>
+                    <a href="{{url('item/23')}}"><img src="/img/index/time.jpg" alt=""></a>
                     <div class="click-detail">
-                        <a href="">点击了解详情</a>
+                        <a href="{{url('item/23')}}">点击了解详情</a>
                     </div>
                 </div>
-                @include('item.time')
+                @include('item.job')
             </div>
             <div class="row clearfix love-list-message">
                 <div class="col-lg-2 col-md-2 left no-padding" >
                     <div class="like">
-                        <h5>爱心岗位</h5>
+                        <h5>爱心时间</h5>
                     </div>
-                    <a href="details.html"><img src="img/index/yi.jpg" alt=""></a>
+                    <a href="{{url('item/22')}}"><img src="/img/index/yi.jpg" alt=""></a>
                     <div class="click-detail">
-                        <a href="">点击了解详情</a>
+                        <a href="{{url('item/22')}}">点击了解详情</a>
                     </div>
                 </div>
-                @include('item.job')
+                @include('item.time')
             </div>
 
         </div>
@@ -356,46 +356,46 @@
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="details.html"><img src="img/banner/library-1.jpg" alt=""></a>
+                                <a href="{{url('item/26')}}"><img src="img/banner/library-1.jpg" alt=""></a>
                             </div>
                             <p class="money">图书馆提供</p>
-                            <p><a href="#"></a></p>
+                            <p><a href="{{url('item/26')}}"></a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/iphone6s-1.jpg" alt=""></a>
+                                <a href="{{url('item/27')}}"><img src="img/banner/iphone6s-1.jpg" alt=""></a>
                             </div>
                             <p class="money">￥2500</p>
-                            <p><a href="#"> 二手iPhone6s 不容错过</a></p>
+                            <p><a href="{{url('item/27')}}"> 二手iPhone6s 不容错过</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="、img/banner/mac.jpg"><img src="img/banner/dinner-1.jpg" alt=""></a>
+                                <a href="{{url('item/28')}}"><img src="img/banner/dinner-1.jpg" alt=""></a>
                             </div>
                             <p class="money">￥10/小时</p>
-                            <p><a href="#">第三餐厅提供</a></p>
+                            <p><a href="{{url('item/28')}}">第三餐厅提供</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href="img/banner/mac.jpg"><img src="img/banner/school.jpg" alt=""></a>
+                                <a href="{{url('item/29')}}"><img src="img/banner/school.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥1000/月</p>
-                            <p><a href="#">展示你的魅力</a></p>
+                            <p class="money">￥2000/月</p>
+                            <p><a href="{{url('item/29')}}">展示你的魅力</a></p>
                         </div>
                     </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
-                                <a href=""><img src="img/banner/apple.jpg" alt=""></a>
+                                <a href="{{url('item/1')}}"><img src="img/banner/apple.jpg" alt=""></a>
                             </div>
-                            <p class="money">￥8/斤</p>
-                            <p><a href="#">晶莹剔透 酸甜爽口</a></p>
+                            <p class="money">￥10.8/斤</p>
+                            <p><a href="{{url('item/1')}}">晶莹剔透 酸甜爽口</a></p>
                         </div>
                     </div>
 

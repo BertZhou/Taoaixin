@@ -20,8 +20,8 @@
             <h3>购物帮助</h3>
             <ul class="data">
                 <li><a href="#" class="active">购物须知</a></li>
-                <li><a href="#">订单相关</a></li>
-                <li><a href="#">商品相关</a></li>
+                <li><a href="{{url('my/order')}}">订单相关</a></li>
+                {{--<li><a href="#">商品相关</a></li>--}}
                 <li><a href="#">积分相关</a></li>
             </ul>
         </div>

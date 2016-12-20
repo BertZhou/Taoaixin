@@ -54,17 +54,21 @@ body {
 .shopClass_icon{width:11px; height:7px; overflow:hidden; background-position:0 -39px; display:inline-block; margin-left:11px;}
 /*1200px  主页*/
 .nav.shopClass h3{font-family:"Microsoft YaHei", "微软雅黑";}
-.nav{line-height:35px;width: 700px;padding-left: 20px;}
-.nav li{float:left;width: 25%;position: relative;}
+.nav,.nav-product{line-height:35px;width: 700px;padding-left: 20px;}
+.nav li,
+.nav-product li
+{float:left;width: 25%;position: relative;}
 .nav li:hover {
 	/*background: #ccc;*/
 
 }
-.nav li a:hover {
+.nav li a:hover ,
+.nav-product li a:hover{
 	color: #fff !important;
 	background: #AF1B21 !important;
 }
-.nav a{
+.nav a,
+.nav-product a{
 	height:35px;
 	display:block;
 	color:#000;
@@ -72,6 +76,7 @@ body {
 	padding: 0px !important;
 	font-size:14px;
 }
+
 /*1000px 商品筛选*/
 .snav.shopClass h3{font-family:"Microsoft YaHei", "微软雅黑";}
 .snav{line-height:35px;}
@@ -192,7 +197,7 @@ a.hided{display:none;}
 .userPosition a:hover{text-decoration:underline;}
 .description_info{background-color:#FFF; width:1100px;margin-bottom:25px;}
 .description{border:#CCC solid 1px;}
-.description .leftArea{width:309px;}
+.description .leftArea{width:328px;}
 .click-detail {
 	width: 100%;
 	height: 60px;

@@ -1,7 +1,7 @@
 <div class="col-lg-10 col-md-10">
     <div class="row clearfix love-more">
         <div class="col-md-12 column">
-            <a href="products.html" class="more">更多&gt;&gt;</a>
+            <a href="{{url('item?type=2')}}" class="more">更多&gt;&gt;</a>
         </div>
     </div>
     {{--{{$items}}--}}

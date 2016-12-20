@@ -8,13 +8,13 @@
     <div class="navBoxother">
         <div class="comWidth clearfix">
             <div class="shopClass fl">
-                <h3>全部商品分类<i class="shopClass_icon"></i></h3>
+                <h3>全部商品分类<i class="shop-icon">&#xe608;</i></h3>
             </div>
-            <ul class="nav fl">
-                <li><a href="products.html" class="active">爱心推荐</a></li>
-                <li><a href="products.html">爱心商品</a></li>
-                <li><a href="products.html">爱心岗位</a></li>
-                <li><a href="products.html">爱心时间</a></li>
+            <ul class="nav-product fl">
+                <li><a href="{{url('item?type=0')}}" class="active">爱心推荐</a></li>
+                <li><a href="{{url('item?type=1')}}">爱心商品</a></li>
+                <li><a href="{{url('item?type=3')}}">爱心岗位</a></li>
+                <li><a href="{{url('item?type=2')}}">爱心时间</a></li>
             </ul>
             <p>&nbsp;</p>
             <p>&nbsp;</p>

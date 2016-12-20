@@ -23,7 +23,18 @@
                     <h3 class="des_content_tit">{{$item->content}}</h3>
                     <div class="dl clearfix">
                         <div class="dt">淘爱心价</div>
-                        <div class="dd clearfix"><span class="hg"><i class="hg_icon">优惠价</i><span class="des_money"><em>￥</em>{{$item->price}}</span></span></div>
+                        <div class="dd clearfix">
+                            <span class="hg">
+                                <i class="hg_icon">优惠价</i>
+                                <span class="des_money">
+                                    @if($item->type == 2 || $item->type == 3)
+                                        <em>￥</em>{{$item->price}}/小时
+                                    @else
+                                        <em>￥</em>{{$item->price}}
+                                    @endif
+                                </span>
+                            </span>
+                        </div>
                     </div>
                     {{--<div class="dl clearfix">--}}
                         {{--<div class="dt">优惠</div>--}}
