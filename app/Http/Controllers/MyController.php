@@ -100,14 +100,14 @@ class MyController extends Controller
         $info=DB::table("user_profiles")->where("mobile",$phone)->first();
         return view("user.buy.paySuccess",["items"=>$gets,"seller"=>$seller,"sum"=>$sum,"info"=>$info]);
     }
-    public function trade(Request $request,$id)
-    {
-        $number=Session::get("number");
-        $gets=DB::table('items')->where('id',$id)->first();
-        $sum=$number*$gets->price;
-        $seller=DB::table("users")->where("id",$gets->user_id)->first();
-        return view("user.buy.trade",["item"=>$gets,"seller"=>$seller,"sum"=>$sum]);
-    }
+//    public function trade(Request $request,$id)
+//    {
+//        $number=Session::get("number");
+//        $gets=DB::table('items')->where('id',$id)->first();
+//        $sum=$number*$gets->price;
+//        $seller=DB::table("users")->where("id",$gets->user_id)->first();
+//        return view("user.buy.trade",["item"=>$gets,"seller"=>$seller,"sum"=>$sum]);
+//    }
     public function tradeSuccess($id)
     {
         $number=Session::get("number");

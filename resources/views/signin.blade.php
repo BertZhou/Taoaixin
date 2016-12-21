@@ -14,7 +14,7 @@
     <div class="logoBar login_logo">
         <div class="comWidth clearfix">
             <div class="logo fl">
-                <a href="{{url('')}}"> <img src="img/login/login.jpg" alt=""></a>
+                <a href="{{url('')}}"> <img src="/img/logo/1.jpg" alt=""></a>
             </div>
             <h3 class="welcome_title">欢迎登陆</h3>
         </div>

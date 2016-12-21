@@ -24,6 +24,8 @@ class OrderController extends Controller
             $items[$order['item_id']]['type'] = $order['type'];
             $items[$order['item_id']]['created'] = $order['created_at'];
             $items[$order['item_id']]['price'] = $order['price'];
+            $items[$order['item_id']]['order_id'] = $order['id'];
+            $items[$order['item_id']]['number'] = $order['number'];
         }
         return view('user.my.order', ['items' => $items]);
     }
@@ -34,8 +36,16 @@ class OrderController extends Controller
         if (empty($order)) {
             return redirect()->back()->withErrors('Order not available.');
         }
+        $user = User::find($order->buyer_user_id);
+        $item = Item::find($order->item_id)->toArray();
 
-        return view('user.order.show', ['order' => $order]);
+        $item['email'] = $user->email;
+        $item['name'] = $user->name;
+        $item['created'] = $order->created_at;
+        $item['sum'] = $order->price * $order->number;
+        $item['number'] = $order->number;
+        $item['order_id'] = $order_id;
+        return view('user.buy.trade', ['item' => $item]);
     }
 
     public function store(Request $request)

@@ -36,18 +36,18 @@
                     <div class="cart_cont clearfix">
                         <div class="cart_item t_name">
                             <div class="cart_shopInfo clearfix">
-                                <img src="{{url($item->url)}}" alt="">
+                                <img src="{{url($item['url'])}}" alt="">
                                 <div class="cart_shopInfo_cont">
-                                    <p class="cart_link"><a href="#">{{$item->content}}</a></p>
+                                    <p class="cart_link"><a href="#">{{$item['content']}}</a></p>
                                     {{--<p class="cart_info">[赠品]：真皮保护套</p>--}}
                                 </div>
                             </div>
                         </div>
                         <div class="cart_item t_price">
-                            ￥{{$item->price}}
+                            ￥{{$item['price']}}
                         </div>
-                        <div class="cart_item t_subtotal">{{Session::get("number")}}</div>
-                        <div class="cart_item t_subtotal t_red">￥{{$sum}}</div>
+                        <div class="cart_item t_subtotal">{{$item['number']}}</div>
+                        <div class="cart_item t_subtotal t_red">￥{{$item['sum']}}</div>
                         <div class="cart_item t_num">0.00</div>
                     </div>
                     <!--<div class="cart_message">-->
@@ -68,7 +68,8 @@
                 </div>
             </div>
         </div>
-        <p class="money">实付款 <span>{{$sum}}</span></p>
+        {{--<p class="money">实付款 <span></span></p>--}}
+        <p class="money">实付款 <span>{{$item['sum']}}</span></p>
         <!--<input type="button" class="btn btn-danger btn-bought" value="确认收货"></a>-->
 
     </div>
@@ -84,13 +85,13 @@
                 </tr>
                 <tr>
                     <th>淘爱心账号</th>
-                    <td>82635823@qq.com</td>
+                    <td>{{$item['email']}}</td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th>卖家昵称</th>
-                    <td>-听小听-</td>
+                    <td>{{$item['name']}}</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -102,7 +103,7 @@
                 </tr>
                 <tr>
                     <th>交易时间</th>
-                    <td>2016/12/02 12:04</td>
+                    <td>{{$item['created']}}</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -119,7 +120,7 @@
             <p class="password">淘爱心支付密码：</p>
             <input type="password" placeholder="支付密码" class="form-control password">
             <a href="">忘记密码？</a>
-            <a href="{{url('tradesuccess',$item->id)}}"><input type="button" class="btn btn-danger btn-bought" value="确认收货"></a>
+            <a href="{{url('tradesuccess',$item['order_id'])}}"><input type="button" class="btn btn-danger btn-bought" value="确认收货"></a>
         </div>
     </div>
 @endsection

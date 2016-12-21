@@ -29,14 +29,14 @@
                         <a class="content" href="{{url('item',$item['id'])}}">{{$item['content']}}</a>
                 </div>
                 <div class="col-md-2">￥{{$item['price']}}</div>
-                <div class="col-md-2">44</div>
+                <div class="col-md-2">{{$item['number']}}</div>
                 <div class="col-md-2">￥{{$item['price']}}</div>
                 <div class="col-md-2">
                     @if($item['type'] == 'payed')
                         <a href="{{url('trade',$item['id'])}}">确认收货</a>
                         @elseif($item['type'] == 'pending')
                         <p>等待买家付款</p>
-                        <a href="{{url('buy',$item['id'])}}?amount=1">订单详情</a>
+                        <a href="{{url('/my/order',$item['order_id'])}}?amount=1">订单详情</a>
                         @elseif($item['type'] == 'confirmed')
                         <p>订单关闭</p>
                         @else

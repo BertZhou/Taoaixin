@@ -1,4 +1,5 @@
 @extends('layout.tao.index')
+@section('title','商品列表')
 
 @section('content')
     <div class="product container">

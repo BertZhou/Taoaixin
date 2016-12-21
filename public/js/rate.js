@@ -10,10 +10,9 @@ $(function () {
    $('.btm').bind('click', function () {
       var content = $('textarea').val();
       var stars = $('.rater-star-result').text().substr(0,1);
-      var lastIndex = window.location.href.lastIndexOf('/') + 1;
-      var id =  window.location.href.substr(lastIndex);
+      var id = $('input[name="orderId"]').val();
       $.ajax({
-         url:'/my/order/rate/'+id,
+         url:'/my/order/'+id +'/rate',
          method:'POST',
          data : {
             stars: stars,

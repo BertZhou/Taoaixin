@@ -1,7 +1,7 @@
 <div class="logoBar">
     <div class="comWidth">
         <div class="logo fl">
-            <a href=""><img src="/img/logo/tax-1.jpg" alt="淘爱心"></a>
+            <a href=""><img src="/img/logo/1.jpg" alt="淘爱心"></a>
         </div>
         <div class="search_box fl">
             <input type="text" class="search_text fl">

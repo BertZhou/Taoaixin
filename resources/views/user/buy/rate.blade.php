@@ -31,6 +31,7 @@
                     {{--</dl>--}}
                 {{--</div>--}}
             {{--</div>--}}
+            <input type="hidden" value="{{$orderId}}" name="orderId">
             <div class="itemlist tb-rate-mb-m" style="border: 1px solid #DDD;">
                 <div class="listhd">
                     <h3>宝贝评价</h3>

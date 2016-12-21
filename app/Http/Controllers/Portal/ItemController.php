@@ -8,6 +8,7 @@ use App\Models\ItemRate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Models\Order;
 
 class ItemController extends Controller
 {
@@ -52,5 +53,11 @@ class ItemController extends Controller
         ]);
         $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get()->keyBy('id');
         return view('item.items',['items' => $items]);
+    }
+    public function rateShow(Request $request, $order_id)
+    {
+        $order = Order::find($order_id);
+        $item = Item::find($order->item_id);
+        return view('user.buy.rate', ['item' => $item, 'orderId' => $order->id]);
     }
 }

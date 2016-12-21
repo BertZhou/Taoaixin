@@ -56,6 +56,7 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('/', 'ItemController@index');
     Route::get('item', 'ItemController@showAll');
     Route::get('item/{id}', 'ItemController@show');
+    Route::get('item/{id}/rate','ItemController@rateShow');
 });
 
 //登录、注册
@@ -78,10 +79,10 @@ Route::get('pay',function() {
 });
 Route::get('buy/{id}','MyController@buy');
 Route::get('pay/{id}','MyController@pay');
-Route::get('trade/{id}','MyController@trade');
+//Route::get('trade/{id}','MyController@trade');
 Route::get('paysuccess/{id}','MyController@paySuccess');
 Route::get('tradesuccess/{id}','MyController@tradeSuccess');
-Route::get('rate/{id}','MyController@rate');
+//Route::get('/my/rate/{id}','MyController@rate');
 Route::get("info_check","InfoController@info_check");
 
 

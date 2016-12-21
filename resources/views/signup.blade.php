@@ -13,7 +13,7 @@
 	<div class="logoBar reg_logo">
 		<div class="comWidth clearfix">
 			<div class="logo fl">
-				<a href="index.html"><img src="img/Register/reg.jpg" alt="淘爱心" ></a>
+				<a href="{{url('')}}"><img src="/img/logo/1.jpg" alt="淘爱心" ></a>
 			</div>
 			<h3 class="welcome_title">欢迎注册</h3>
 		</div>

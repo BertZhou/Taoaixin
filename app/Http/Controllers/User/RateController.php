@@ -7,9 +7,14 @@ use App\Models\ItemRate;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class RateController extends Controller
 {
+//    public function show(Request $request, $order_id) {
+//
+//        return view('user.buy.rate');
+//    }
     public function store(Request $request, $order_id)
     {
         $this->validate($request, [
@@ -17,12 +22,12 @@ class RateController extends Controller
             'content'   =>  'string'
         ]);
 
-        $order = Order::where(['id' => $order_id, 'type' => 'completed', 'buyer_user_id' => $request->user()->id])->first();
+        $order = Order::where(['id' => $order_id, 'type' => 'completed', 'buyer_user_id' => Session::get('userid')])->first();
 
         if (empty($order)) {
-            return redirect()->back()->withErrors('Order not available.');
+//            return redirect()->back()->withErrors('Order not available.');
         } elseif ($order->is_rated) {
-            return redirect()->back()->withErrors('Order has been already rated.');
+//            return redirect()->back()->withErrors('Order has been already rated.');
         }
 
         $item = Item::find($order->item_id);
@@ -54,17 +59,17 @@ class RateController extends Controller
         $order = Order::where(['id' => $order_id, 'type' => 'completed', 'buyer_user_id' => $request->user()->id])->first();
 
         if (empty($order)) {
-            return redirect()->back()->withErrors('Order not available.');
+//            return redirect()->back()->withErrors('Order not available.');
         } elseif (!$order->is_rated) {
-            return redirect()->back()->withErrors('Order has no rate.');
+//            return redirect()->back()->withErrors('Order has no rate.');
         }
 
         $rate = ItemRate::where(['id' => $rate_id, 'order_id' => $order->id])->first();
 
         if (empty($rate)) {
-            return redirect()->back()->withErrors('Rate not available.');
+//            return redirect()->back()->withErrors('Rate not available.');
         } elseif ($rate->remark) {
-            return redirect()->back()->withErrors('Rate can only be modify once.');
+//            return redirect()->back()->withErrors('Rate can only be modify once.');
         }
 
         $rate->update([
@@ -73,6 +78,6 @@ class RateController extends Controller
             'remark'    =>  1
         ]);
 
-        return redirect()->back();
+//        return redirect()->back();
     }
 }
