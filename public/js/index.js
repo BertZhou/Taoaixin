@@ -131,12 +131,12 @@ window.onload = function() {
         };
     }  
     //初始化自动轮播  
-    // fnStop();
-    // fnStart();
+    fnStop();
+    fnStart();
 };        
 //启动自动轮播
 function fnStart() {  
-    init = setInterval('fnAuto()',6000); 
+    init = setInterval('fnAuto()',3000);
 }        
 //停止自动轮播
 function fnStop() {  

@@ -66,7 +66,6 @@
 })();
 var deleteFetch = function (favoritedId) {
 	var id = favoritedId;
-	debugger
 	$.ajax({
 		url:'/my/favorite/'+ id,
 		method: 'DELETE',

@@ -29,9 +29,9 @@
             <div class="delivery">
                 <em>货物寄送至：</em>
                 <span class="address">
-                    	{{$info->province}} {{$info->city}} {{$info->area}} {{$info->address}} {{$info->name}}收
+                    	{{--{{$info->province}} {{$info->city}} {{$info->area}} {{$info->address}} {{$info->name}}收--}}
                         <span class="phone">
-                            {{$info->mobile}}
+                            {{--{{$info->mobile}}--}}
                         </span>
                         <span class="sign">
                             默认地址
@@ -42,11 +42,11 @@
             </div>
             <div class="operate">
                 <p>
-                    <a class="view-more">已买到宝贝列表</a>
-                    <a class="view-more">订单详情</a>
+                    <a class="view-more" href="{{url('my/order')}}">已买到宝贝列表</a>
+                    <a class="view-more" href="{{url('my/order',$order->id)}}">订单详情</a>
                     <span>
                     	联系卖家：
-                        <a>xxxxx</a>
+                        <a>{{$seller->name}}</a>
                     </span>
                 </p>
             </div>

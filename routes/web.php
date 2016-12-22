@@ -57,6 +57,9 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('item', 'ItemController@showAll');
     Route::get('item/{id}', 'ItemController@show');
     Route::get('item/{id}/rate','ItemController@rateShow');
+    Route::get('item/{id}/buy','ItemController@buy');
+    Route::get('item/{id}/pay','ItemController@pay');
+    Route::get('item/{id}/paysuccess','ItemController@paySuccess');
 });
 
 //登录、注册
@@ -77,13 +80,13 @@ Route::get('buy',function() {
 Route::get('pay',function() {
     return view('user.buy.pay');
 });
-Route::get('buy/{id}','MyController@buy');
-Route::get('pay/{id}','MyController@pay');
+//Route::get('buy/{id}','MyController@buy');
+//Route::get('pay/{id}','MyController@pay');
 //Route::get('trade/{id}','MyController@trade');
-Route::get('paysuccess/{id}','MyController@paySuccess');
+//Route::get('paysuccess/{id}','MyController@paySuccess');
 Route::get('tradesuccess/{id}','MyController@tradeSuccess');
 //Route::get('/my/rate/{id}','MyController@rate');
-Route::get("info_check","InfoController@info_check");
+Route::post("info_check","InfoController@info_check");
 
 
 Route::get('create',function() {

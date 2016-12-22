@@ -78,7 +78,7 @@
                     <div class="shop_buy">
                         <a href="" class="btn btn-danger">加入购物车</a>
                         <span class="line"></span>
-                        <a href="{{url('buy',$item->id)}}?amount=1"  class="btn btn-warning btn-buy">立即购买</a>
+                        <a href="{{url('item',$item->id)}}/buy?amount=1"  class="btn btn-warning btn-buy">立即购买</a>
                     </div>
                     <div class="notes">
                         <span class="icon-fav detail-icon">&#xe610;

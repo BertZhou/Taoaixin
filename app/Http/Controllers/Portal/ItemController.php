@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Portal;
 use App\Models\User;
 use App\Models\Item;
 use App\Models\ItemRate;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
+use Illuminate\Support\Facades\Session;
 
 class ItemController extends Controller
 {
@@ -60,4 +62,35 @@ class ItemController extends Controller
         $item = Item::find($order->item_id);
         return view('user.buy.rate', ['item' => $item, 'orderId' => $order->id]);
     }
+    public function buy(Request $request,$id)
+    {
+        $number=$request->get("amount");
+        $path=$_SERVER['HTTP_HOST'];
+        $item = Item::find($id);
+        $sum=$item->price*$number;
+        $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
+
+        return view("user.buy.buy",["items"=>$item,"number"=>$number,"sum"=>$sum, "info" => $info]);
+    }
+    public function pay($id)
+    {
+//        $number=Session::get("number");
+        $item = Item::find($id);
+        $order = Order::where('item_id', $id)->first();
+        $sum=$order->number*$order->price;
+        $seller=DB::table("users")->where("id",$item->user_id)->first();
+        $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
+        $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
+        return view("user.buy.pay",["items"=>$item,"seller"=>$seller,"sum"=>$sum, 'address'=>$address]);
+    }
+    public function paySuccess($id)
+    {
+//        $number=Session::get("number");
+        $item = Item::find($id);
+        $order = Order::where('item_id', $id)->first();
+        $sum=$order->number*$order->price;
+        $seller=DB::table("users")->where("id",$item->user_id)->first();
+        return view("user.buy.paySuccess",["items"=>$item,"seller"=>$seller,"sum"=>$sum,"order"=>$order]);
+    }
+
 }

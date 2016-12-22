@@ -24,27 +24,27 @@ class RateController extends Controller
 
         $order = Order::where(['id' => $order_id, 'type' => 'completed', 'buyer_user_id' => Session::get('userid')])->first();
 
-        if (empty($order)) {
-//            return redirect()->back()->withErrors('Order not available.');
-        } elseif ($order->is_rated) {
-//            return redirect()->back()->withErrors('Order has been already rated.');
-        }
+//        if (empty($order)) {
+////            return redirect()->back()->withErrors('Order not available.');
+//        } elseif ($order->is_rated) {
+////            return redirect()->back()->withErrors('Order has been already rated.');
+//        }
 
-        $item = Item::find($order->item_id);
+//        $item = Item::find($order->item_id);
+//
+//        $rate = ItemRate::create([
+//            'order_id'          =>  $order->id,
+//            'item_id'           =>  $item->id,
+//            'buyer_user_id'     =>  $order->buyer_user_id,
+//            'seller_user_id'    =>  $order->seller_user_id,
+//            'stars'             =>  $request->input('stars'),
+//            'content'           =>  $request->input('content'),
+//            'remark'            =>  0
+//        ]);
 
-        $rate = ItemRate::create([
-            'order_id'          =>  $order->id,
-            'item_id'           =>  $item->id,
-            'buyer_user_id'     =>  $order->buyer_user_id,
-            'seller_user_id'    =>  $order->seller_user_id,
-            'stars'             =>  $request->input('stars'),
-            'content'           =>  $request->input('content'),
-            'remark'            =>  0
-        ]);
-
-        $order->update([
-            'is_rated'  =>  1
-        ]);
+//        $order->update([
+//            'is_rated'  =>  1
+//        ]);
 
 //        return redirect()->back();
     }

@@ -26,7 +26,7 @@
 <div class="loginBox">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" role="form" name="signin" ng-controller="userInfoController" method="post" action="signin_check">
+            <form class="form-horizontal"  name="signin" ng-controller="userInfoController">
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="username">
                         用户名
@@ -44,18 +44,18 @@
                     </div> -->
                     <div class="error col-md-offset-3 col-md-10"
                          ng-show="signin.username.$dirty && signin.username.$invalid">
-                        <small class="error"
-                               ng-show="signin.username.$error.required">
-                            用户名不能为空
-                        </small>
-                        <small class="error"
-                               ng-show="signin.username.$error.minlength">
-                            8-20位，可由数字、字母和“_”组成
-                        </small>
-                        <small class="error"
-                               ng-show="signin.username.$error.maxlength">
-                            用户名长度不能超多20个字符
-                        </small>
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.username.$error.required">--}}
+                            {{--用户名不能为空--}}
+                        {{--</small>--}}
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.username.$error.minlength">--}}
+                            {{--8-20位，可由数字、字母和“_”组成--}}
+                        {{--</small>--}}
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.username.$error.maxlength">--}}
+                            {{--用户名长度不能超多20个字符--}}
+                        {{--</small>--}}
                     </div>
                 </div>
 
@@ -76,18 +76,18 @@
                     </div> -->
                     <div class="error col-md-offset-3 col-md-10"
                          ng-show="signin.password.$dirty && signin.password.$invalid">
-                        <small class="error"
-                               ng-show="signin.password.$error.required">
-                            密码不能为空
-                        </small>
-                        <small class="error"
-                               ng-show="signin.password.$error.minlength">
-                            至少8个字符
-                        </small>
-                        <small class="error"
-                               ng-show="signin.password.$error.maxlength">
-                            密码长度不能超多20个字符
-                        </small>
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.password.$error.required">--}}
+                            {{--密码不能为空--}}
+                        {{--</small>--}}
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.password.$error.minlength">--}}
+                            {{--至少8个字符--}}
+                        {{--</small>--}}
+                        {{--<small class="error"--}}
+                               {{--ng-show="signin.password.$error.maxlength">--}}
+                            {{--密码长度不能超多20个字符--}}
+                        {{--</small>--}}
                     </div>
                 </div>
 
@@ -103,14 +103,33 @@
                         <label class="forget-password">忘记密码？</label>
                     </div>
                 </div>
-                <button type="submit" class="login_btn btn btn-primary col-md-4 col-md-offset-4"
+            </form>
+
+            <button type="submit" class="login_btn btn btn-primary col-md-4 col-md-offset-4"
                         ng-disabled="!(userInfo.password && userInfo.username)"
                         class="">登 &nbsp 录</button>
-            </form>
         </div>
 
     </div>
     <a class="reg_link" href="{{url('register')}}"></a>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">淘爱心登录</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="fail-icon">&#xe60c;<span class="status">  密码错误！</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-fav" data-dismiss="modal">Close</button>
+                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="login_45">
     <p>Copyright&nbsp;&nbsp;&nbsp;2016&nbsp;&nbsp;taoaixin.com&nbsp;&nbsp;杭州电子科技大学版权所有</p>
@@ -121,7 +140,8 @@
 {{--<script type="text/javascript" src="js/angular-messages.min.js"></script>--}}
 {{--<script type="text/javascript" src="js/myangularjs.js"></script>--}}
 <!--<script type="text/javascript" src="js/easyPay.js"></script>!-->
-<script type="text/javascript" src="js/myjs.js"></script>
+<script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/myjs.js"></script>
 
 </body>
 </html>

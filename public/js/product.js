@@ -77,6 +77,6 @@ var getId = function () {
 };
 var setURL = function (amount) {
 	var id = getId();
-	var url = '/buy/'+ id + '?amount=' + amount;
+	var url = '/item/'+ id + '/buy?amount=' + amount;
 	$('.btn-buy').attr('href', url);
 };

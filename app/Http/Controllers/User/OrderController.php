@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\UserProfile;
 use Carbon;
 use App\Models\Item;
 use App\Models\User;
@@ -15,6 +16,11 @@ class OrderController extends Controller
 {
     public function index(Request $request)
     {
+        $this->validate($request, [
+            'offset'    =>  'integer|min:0',
+            'limit'     =>  'integer|min:0'
+        ]);
+//        $count = Order::where('buyer_user_id', Session::get('userid'))->get();
         $orders = Order::where('buyer_user_id', Session::get('userid'))->get()->keyBy('id');
         $items = Item::whereIn('id', $orders->pluck('item_id'))->get()->keyBy('id');
         $orders = $orders->toArray();
@@ -26,6 +32,7 @@ class OrderController extends Controller
             $items[$order['item_id']]['price'] = $order['price'];
             $items[$order['item_id']]['order_id'] = $order['id'];
             $items[$order['item_id']]['number'] = $order['number'];
+            $items[$order['item_id']]['sum'] = $order['number'] * $order['price'];
         }
         return view('user.my.order', ['items' => $items]);
     }
@@ -38,7 +45,9 @@ class OrderController extends Controller
         }
         $user = User::find($order->buyer_user_id);
         $item = Item::find($order->item_id)->toArray();
-
+        $info = UserProfile::find($order->buyer_user_id);
+        $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
+        $item['address'] = $address;
         $item['email'] = $user->email;
         $item['name'] = $user->name;
         $item['created'] = $order->created_at;
@@ -52,11 +61,11 @@ class OrderController extends Controller
     {
         $this->validate($request, [
             'item_id'   =>  'required|integer|min:0',
-            'note'      =>  'string'
+            'note'      =>  'string',
+            'number'    =>   'integer|min:0'
         ]);
 
         $item = Item::find($request->input('item_id'));
-
         if (empty($item) || $item->quantity <= 0) {
             return redirect()->back()->withErrors('Item not available.');
         }
@@ -69,10 +78,11 @@ class OrderController extends Controller
             'seller_user_id'    =>  $item->user_id,
             'price'             =>  $item->price,
             'note'              =>  $request->input('note'),
-            'is_rated'          =>  0
+            'is_rated'          =>  0,
+            'number'            =>  $request->input('number')
         ]);
 
-        $item->decrement('quantity');
+//        $item->decrement('quantity');
 
 //        return redirect()->back();
     }

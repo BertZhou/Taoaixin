@@ -25,21 +25,10 @@
                     订单详情：<a href="#"><span class="maijia_dingdan">{{$items->content}}</span></a><br/><br/>
                     卖家昵称：<a href="#"><span class="maijia_dianming">{{$seller->name}}</span></a>
                 </span>
+            <p style="margin-top: 10px;">货物寄送至：<span class="maijia_dianming">{{$address}}</span></p>
         </div>
         <div class="zhifu_daifu"><a href="#">找人代付</a>&nbsp;&nbsp;<a href="#">联系客服</a></div>
         <div class="zhifu_jiage1"><span >{{$sum}}</span>元</div>
-        <div class="zhifu_xiangqing" ><a href="#"><span class="xianshi">查看详情</span></a></div>
-        <div class="zhifu_xiangqingye" id="xianshi_" style="display:none">
-
-                    <span >
-                        <span class="xiangqing1">货物寄送至：</span><br/> <a href="#"><span class="xiangqing2">浙江省 杭州市 江干区 白杨街道 杭州电子科技大学 <br/>周玲杰 收<br>13750898266<br></span></a>
-                        <a href="#" target="_blank"><span class="xiangqing3">设置默认地址</span></a>
-                    </span>
-
-            </span>
-        </div>
-        <div class="trade-info-center">
-        </div>
     </div>
     <div class="pay-message">
         <div class="pay-amount">
@@ -54,7 +43,7 @@
             <span style="font-size:14px">淘爱心支付密码：</span><br/><br/>
             <input type="password" class="zhifu_mimabox " tabindex="1" id="payPassword_rsainput" placeholder="密码" name="payPassword_rsainput" oncontextmenu="return false" onpaste="return false" oncopy="return false" oncut="return false" autocomplete="off" value="">&nbsp;&nbsp;
             <a href="#" target="_blank"><span class="zhifu_forget">忘记密码？</span></a><br/><br/>
-            <a href ="{{url('paysuccess',$items->id)}}" class="myButton btn-confirm-pay">确认付款</a>
+            <a href ="{{'paysuccess'}}" class="myButton btn-confirm-pay">确认付款</a>
         </div>
     </div>
 @endsection

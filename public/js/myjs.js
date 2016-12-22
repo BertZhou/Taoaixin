@@ -1,7 +1,5 @@
 
-    var username = sessionStorage.getItem('username');
-    $('.sign-success').text(username);
-	//我的淘爱心 
+	//我的淘爱心
 	$(function(){
 		$("#wdtax").hover(function(){
 			$("#wdtax_mune").show();
@@ -46,21 +44,6 @@
 			$("#account").removeClass("navigation_hover");
 		});
 	});
-	
-
-// 注册之间的切换
-$(document).ready(function() {  
-	$("#reg_student").click(function(){
-		$("#reg_student2").show();
-		$("#reg_other2").hide();
-
-	});
-	$("#reg_other").click(function(){
-		$("#reg_other2").show();
-		$("#reg_student2").hide();
-	});
-});
-
 
   //收藏夹
   $(document).ready(function(){
@@ -75,31 +58,6 @@ $(document).ready(function() {
     });
   })
   });
-
-  //点击退出 退出到首页
-  $(document).ready(function () {
-    $(function () {
-      $('.exit').bind('click', function () {
-        location.href = 'login.html';
-      });
-      $('.manage').bind('click',function () {
-        location.href = 'personalData.html';
-      });
-    });
-  });
-
-//点击淘爱心首页 登录过后的跳转到登录成功页
-(function (){
-  var username = sessionStorage.getItem('username');
-  $('.F_tax').bind('click',function () {
-    if(username){
-      location.href = 'indexLogin.html';
-    }else{
-      location.href = 'index.html';
-    }
-  });
-
-})();
 
 //发布商品选择类型按钮
 	var m = 0;
@@ -217,4 +175,28 @@ $(document).ready(function() {
 		});
 		
 	});
-	
+	/*点击登录*/
+	;$(function () {
+		$('.login_btn').bind('click', function () {
+			var username = $('#username').val();
+			var password = $('#password').val();
+
+			$.ajax({
+				url:'signin_check',
+				method:'POST',
+				data: {
+					username: username,
+					password: password
+				},
+				success: function (json) {
+					if(json.message == "success") {
+						window.location.href = 'http://' +   window.location.host;
+					}else {
+						// var message = json.data;
+						$('.status').text(json.data);
+						$('#myModal').modal('show');
+					}
+				}
+			})
+		});
+	});

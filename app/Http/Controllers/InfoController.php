@@ -12,19 +12,18 @@ class InfoController extends Controller
         //$inputs["address"]=$request->get("province")+$request->get("city")
         //+$request->get("area")+$request->get("address");
         //dd( $_SERVER['HTTP_HOST']);
-        $inputs["address"]=$request->input("address");
-        $inputs["province"]=$request->get("province");
-        $inputs["city"]=$request->get("city");
-        $inputs["area"]=$request->get("area");
-        //dd($inputs["address"]);
-        //$inputs["user_id"]=Session::get("userid");
-        $inputs["mobile"]=$request->get("mobile");
-        $inputs["name"]=$request->get("name");
-        UserProfile::create($inputs);
-        Session::put("mobile",$inputs["mobile"]);
-       // Session::put("info_name",$inputs["name"]);
-        //return response()->json(["ok"=>"ok"]);
-        return redirect()->back();
-
+        $message = $request -> get('message');
+        $userProfile = UserProfile::create([
+              'address'           =>  $message['address'],
+              'province'          =>  $message['province'],
+              'city'              =>  $message['city'],
+              'user_id'           =>  Session::get('userid'),
+              'area'              =>  $message['area'],
+              'mobile'            =>  $message['mobile'],
+              'name'              =>  $message['name']
+          ]);
+        Session::put("mobile",$message["mobile"]);
+        return response()->json(["ok"=>"ok"]);
+//        return redirect()->back();
     }
 }

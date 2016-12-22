@@ -1,24 +1,28 @@
 (function() {
-
-
-    $('.btn-submit').bind('click', function () {
+    $('.btn-submit').bind('click',function () {
+        var message = {
+            email: $('input[name="email"]').val(),
+            username: $('input[name="username"]').val(),
+            password: $('#pass').val(),
+            passwordagain: $('#passagain').val(),
+            identity: $('input[name="radio"]:checked').data('id')
+        };
+        debugger
         $.ajax({
-           url :'signup_check',
-            data : {
-                username : username,
-                password : password,
-                contact  : contact
+            url:'/signup_check',
+            data: {
+                message: message
             },
-            method : 'POST',
-            dataType : 'json',
-            success : function (json){
-                if(!json.code || json.code == 200){
-                    // location.href = 'indexLogin.html?username='+json.username + '&id=' + json.id;
-                    sessionStorage.setItem('username',username);
-                    // sessionStorage.setItem('id',json.user.id);
-                    //location.href = 'signin';
+            method: 'POST',
+            success: function (json) {
+                if(json.message == "success") {
+                    window.location.href = 'http://' +   window.location.host;
+                }else {
+                    $('.status').text(json.data);
+                    $('#myModal').modal('show');
                 }
             }
-        });
+        })
     });
+
 })();

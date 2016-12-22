@@ -39,10 +39,9 @@
     <script type="text/javascript" src="/js/myjs.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
     <script type="text/javascript" src="/js/comment.js"></script>
-    <script type="text/javascript" src="/js/rate.js"></script>
     <script type="text/javascript" src="/js/jquery-ui/jquery.citys.js"></script>
-    <script type="text/javascript">
-        $('.select-address').citys({province:'浙江',city:'杭州市',area:'江干区'});
-    </script>
+    <script type="text/javascript" src="/js/rate.js"></script>
+    <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
+
 </body>
 </html>

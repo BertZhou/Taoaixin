@@ -18,7 +18,7 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
      */
     protected $table="users";
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_student'
     ];
 
 
