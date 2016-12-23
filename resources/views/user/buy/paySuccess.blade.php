@@ -34,7 +34,7 @@
                             {{--{{$info->mobile}}--}}
                         </span>
                         <span class="sign">
-                            默认地址
+                            {{$address}}
                         </span>
                      </span>
             </div>

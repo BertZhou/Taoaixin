@@ -65,7 +65,6 @@ class ItemController extends Controller
     public function buy(Request $request,$id)
     {
         $number=$request->get("amount");
-        $path=$_SERVER['HTTP_HOST'];
         $item = Item::find($id);
         $sum=$item->price*$number;
         $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
@@ -87,10 +86,15 @@ class ItemController extends Controller
     {
 //        $number=Session::get("number");
         $item = Item::find($id);
-        $order = Order::where('item_id', $id)->first();
+        $order = Order::where('item_id', $id)->orderBy('id', 'desc')->first();
+        $order -> update([
+           'type' => 'payed'
+        ]);
         $sum=$order->number*$order->price;
         $seller=DB::table("users")->where("id",$item->user_id)->first();
-        return view("user.buy.paySuccess",["items"=>$item,"seller"=>$seller,"sum"=>$sum,"order"=>$order]);
+        $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
+        $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
+        return view("user.buy.paySuccess",["items"=>$item,"seller"=>$seller,"sum"=>$sum,"order"=>$order, 'address' => $address]);
     }
 
 }

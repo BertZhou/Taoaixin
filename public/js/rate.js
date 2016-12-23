@@ -55,7 +55,7 @@ $(function () {
             content: content
          },
          success: function () {
-            debugger
+            $('#myModal').modal('show');
          },
          error: function () {
             debugger
@@ -82,5 +82,7 @@ $(function () {
             window.location.href = url;
          }
       })
-   })
+   });
+//   点击添加到购物车
+
 });

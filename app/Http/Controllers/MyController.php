@@ -47,7 +47,6 @@ class MyController extends Controller
     }
     public function  signup_check(Request $request)
     {
-    	//$user=new \App\User();
         $message = $request -> get('message');
 
     	$inputs["name"] = $message['username'];
@@ -55,8 +54,10 @@ class MyController extends Controller
     	$inputs["password"]= $message['password'];
 //    	$inputs["password"]= $message['passwordagain'];
     	$inputs["is_student"]= $message['identity'];
+
     	$results1=DB::table("users")->where("name",$inputs["name"])->first();
     	$results2=DB::table("users")->where("email",$inputs["email"])->first();
+
         if(empty($inputs["email"]) || empty($inputs["name"])){
             return response() -> json(["message" => "fail", "data" => "用户名或邮箱不能为空"]);
         }else if($results1||$results2) {

@@ -73,19 +73,30 @@
         </div>
     </div>
         <div class="fav-item clearfix  ">
-            @foreach($items as $item)
+            {{--@foreach($items as $item)--}}
                 <div class="fav-list2">
-                    <a href="#"><img src="{{url($item['url'])}}" alt="taoaixin">
+                    <a href="{{'/item/5'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/gao.jpg" alt="taoaixin">
                     </a>
                     <div class="pro-message">
-                        <div class=""><span class="pro-price"><strong>￥{{$item['price']}}</strong></span></div>
-                        <span><a href="">{{$item['name']}}</a></span>
+                        <div class=""><span class="pro-price"><strong>￥10.00</strong></span></div>
+                        <span><a href="">高数</a></span>
                         <div class="pro-detail">
-                            <p>{{$item['content']}}</p>
+                            <p>同济版高等数学二手9成新</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            <div class="fav-list2">
+                <a href="{{'/item/16'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/app.jpg" alt="taoaixin">
+                </a>
+                <div class="pro-message">
+                    <div class=""><span class="pro-price"><strong>￥10/小时</strong></span></div>
+                    <span><a href="">app推广</a></span>
+                    <div class="pro-detail">
+                        <p>网易严选APP推广员 日结 </p>
+                    </div>
+                </div>
+            </div>
+            {{--@endforeach--}}
         </div>
 
         {{--<div class="fav-bottom clearfix">--}}

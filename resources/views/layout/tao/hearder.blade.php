@@ -32,8 +32,8 @@
                 <ul class="mune" id="wdtax_mune">
                     <li><a href="{{url('my/order')}}">已淘到的爱心</a></li>
                     <li><a href="#">我的足迹</a></li>
-                    <li><a href="#">爱公益</a></li>
-                    <li><a href="#">新欢</a></li>
+                    {{--<li><a href="#">爱公益</a></li>--}}
+                    {{--<li><a href="#">新欢</a></li>--}}
                 </ul>
             </div>
             <a href="#" class="fl">我的消息</a>
@@ -59,10 +59,10 @@
             </div>
             <div class="service fl" id="service">
                 <a href="#">联系客服</a>
-                <ul class="mune" id="service_mune">
-                    <li><a href="#">收藏的宝贝</a></li>
-                    <li><a href="#">收藏的店铺</a></li>
-                </ul>
+                {{--<ul class="mune" id="service_mune">--}}
+                    {{--<li><a href="#">收藏的宝贝</a></li>--}}
+                    {{--<li><a href="#">收藏的店铺</a></li>--}}
+                {{--</ul>--}}
             </div>
         </div>
     </div>

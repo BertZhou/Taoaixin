@@ -162,7 +162,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        /*cart*/
+        Overtrue\LaravelShoppingCart\ServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -230,6 +231,7 @@ return [
 
         'ImageTool' => Intervention\Image\Facades\Image::class,
         'Carbon' => Carbon\Carbon::class,
+        'Cart'      => Overtrue\LaravelShoppingCart\Facade::class,
     ],
 
 ];

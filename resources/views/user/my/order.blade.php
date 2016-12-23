@@ -38,7 +38,7 @@
                         <div class="col-md-2">￥{{$item['sum']}}</div>
                         <div class="col-md-2">
                             @if($item['type'] == 'payed')
-                                <a href="{{url('trade',$item['id'])}}">确认收货</a>
+                                <a href="{{url('/my/order',$item['id'])}}">确认收货</a>
                                 @elseif($item['type'] == 'pending')
                                 <p>等待买家付款</p>
                                 <a href="{{url('/my/order',$item['order_id'])}}">订单详情</a>

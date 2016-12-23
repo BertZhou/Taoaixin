@@ -45,7 +45,7 @@ class OrderController extends Controller
         }
         $user = User::find($order->buyer_user_id);
         $item = Item::find($order->item_id)->toArray();
-        $info = UserProfile::find($order->buyer_user_id);
+        $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
         $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
         $item['address'] = $address;
         $item['email'] = $user->email;
@@ -53,6 +53,7 @@ class OrderController extends Controller
         $item['created'] = $order->created_at;
         $item['sum'] = $order->price * $order->number;
         $item['number'] = $order->number;
+        $item['type'] = $order->type;
         $item['order_id'] = $order_id;
         return view('user.buy.trade', ['item' => $item]);
     }
@@ -129,5 +130,16 @@ class OrderController extends Controller
         }
 
 //        return redirect()->back();
+    }
+
+    public function tradeSuccess (Request $request, $id)
+    {
+        $order = Order::find($id);
+        $order->update ([
+            'type' => 'completed'
+        ]);
+        $sum = $order->number * $order ->price;
+        $seller = User::find($order->seller_user_id);
+        return view("user.buy.tradeSuccess",["items"=>$order,"seller"=>$seller,"sum"=>$sum]);
     }
 }

@@ -1,5 +1,5 @@
 @extends('user.buy.layout')
-@section('title','下单')
+@section('title','订单评价')
 
 
 @section('topbar')
@@ -76,8 +76,8 @@
                                             <textarea name="" id="" class="text"></textarea>
                                             <span class="tr">字数限制为5-200个</span>
                                         </div>
-                                        <button class="btm" type="submit"></button>
                                     </form>
+                                    <button class="btm" type="submit"></button>
                                 </div>
                             </div>
                         </li>
@@ -173,5 +173,23 @@
                     <div class="hr_25"></div>
                 </div>
             </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">淘爱心评论</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="status">评论提交成功</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn  btn-fav" data-dismiss="modal">Close</button>
+                    {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

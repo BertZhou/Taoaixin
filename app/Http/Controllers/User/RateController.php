@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Session;
 
 class RateController extends Controller
 {
-//    public function show(Request $request, $order_id) {
-//
+//    public function show(Request $request, $order_id)
+//    {
 //        return view('user.buy.rate');
 //    }
     public function store(Request $request, $order_id)
@@ -30,17 +30,17 @@ class RateController extends Controller
 ////            return redirect()->back()->withErrors('Order has been already rated.');
 //        }
 
-//        $item = Item::find($order->item_id);
+        $item = Item::find($order->item_id);
 //
-//        $rate = ItemRate::create([
-//            'order_id'          =>  $order->id,
-//            'item_id'           =>  $item->id,
-//            'buyer_user_id'     =>  $order->buyer_user_id,
-//            'seller_user_id'    =>  $order->seller_user_id,
-//            'stars'             =>  $request->input('stars'),
-//            'content'           =>  $request->input('content'),
-//            'remark'            =>  0
-//        ]);
+        $rate = ItemRate::create([
+            'order_id'          =>  $order->id,
+            'item_id'           =>  $item->id,
+            'buyer_user_id'     =>  $order->buyer_user_id,
+            'seller_user_id'    =>  $order->seller_user_id,
+            'stars'             =>  $request->input('stars'),
+            'content'           =>  $request->input('content'),
+            'remark'            =>  0
+        ]);
 
 //        $order->update([
 //            'is_rated'  =>  1

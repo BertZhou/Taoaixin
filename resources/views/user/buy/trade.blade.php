@@ -116,11 +116,16 @@
             确认收货
         </div>
         <div class="panel-body">
-            <p class="confirm">请收到货后再确认收货！否则您可能钱货两空！</p>
-            <p class="password">淘爱心支付密码：</p>
-            <input type="password" placeholder="支付密码" class="form-control password">
-            <a href="">忘记密码？</a>
-            <a href="{{url('tradesuccess',$item['order_id'])}}"><input type="button" class="btn btn-danger btn-bought" value="确认收货"></a>
+            @if($item['type'] == 'completed')
+                订单状态：<p class="confirm">交易成功</p>
+                <a href="{{url('item',$item['order_id'])}}/rate"><input type="button" class="btn btn-danger btn-bought" value="立即评价"></a>
+            @else
+                <p class="confirm">请收到货后再确认收货！否则您可能钱货两空！</p>
+                <p class="password">淘爱心支付密码：</p>
+                <input type="password" placeholder="支付密码" class="form-control password">
+                <a href="">忘记密码？</a>
+                <a href="{{url('/my/order',$item['order_id'])}}/tradesuccess"><input type="button" class="btn btn-danger btn-bought" value="确认收货"></a>
+            @endif
         </div>
     </div>
 @endsection
