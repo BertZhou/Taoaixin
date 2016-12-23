@@ -12,7 +12,7 @@ class CartController extends Controller
     {
 //        $items = Cart::all();
 //        var_dump($items);
-        return view('user.shopping.test');
+        return view('user.shopping.index');
     }
     public function store (Request $request)
     {
