@@ -200,8 +200,12 @@
 	text-decoration: underline;
 }
 .subNav{font-size: 15px;text-align: center;font-weight: bold;}
-.subNav a{color:white;font-size: 15px;}
-.shopClass_show h3:hover{text-decoration:underline;background-color: #D7464C}
+.subNav a{
+	color:#656565;
+	font-size: 15px;}
+.shopClass_show h3:hover{text-decoration:underline;background-color: #ff552e}
+.shopClass_show h3:hover a{
+	color: #fff;}
 
 
 /*轮播图*/

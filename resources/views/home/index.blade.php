@@ -346,22 +346,10 @@
 
         </div>
 
-
-
-
         <div class="col-lg-2 col-md-2 col-sm-2 no-padding" >
             <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
                 <div class="recommend">
                     <h3 class="tit">爱心项目推荐</h3>
-                    <div class="tjitem">
-                        <div class="item_cont">
-                            <div class="img_item">
-                                <a href="{{url('item/26')}}"><img src="img/banner/library-1.jpg" alt=""></a>
-                            </div>
-                            <p class="money">图书馆提供</p>
-                            <p><a href="{{url('item/26')}}"></a></p>
-                        </div>
-                    </div>
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
@@ -371,6 +359,7 @@
                             <p><a href="{{url('item/27')}}"> 二手iPhone6s 不容错过</a></p>
                         </div>
                     </div>
+
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">
@@ -380,6 +369,16 @@
                             <p><a href="{{url('item/28')}}">第三餐厅提供</a></p>
                         </div>
                     </div>
+                    <div class="tjitem">
+                        <div class="item_cont">
+                            <div class="img_item">
+                                <a href="{{url('item/26')}}"><img src="img/banner/library-1.jpg" alt=""></a>
+                            </div>
+                            <p class="money">图书馆提供</p>
+                            <p><a href="{{url('item/26')}}"></a></p>
+                        </div>
+                    </div>
+
                     <div class="tjitem">
                         <div class="item_cont">
                             <div class="img_item">

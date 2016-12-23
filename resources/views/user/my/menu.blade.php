@@ -8,7 +8,7 @@
                 <li><a href="{{url('my')}}">首页</a></li>
                 <li><a href="#">我的资金</a></li>
                 <li><a href="#">账户设置</a></li>
-                <li><a href="#">消息</a></li>
+                <li><a href="{{url('my/message')}}">消息</a></li>
             </ul>
         </div>
         <div class=" col-md-5" style="text-align: left;padding-top: 2%">

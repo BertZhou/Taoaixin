@@ -231,7 +231,7 @@ return [
 
         'ImageTool' => Intervention\Image\Facades\Image::class,
         'Carbon' => Carbon\Carbon::class,
-        'Cart'      => Overtrue\LaravelShoppingCart\Facade::class,
+//        'Cart'      => Overtrue\LaravelShoppingCart\Facade::class,
     ],
 
 ];

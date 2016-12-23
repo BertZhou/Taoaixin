@@ -10,7 +10,8 @@
         "bican/roles": "dev-master",
         "intervention/image": "*",
         "intervention/imagecache": "^2.3",
-        "overtrue/laravel-shopping-cart": "1.0.*"
+        "overtrue/laravel-shopping-cart": "1.0.*",
+        "gloudemans/shoppingcart": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

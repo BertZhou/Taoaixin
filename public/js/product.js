@@ -1,4 +1,24 @@
 ;$(function () {
+    //点击添加到购物车
+	$('.btn-cart').bind('click', function () {
+		var itemId = $('input[name="itemID"]').val();
+		var number = $('input[name="amount"]').val();
+
+		$.ajax({
+			url: '/cart',
+			method: 'POST',
+			data: {
+				item_id: itemId,
+				number: number
+			},
+			success:function (json) {
+				$('#myModalLabel').text('淘爱心添加到购物车');
+				$('.status').text('添加购物车成功！');
+				$('#myModal').modal('show');
+			}
+		})
+			
+	});
     //点击添加到收藏
 	$('.detail-icon').bind('click',function () {
 		var itemID = $('input[name="itemID"]').val();
@@ -9,6 +29,8 @@
 				item_id: itemID
 			},
 			success: function(){
+				$('#myModalLabel').text('淘爱心收藏');
+				$('.status').text('爱心宝贝收藏成功！');
 				$('#myModal').modal('show');
 			}
 		})
@@ -68,7 +90,9 @@
 			});
 		}
 	});
+
 });
+
 
 var getId = function () {
 	var amount = $('input[name="amount"]').val();

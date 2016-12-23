@@ -14,7 +14,7 @@ class VerificationController extends Controller
     {
         $verification = UserVerification::where('user_id', $request->user()->id)->first();
 
-        return view('user.verification.index', ['verification' => $verification]);
+        return view('user.my.verification', ['verification' => $verification]);
     }
 
     public function create()

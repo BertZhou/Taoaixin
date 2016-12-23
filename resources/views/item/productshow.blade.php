@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="shop_buy">
-                        <a href="" class="btn btn-danger">加入购物车</a>
+                        <a href="javascript:;" class="btn btn-danger btn-cart">加入购物车</a>
                         <span class="line"></span>
                         <a href="{{url('item',$item->id)}}/buy?amount=1"  class="btn btn-warning btn-buy">立即购买</a>
                     </div>
@@ -97,11 +97,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">淘爱心收藏</h4>
+                <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
             <div class="modal-body">
-                <p class="status">爱心宝贝收藏成功</p>
-
+                <p class="status"></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn  btn-fav" data-dismiss="modal">Close</button>

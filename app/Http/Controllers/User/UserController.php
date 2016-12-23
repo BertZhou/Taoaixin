@@ -8,7 +8,8 @@ use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
-
+use App\Models\Order;
+use App\Models\Item;
 class UserController extends Controller
 {
     public function index(Request $request)
@@ -77,5 +78,29 @@ class UserController extends Controller
         }
         
         return redirect('my');
+    }
+    public function message (Request $request)
+    {
+        $orders = Order::where('buyer_user_id', Session::get('userid'))->get()->keyBy('id');
+        $items = Item::whereIn('id', $orders->pluck('item_id'))->get()->keyBy('id');
+        $orders = $orders->toArray();
+        $items = $items->toArray();
+        $count = 0;
+        foreach ($orders as $order) {
+            $items[$order['item_id']]['type'] = $order['type'];
+            $items[$order['item_id']]['created'] = $order['created_at'];
+            $items[$order['item_id']]['price'] = $order['price'];
+            $items[$order['item_id']]['order_id'] = $order['id'];
+            $items[$order['item_id']]['number'] = $order['number'];
+            $items[$order['item_id']]['sum'] = $order['number'] * $order['price'];
+            if($order['type'] != 'pending'){
+                $count++;
+            }
+        }
+        return view('user.my.message',['items' => $items, 'count' => $count]);
+    }
+    public function address (Request $request)
+    {
+        return view('user.my.address');
     }
 }

@@ -36,7 +36,7 @@
                     {{--<li><a href="#">新欢</a></li>--}}
                 </ul>
             </div>
-            <a href="#" class="fl">我的消息</a>
+            <a href="{{url('my/message')}}" class="fl">我的消息</a>
             <div class="myshop fl">
                 <span class="shopping-icon">&#xe60f;</span>
                 <a href="shopping.html">购物车</a></div>

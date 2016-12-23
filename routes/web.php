@@ -48,8 +48,9 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'create', 'store']]);
     Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destroy']]);
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
-    Route::get('shopping','ShoppingController@index');
     Route::get('order/{id}/tradesuccess','OrderController@tradeSuccess');
+    Route::get('message','UserController@message');
+    Route::get('address','UserController@address');
 });
 
 Route::group(['namespace' => 'Portal'], function () {
@@ -61,7 +62,8 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('item/{id}/buy','ItemController@buy');
     Route::get('item/{id}/pay','ItemController@pay');
     Route::get('item/{id}/paysuccess','ItemController@paySuccess');
-    Route::get('cart','CartController@index');
+//    Route::get('cart','CartController@index');
+    Route::resource('cart', 'CartController', ['only' => ['index', 'show', 'create', 'store']]);
 });
 
 //登录、注册
