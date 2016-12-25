@@ -131,8 +131,8 @@ window.onload = function() {
         };
     }  
     //初始化自动轮播  
-    fnStop();
-    fnStart();
+    // fnStop();
+    // fnStart();
 };        
 //启动自动轮播
 function fnStart() {  

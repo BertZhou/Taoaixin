@@ -45,19 +45,20 @@
 		});
 	});
 
-  //收藏夹
-  $(document).ready(function(){
-    $(function(){
-    $(".fav-baobei").hover(function(){
-      $(".menu").toggle();
-      $(".fav-baobei").addClass("navigation_hover");
-    },
-      function(){
-      $(".menu").toggle();
-      $(".fav-baobei").removeClass("navigation_hover");
-    });
-  })
-  });
+	  //收藏夹
+	  $(document).ready(function(){
+		$(function(){
+
+		$(".fav-baobei").hover(function(){
+		  $(".menu").toggle();
+		  $(".fav-baobei").addClass("navigation_hover");
+		},
+		  function(){
+		  $(".menu").toggle();
+		  $(".fav-baobei").removeClass("navigation_hover");
+		});
+	  })
+	  });
 
 //发布商品选择类型按钮
 	var m = 0;
@@ -70,26 +71,18 @@
 			$("#radio2").addClass("focus");
 			$("#radio1").removeClass("focus");
 		});
-		$("#type_select1").click(function(){
-			$("#type_select1").addClass("focus");
-			$("#type_select2").removeClass("focus");
-			$("#type_select3").removeClass("focus");
-			m=1;
-		});
-		$("#type_select2").click(function(){
-			$("#type_select2").addClass("focus");
-			$("#type_select1").removeClass("focus");
-			$("#type_select3").removeClass("focus");
-			m=2;
-		});
-		$("#type_select3").click(function(){
-			$("#type_select3").addClass("focus");
-			$("#type_select1").removeClass("focus");
-			$("#type_select2").removeClass("focus");
-			m=3;
-		});
-		
-		
+
+
+        $('.create').bind('click', function () {
+           if(!$(this).hasClass('focus')){
+               $(this).addClass('focus')
+                   .parent()
+                   .siblings()
+                   .find('.create')
+                   .removeClass('focus');
+           }
+           m = $(this).data('type');
+        });
 	});
 	
 
@@ -100,7 +93,7 @@
 			$("#select").hide();
 			$("#fbsuccess").hide();
 			switch(m){
-				case 2:
+				case '1':
 				$("#goodtype").show();
 				$("#condition").show();
 				$("#goodprice").show();
@@ -109,7 +102,7 @@
 				$("#timefin").hide();
 				$("#place").show();
 				break;
-				case 1:
+				case '2':
 				 $("#goodtype").hide();
 				$("#condition").hide();
 				$("#goodprice").show();
@@ -118,7 +111,7 @@
 				$("#timefin").show();
 				$("#place").hide();
 				break;
-				case 3:
+				case '3':
 				$("#goodtype").hide();
 				$("#condition").hide();
 				$("#goodprice").hide();
@@ -144,7 +137,7 @@
 			$("#select").hide();
 			$("#fbsuccess").hide();
 			switch(m){
-				case 2:
+				case 1:
 				$("#goodtype").show();
 				$("#condition").show();
 				$("#goodprice").show();
@@ -153,10 +146,12 @@
 				$("#timefin").hide();
 				$("#place").show();
 				break;
-				case 1:
+				case 2:
 				 $("#goodtype").hide();
 				$("#condition").hide();
 				$("#goodprice").show();
+                    $('.unit').text('/小时');
+                    // $('.rows_title').hide();
 				$("#payment").hide();
 				$("#timestr").show();
 				$("#timefin").show();
@@ -166,6 +161,7 @@
 				$("#goodtype").hide();
 				$("#condition").hide();
 				$("#goodprice").hide();
+                    $('.unit').text('/小时');
 				$("#payment").show();
 				$("#timestr").hide();
 				$("#timefin").hide();

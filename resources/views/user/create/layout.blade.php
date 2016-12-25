@@ -89,6 +89,7 @@
 <script src="/js/bootstrap.min.js"></script>
 {{--<script src="js/easyPay.js"></script>--}}
 <script src="/js/product.js"></script>
+<script src="/js/create.js"></script>
 
 </body>
 </html>

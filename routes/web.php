@@ -62,8 +62,11 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('item/{id}/buy','ItemController@buy');
     Route::get('item/{id}/pay','ItemController@pay');
     Route::get('item/{id}/paysuccess','ItemController@paySuccess');
+    Route::get('item/create','ItemController@store');
 //    Route::get('cart','CartController@index');
-    Route::resource('cart', 'CartController', ['only' => ['index', 'show', 'create', 'store']]);
+
+    Route::resource('cart', 'CartController', ['only' => ['index', 'destroy', 'create', 'store']]);
+    Route::resource('create', 'SellerController', ['only' => ['index', 'destroy', 'create', 'store']]);
 });
 
 //登录、注册
@@ -78,9 +81,9 @@ Route::post("signin_check","MyController@signin_check");
 Route::post("signup_check","MyController@signup_check");
 Route::get("login_out","MyController@login_out");
 
-
 Route::post("info_check","InfoController@info_check");
 
-Route::get('create',function() {
-    return view('user.create.product');
+
+Route::get('seller',function() {
+    return view('user.seller.index');
 });

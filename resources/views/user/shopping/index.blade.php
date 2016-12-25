@@ -1,12 +1,13 @@
 @extends('user.shopping.layout')
 @section('title','购物车')
 @section('content')
+
     <div class="cart-layout clearfix">
         <div class="cart-top clearfix">
             <ul class="switch-cart">
-                <li><a href="#">全部商品</a><span class="number">15</span><span class="pipe"></span></li>
-                <li><a href="#">降价商品</a><span class="number">5</span><span class="pipe"></span></li>
-                <li><a href="#">库存紧张</a><span class="number">5</span><span class="pipe"></span></li>
+                <li><a href="#">全部商品</a><span class="number">{{count($carts)}}</span><span class="pipe"></span></li>
+                {{--<li><a href="#">降价商品</a><span class="number">5</span><span class="pipe"></span></li>--}}
+                {{--<li><a href="#">库存紧张</a><span class="number">5</span><span class="pipe"></span></li>--}}
             </ul>
             <a href="#" class="submit-btn fr">结算</a>
             <div class="cart-sum fr">¥<span class="priceTotal">0.00</span></div>
@@ -17,7 +18,7 @@
         <div class="shopTop">
             <div class="th item0">
                 <div class="cart"> <!--&nbsp;空格占位符-->
-                    <label><input class="check-all check" type="checkbox">&nbsp;全选</input></label>
+                    <label><input class="check-all check" type="checkbox">&nbsp;全选</label>
                 </div>
             </div>
             <div class="th item1">商品信息</div>
@@ -27,217 +28,71 @@
             <div class="th item5">金额（元）</div>
             <div class="th item6">操作</div>
         </div>
+        @if(count($carts) == 0)
+            <div class="text-center" style="margin:20px; text-align: center;">
+                <img src="/img/icon/icon_empty_content.png" alt="">
+            </div>
+                @else
+            @foreach($carts as $cart)
 
         <div class="shopBar clearfix">
-
             <div class="J_Order ">
                 <div class="cart-checkbox">
                     &nbsp;
-                    <input class="check-shop check" type="checkbox"></input>&nbsp;店铺：
+                    <input class="check-shop check" type="checkbox">&nbsp;店铺：
                     <a href="#">Apple</a>
                 </div>
                 <div class="shop-content clearfix">
-                    <input class="checkboxshop check" type="checkbox"></input>
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/details/taxxq-2.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生 产批次不同混合发货</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">1450.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1"></input>
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">1450.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-
-                <div class="shop-content clearfix">
-                    <input class="checkboxshop check" type="checkbox"></input>
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/details/taxxq-2.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生 产批次不同混合发货</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">1450.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1"></input>
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">1450.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="shopBar clearfix">
-            <div class="J_Order clearfix">
-                <div class="cart-checkbox">
-                    &nbsp;
-                    <input class="check-shop check" type="checkbox"></input>&nbsp;店铺：
-                    <a href="#">常山胡柚</a>
-                </div>
-                <div class="shop-content clearfix">
-                    <input class="checkboxshop check" type="checkbox"></input>
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/shopping/1.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">胡柚起源于常山县青石乡胡家村，是优良的柚子自然杂交群体品种</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">13.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1"></input>
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">13.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="shopBar">
-            <div class="J_Order clearfix">
-                <div class="cart-checkbox">
-                    &nbsp;
-                    <input class="check-shop check" type="checkbox"></input>&nbsp;店铺：
-                    <a href="#">常山胡柚</a>
-                </div>
-                <div class="shop-content clearfix">
-
-                    <input class="checkboxshop check" type="checkbox"></input>
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/shopping/1.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">胡柚起源于常山县青石乡胡家村，是优良的柚子自然杂交群体品种</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">13.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1"></input>
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">13.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="shopBar clearfix">
-            <div class="J_Order clearfix">
-                <div class="cart-checkbox">
-                    &nbsp;
-                    <input class="check-shop check" type="checkbox"></input>&nbsp;店铺：
-                    <a href="#">常山胡柚</a>
-                </div>
-                <div class="shop-content clearfix">
-
-                    <input class="checkboxshop check" type="checkbox"></input>
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/shopping/1.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">胡柚起源于常山县青石乡胡家村，是优良的柚子自然杂交群体品种</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">13.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1"></input>
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">13.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="shopBar">
-            <div class="J_Order clearfix">
-                <div class="cart-checkbox">
-                    &nbsp;
-                    <input class="check-shop check" type="checkbox">&nbsp;店铺：
-                    <a href="#">常山胡柚</a>
-                </div>
-                <div class="shop-content clearfix">
-
                     <input class="checkboxshop check" type="checkbox">
                     <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/shopping/1.jpg"></a>
+                        <a href="#" class="productPic"><img src="{{$cart->url}}"></a>
                     </div>
                     <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">胡柚起源于常山县青石乡胡家村，是优良的柚子自然杂交群体品种</a></p>
+                        <p class="cart-link"><a href="#">{{$cart->content}}</a></p>
                     </div>
                     <div class="td td-props">类型：</div>
-                    <div class="td td-price">13.00</div>
+                    <div class="td td-price">{{$cart->price}}</div>
                     <div class="td td-amount">
                         <span class="prereduce"></span>
-                        <input class="text" type="text" value="1">
+                        <input class="text" type="text" value="{{$cart->number}}">
                         <span class="add">+</span>
                     </div>
-                    <div class="td td-total">13.00</div>
+                    <div class="td td-total">{{$cart->sum}}</div>
                     <div class="td td-op">
                         <a href="#">移出收藏夹</a>
+                        <input type="hidden" value="{{$cart->id}}" name="cart">
                         <a href="#" class="delete">删除</a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="shopBar">
-            <div class="J_Order clearfix">
-                <div class="cart-checkbox">
-                    &nbsp;
-                    <input class="check-shop check" type="checkbox">&nbsp;店铺：
-                    <a href="#">常山胡柚</a>
-                </div>
-                <div class="shop-content clearfix">
-                    <input class="checkboxshop check" type="checkbox">
-                    <div class="td ">
-                        <a href="#" class="productPic"><img src="/img/shopping/1.jpg"></a>
-                    </div>
-                    <div class="td cart-shopInfo">
-                        <p class="cart-link"><a href="#">胡柚起源于常山县青石乡胡家村，是优良的柚子自然杂交群体品种</a></p>
-                    </div>
-                    <div class="td td-props">类型：</div>
-                    <div class="td td-price">13.00</div>
-                    <div class="td td-amount">
-                        <span class="prereduce"></span>
-                        <input class="text" type="text" value="1">
-                        <span class="add">+</span>
-                    </div>
-                    <div class="td td-total">13.00</div>
-                    <div class="td td-op">
-                        <a href="#">移出收藏夹</a>
-                        <a href="#" class="delete">删除</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+                {{--<div class="shop-content clearfix">--}}
+                    {{--<input class="checkboxshop check" type="checkbox">--}}
+                    {{--<div class="td ">--}}
+                        {{--<a href="#" class="productPic"><img src="/img/details/taxxq-2.jpg"></a>--}}
+                    {{--</div>--}}
+                    {{--<div class="td cart-shopInfo">--}}
+                        {{--<p class="cart-link"><a href="#">全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后银 MD531CH/A 银白两色生 产批次不同混合发货</a></p>--}}
+                    {{--</div>--}}
+                    {{--<div class="td td-props">类型：</div>--}}
+                    {{--<div class="td td-price">1450.00</div>--}}
+                    {{--<div class="td td-amount">--}}
+                        {{--<span class="prereduce"></span>--}}
+                        {{--<input class="text" type="text" value="1">--}}
+                        {{--<span class="add">+</span>--}}
+                    {{--</div>--}}
+                    {{--<div class="td td-total">1450.00</div>--}}
+                    {{--<div class="td td-op">--}}
+                        {{--<a href="#">移出收藏夹</a>--}}
+                        {{--<a href="#" class="delete">删除</a>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+
+            </div>
+        </div>
+        @endforeach
+        @endif
         <div class="floatBar" id="floatBar">
-            <label class="select-all fl"><input class="check-all check" type="checkbox">&nbsp;全选</input></label>
+            <label class="select-all fl"><input class="check-all check" type="checkbox">&nbsp;全选</label>
             <div class="operations">
                 <a href="#" class="deleteAll fl" id="deleteAll">删除</a>
                 <a href="#" class="clear fl">清除消失宝贝</a>
@@ -245,7 +100,7 @@
             </div>
 
             <div class="closing fr" >
-                <a href="order.html">
+                <a href="javascript:;" class="jiesuan">
                     <input type="submit" id="jiesuan" disabled="true" value="结算">
                 </a>
             </div>
@@ -264,6 +119,7 @@
         </div>
     </div>
     <div class="success">
+        <input type="hidden" value="" name="id">
         <div class="prompt">
             <p>删除宝贝</p>
             <span class="icon-del">&#xe60a;</span>

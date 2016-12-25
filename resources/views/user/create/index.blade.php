@@ -42,35 +42,36 @@
                         </div>
 
                     </div>
-                    <div class="rows_wrap clearfix" id="goodtype">
-                        <div class="rows_content">
-                            <div class="volatile_wrap">
-                                <div class="volatile_required_wrap clearfix">
-                                    <div class="selectordef" style="width:165px;">
-                                        <div class="title" id="name">
-                                            <span class="seled">请选择</span>
-                                            <span class="arrow"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rows_title">
-                        	<span>
-                            	<span class="rows_title_star">*</span>
-                                类别
-                            </span>
-                        </div>
-                    </div>
+                    {{--<div class="rows_wrap clearfix" id="goodtype">--}}
+                        {{--<div class="rows_content">--}}
+                            {{--<div class="volatile_wrap">--}}
+                                {{--<div class="volatile_required_wrap clearfix">--}}
+                                    {{--<div class="selectordef" style="width:165px;">--}}
+                                        {{--<div class="title" id="name">--}}
+                                            {{--<span class="seled">请选择</span>--}}
+                                            {{--<span class="arrow"></span>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="rows_title">--}}
+                        	{{--<span>--}}
+                            	{{--<span class="rows_title_star">*</span>  --}}
+                                {{--类别--}}
+                            {{--</span>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <div class="rows_wrap clearfix" id="condition">
                         <div class="rows_content">
                             <div class="volatile_wrap">
                                 <div class="volatile_required_wrap clearfix">
                                     <div class="selectordef" style="width: 150px;">
-                                        <div class="title">
-                                            <span class="seled new-old">请选择</span>
-                                            <span class="arrow"></span>
-                                        </div>
+                                        <input type="text" value="" name="">
+                                        {{--<div class="title">--}}
+                                            {{--<span class="seled new-old">请选择</span>--}}
+                                            {{--<span class="arrow"></span>--}}
+                                        {{--</div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -86,7 +87,8 @@
                         <div class="rows_content">
                             <div class="input_text_wrap clearfix success">
                                 <input style="width: 132px;"type="inputText" id="product-price">
-                                <span>元</span>
+                                {{--@if($user->type)--}}
+                                <span class="unit">元</span>
                             </div>
                         </div>
                         <div class="rows_title">
@@ -99,7 +101,7 @@
                     <div class="rows_wrap clearfix" id="payment">
                         <div class="rows_content">
                             <div class="input_text_wrap clearfix success">
-                                <input style="width: 132px;"type="inputText" id="time-price">
+                                <input style="width: 132px;"type="inputText" id="time-price"><span>/小时</span>
                             </div>
                         </div>
                         <div class="rows_title">
@@ -153,13 +155,13 @@
                     <div class="rows_wrap clearfix">
                         <div class="rows_content">
                             <div class="input_text_wrap clearfix success">
-                                <input style="width: 395px;"type="inputText">
+                                <input style="width: 395px;"type="inputText" name="name">
                             </div>
                         </div>
                         <div class="rows_title">
                         	<span>
                             	<span class="rows_title_star">*</span>
-                                商品标题
+                                商品名
                             </span>
                         </div>
                     </div>
@@ -223,7 +225,7 @@
                                                 </div>
                                             </div>
                                             <div id='editor' class='span9' style='' contenteditable>
-                                                <p>请描述商品详细情况</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -325,22 +327,22 @@
                         <div class="type">
                             <ul>
                                 <li>
-                                    <div id="type_select1" data-type="time" id="time">
+                                    <div id="type_select1" data-type="2" id="time" class="create">
                                         <i></i>
+                                        <label for="time"><span class="xuanxiang">爱心时间</span></label>
                                     </div>
-                                    <label for="time"><span class="xuanxiang">爱心时间</span></label>
                                 </li>
                                 <li>
-                                    <div id="type_select2" data-type="product">
+                                    <div id="type_select2" data-type="1" class="create">
                                         <i></i>
+                                        <label class="xuanxiang">爱心商品</label>
                                     </div>
-                                    <span class="xuanxiang">爱心商品</span>
                                 </li>
                                 <li>
-                                    <div id="type_select3" data-type="job">
+                                    <div id="type_select3" data-type="3" class="create">
                                         <i></i>
+                                        <label class="xuanxiang">爱心岗位</label>
                                     </div>
-                                    <span class="xuanxiang">爱心岗位</span>
                                 <li>
                             </ul>
                         </div>

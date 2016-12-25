@@ -9,6 +9,8 @@
     <link type="text/css" rel="stylesheet" href="/css/shopping.css">
 </head>
 <body>
+<div class="focus">
+</div>
     @include('layout.tao.hearder')
     @include('user.shopping.menu')
     @yield('content')

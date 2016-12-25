@@ -114,6 +114,8 @@ $(function () {
   var target;//将要删除的元素
   $('.delete').bind('click', function () {
       var flag = 0;
+      id = $(this).prev().val();
+      $('input[name="id"]').val(id);
       openDelProWin(flag);
       target = $(this).parent().parent();
       targetLength = $(this).parent().parent().siblings('div.shop-content').length;
@@ -137,14 +139,25 @@ $(function () {
   $('.btn_close').bind('click', closeDelProWin);
   //点击确认删除宝贝 进行DOM操作，删除响应宝贝 目前没有跟后台交互 20160729
   $('.btn_confirm').bind('click', function () {
-      if(targetLength) {
-        target.remove(); 
-      }else {
-        target.parent().remove();
-      }
-      closeDelProWin();
-      calcProdSubTotal();
-      return false;
+      // var id = 10;
+      $.ajax({
+          url: '/cart/' + id,
+          method: 'DELETE',
+          data: {
+              id : id
+          },
+          success: function () {
+              window.location.reload();
+              // if(targetLength) {
+              //     target.remove();
+              // }else {
+              //     target.parent().remove();
+              // }
+              // closeDelProWin();
+              // calcProdSubTotal();
+              // return false;
+          }
+      });
   });
   /**
   * 对底部菜单监听scroll事件 绑定在滚动的元素上
@@ -195,6 +208,21 @@ $(function () {
       }
   });
 
+  //  点击结算
+    $('.jiesuan').bind('click', function () {
+        var _self = this;
+        var $shopparent = $('div.shop-content');
+
+        $($shopparent).each(function () {
+            var isChecked = $(this).find('input').prop('checked');
+            if(isChecked) {
+                var number = $(this).find('.text').val();
+                var id = $(this).find('input[name="cart"]').val();
+                var url = '/item/' + id + '/buy?amount=' + number;
+                window.location.href = 'http://' + window.location.host + url;
+            }
+        });
+    });
   // js end
 });
 
@@ -254,6 +282,7 @@ $(function () {
   var openDelProWin = function (flag) {
       $('.focus').css({'z-index':'10','background-color':'black','-webkit-filter':'opacity(70%)'});
       flag ?$('.proDelete p').text('确认要删除这些宝贝吗？'): $('.proDelete p').text('确认要删除该宝贝吗？');
+
       $(".success").show();
       $('.rewrite').hide();
   };

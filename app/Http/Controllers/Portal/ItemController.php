@@ -53,7 +53,7 @@ class ItemController extends Controller
             'offset'    =>  'integer|min:0',
             'limit'     =>  'integer|min:0'
         ]);
-        $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get()->keyBy('id');
+        $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->orderBy('id','desc')->get()->keyBy('id');
         return view('item.items',['items' => $items]);
     }
     public function rateShow(Request $request, $order_id)
@@ -95,6 +95,14 @@ class ItemController extends Controller
         $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
         $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
         return view("user.buy.paySuccess",["items"=>$item,"seller"=>$seller,"sum"=>$sum,"order"=>$order, 'address' => $address]);
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'item_id'   =>  'required|integer|min:0',
+            'note'      =>  'string',
+            'type'    =>   'integer|min:0'
+        ]);
     }
 
 }

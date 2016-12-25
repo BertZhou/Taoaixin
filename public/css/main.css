@@ -837,7 +837,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
 
 
 
-.col-main{ width:988px; float:right;}
+.col-main{ width:888px; float:right;}
 
 .seller-info {
     width: 988px;
@@ -973,7 +973,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
   margin-right: 14px;
   margin-top:20px;
   float:left;
-  width:488px;
+  width:388px;
   position: relative;
   border: 1px solid #E0E0E0;
   margin-bottom: 15px;
@@ -1239,6 +1239,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
     margin-right: 15px;
 }
 .radio_wrap .radio span {
+	cursor: pointer;
     margin-left: 20px;
     float: left;
     font-size: 14px;
@@ -1333,7 +1334,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
     *margin-top: 0;
     float: left;
     line-height: 34px;
-    text-align: center;
+    /*text-align: center;*/
     _text-align: left;
 }
 .editor {
@@ -1359,6 +1360,7 @@ ol.tb-rate-nav-steps li.fklast-current{ background-position:100% -138px;}
     width: 16px;
     height: 16px;
     position: absolute;
+	margin-top:5px;
 }
 
 .type_select li{ line-height:16px; padding-bottom:20px;}

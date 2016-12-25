@@ -3,7 +3,8 @@
 
 /*公用*/
 .comWidth{width:1100px; margin-left:auto; margin-right:auto;}
-.smallcomWidth{width:1000px; margin-left:auto; margin-right:auto;}
+.smallcomWidth{width:1000px; margin-left:auto; margin-right:auto;
+    background: #fff;}
 .leftArea{float:left;}
 .rightArea{float:right;}
 .hide{display:none;}

@@ -39,7 +39,7 @@
             <a href="{{url('my/message')}}" class="fl">我的消息</a>
             <div class="myshop fl">
                 <span class="shopping-icon">&#xe60f;</span>
-                <a href="shopping.html">购物车</a></div>
+                <a href="{{url('cart')}}">购物车</a></div>
             <div class="favorites fl" id="favorites">
                 <span class="icon-fav">&#xe610;</span>
                 <a href="{{url('my/favorite')}}">收藏夹</a>
@@ -49,9 +49,9 @@
                 </ul>
             </div>
             <div class="seller fl" id="seller">
-                <a href="sellerCenter.html">卖家中心</a>
+                <a href="{{url('seller')}}">卖家中心</a>
                 <ul class="mune" id="seller_mune">
-                    <li><a href="sellerCenter.html">免费开店</a></li>
+                    <li><a href="{{url('create')}}">上架商品</a></li>
                     <li><a href="#">已卖出的宝贝</a></li>
                     <li><a href="#">出售中宝贝</a></li>
                     <li><a href="#">卖家资质</a></li>
