@@ -12,12 +12,30 @@
     //background: url(../images/icon/address.png) no-repeat;
     .list-group-item {
       border-top:none;
+      select {
+
+        &.identity {
+          margin-left:24px;
+          display: inline-block;
+          width:20%;
+        }
+      }
       input {
         &.form-control {
           width:60%;
           margin-left:10px;
           display: inline-block;
         }
+        &.uploder {
+          top: 0;
+          opacity:0;
+          position: absolute;
+          width: 70%;
+          height: 100%;
+        }
+      }
+      .col-md-6 {
+        position: relative;
       }
       span {
         &.choose-span {

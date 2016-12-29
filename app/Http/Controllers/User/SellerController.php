@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Portal;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -32,7 +32,7 @@ class SellerController extends Controller
             'price'             =>  $message['price'],
             'type'              =>  $message['type'],
             'content'           =>  $message['content'],
-            'url'               =>  'http://o7jajeu9a.bkt.clouddn.com/undetermined.jpg'
+            'url'               =>  'http://o7jajeu9a.bkt.clouddn.com/undetermined2.jpg'
         ]);
 
         return response()->json(['message' => 'success']);

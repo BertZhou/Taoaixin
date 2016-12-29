@@ -22,5 +22,8 @@
     <script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="/js/myjs.js"></script>
     <script type="text/javascript" src="/js/my.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui/jquery.citys.js"></script>
+    <script type="text/javascript" src="/js/rate.js"></script>
+    <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
 </body>
 </html>

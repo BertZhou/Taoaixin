@@ -46,7 +46,8 @@
                 message: message
             },
             success: function (json) {
-                debugger
+                $('#Item_details').hide();
+                $('#fbsuccess').show();
             }
         })
     });

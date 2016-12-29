@@ -31,7 +31,6 @@ class RateController extends Controller
 //        }
 
         $item = Item::find($order->item_id);
-//
         $rate = ItemRate::create([
             'order_id'          =>  $order->id,
             'item_id'           =>  $item->id,

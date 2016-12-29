@@ -45,7 +45,7 @@
             <h3 class="shopDes_tit">商品评价</h3>
             <div class="score_box clearfix">
                 <div class="score">
-                    <span>4.7</span><em>分</em>
+                    {{--<span>4.7</span><em>分</em>--}}
                 </div>
                 <div class="score_speed">
                     <ul class="score_speed_text">

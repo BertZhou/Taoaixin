@@ -9,12 +9,12 @@
                 <input type="button" value="搜 索" class="search_btn">
                 </span>
         </div>
-        <a href="shopping.html">
+        <a href="{{url('cart')}}">
             <div class="shopCar fr">
                 <!-- <span class="shopText fl">购物车</span> -->
                 <span class="shopping-icon fl">&#xe60f;</span>
                 <span class="shoppingCar fl">购物车</span>
-                <span class="shopNum fl">0</span>
+                {{--<span class="shopNum fl">0</span>--}}
             </div>
         </a>
     </div>

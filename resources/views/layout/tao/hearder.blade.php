@@ -51,7 +51,7 @@
             <div class="seller fl" id="seller">
                 <a href="{{url('seller')}}">卖家中心</a>
                 <ul class="mune" id="seller_mune">
-                    <li><a href="{{url('create')}}">上架商品</a></li>
+                    <li><a href="{{url('my/create')}}">上架商品</a></li>
                     <li><a href="#">已卖出的宝贝</a></li>
                     <li><a href="#">出售中宝贝</a></li>
                     <li><a href="#">卖家资质</a></li>

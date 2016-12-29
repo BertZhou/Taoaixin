@@ -17,7 +17,7 @@
             {{--<input type="button" value="搜  索" class="sell-tab-search-btn fr">--}}
         {{--</div>--}}
         <div class="yijianshangjia fr">
-            <a href="{{'create'}}"><img src="/img/seller center/sell-1.gif"></a>
+            <a href="{{'my/create'}}"><img src="/img/seller center/sell-1.gif"></a>
         </div>
     </div>
 </div>

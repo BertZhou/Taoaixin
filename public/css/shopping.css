@@ -131,7 +131,8 @@
 }
 
 .floatBar {
-  position: fixed;
+  /*position: fixed;*/
+    position: relative;
   bottom :0px;
 }
 .floatBar-after {

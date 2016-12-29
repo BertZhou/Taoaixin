@@ -23,7 +23,7 @@
                         <div class="panel-body row">
                             <div class="col-md-3">
                                 <img src="{{$item['url']}}"  class="message-img" alt="">
-                                <p><span class="time">半个月前</span>来自 <span class="t-delivery">淘爱心物流</span></p>
+                                <p><span class="time">一分钟前</span>来自 <span class="t-delivery">淘爱心物流</span></p>
                             </div>
                             <ul class="list-group col-md-9">
                                 <li class="list-group-item">订单号: <span>20161220121212</span></li>

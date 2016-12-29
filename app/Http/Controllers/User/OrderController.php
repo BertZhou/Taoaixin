@@ -34,6 +34,12 @@ class OrderController extends Controller
             $items[$order['item_id']]['number'] = $order['number'];
             $items[$order['item_id']]['sum'] = $order['number'] * $order['price'];
         }
+
+//        $items = DB::table('items')->leftJoin('orders', 'items.id', 'orders.item_id')->get();
+//        foreach( $items as $item) {
+//            $item->sum = $order['number'] * $order['price'];
+//        }
+
         return view('user.my.order', ['items' => $items]);
     }
 

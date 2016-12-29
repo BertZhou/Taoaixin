@@ -19,7 +19,7 @@ class CartController extends Controller
             'limit'     =>  'integer|min:0'
         ]);
 //        $carts = DB::table('carts')->get();
-        $carts = DB::table('carts')->leftJoin('items', 'carts.item_id', 'items.id')->get();
+        $carts = DB::table('carts')->where('buy_user_id', Session::get('userid'))->leftJoin('items', 'carts.item_id', 'items.id')->get();
 //        var_dump($carts);
         return view('user.shopping.index',['carts' => $carts]);
     }

@@ -51,6 +51,9 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::get('order/{id}/tradesuccess','OrderController@tradeSuccess');
     Route::get('message','UserController@message');
     Route::get('address','UserController@address');
+
+    Route::resource('create', 'SellerController', ['only' => ['index', 'destroy', 'create', 'store']]);
+
 });
 
 Route::group(['namespace' => 'Portal'], function () {
@@ -62,11 +65,10 @@ Route::group(['namespace' => 'Portal'], function () {
     Route::get('item/{id}/buy','ItemController@buy');
     Route::get('item/{id}/pay','ItemController@pay');
     Route::get('item/{id}/paysuccess','ItemController@paySuccess');
-    Route::get('item/create','ItemController@store');
+//    Route::get('item/create','ItemController@store');
 //    Route::get('cart','CartController@index');
-
+    Route::get('search','ItemController@search');
     Route::resource('cart', 'CartController', ['only' => ['index', 'destroy', 'create', 'store']]);
-    Route::resource('create', 'SellerController', ['only' => ['index', 'destroy', 'create', 'store']]);
 });
 
 //登录、注册

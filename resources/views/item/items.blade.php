@@ -38,13 +38,14 @@
             <div class="col-md-10 product-list">
                 <div class="col-lg-12">
                     <ul class="product-nav-bar clearfix">
-                        <li class="col-lg-3 "><a href="{{url('item?type=0')}}">爱心推荐</a></li>
-                        <li class="col-lg-3 "><a href="{{url('item?type=1')}}">爱心商品</a></li>
-                        <li class="col-lg-3"><a href="{{url('item?type=3')}}">爱心岗位</a></li>
-                        <li class="col-lg-3"><a href="{{url('item?type=2')}}">爱心时间</a></li>
+                        <li class="col-lg-3 "><a href="{{url('item?type=0')}} " data-type="0">爱心推荐</a></li>
+                        <li class="col-lg-3 "><a href="{{url('item?type=1')}}" data-type="1">爱心商品</a></li>
+                        <li class="col-lg-3"><a href="{{url('item?type=3')}}" data-type="3">爱心岗位</a></li>
+                        <li class="col-lg-3"><a href="{{url('item?type=2')}}" data-type="2">爱心时间</a></li>
                     </ul>
                 </div>
                 @foreach($items as $item)
+                    <input type="hidden" id="selectedMenu" value="{{$type}}">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="product-item">
                         <div class="product-img">

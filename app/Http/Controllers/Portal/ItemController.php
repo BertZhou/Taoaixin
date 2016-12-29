@@ -54,7 +54,7 @@ class ItemController extends Controller
             'limit'     =>  'integer|min:0'
         ]);
         $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->orderBy('id','desc')->get()->keyBy('id');
-        return view('item.items',['items' => $items]);
+        return view('item.items',['items' => $items, 'type' => $type]);
     }
     public function rateShow(Request $request, $order_id)
     {
@@ -79,7 +79,11 @@ class ItemController extends Controller
         $sum=$order->number*$order->price;
         $seller=DB::table("users")->where("id",$item->user_id)->first();
         $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
-        $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
+        if(empty($info)){
+            $address = '请添加地址';
+        }else {
+            $address = $info->province.' '.$info->city.' '.$info->area.' '.$info->address.' '.$info->name.' '.$info->mobile;
+        }
         return view("user.buy.pay",["items"=>$item,"seller"=>$seller,"sum"=>$sum, 'address'=>$address]);
     }
     public function paySuccess($id)
@@ -104,5 +108,35 @@ class ItemController extends Controller
             'type'    =>   'integer|min:0'
         ]);
     }
+    public function search(Request $request) {
+        $this->validate($request, [
+            'offset'    =>  'integer|min:0',
+            'limit'     =>  'integer|min:0',
+            'name'      =>  'string',
+            'price_min' =>  'integer|min:0',
+            'price_max' =>  'integer|min:0',
+            'order'     =>  'in:view,sold,price,id',
+            'by'        =>  'in:asc,desc',
+        ]);
+        $type = $request->get("type");
+        $search = array_filter($request->only('name', 'price_min', 'price_max', 'order', 'by'), function($var){
+            return !empty($var);}
+            );
 
+        $items = new Item;
+        if (isset($search['name'])) {
+            $items = $items->where('name', 'LIKE', '%'.$search['name'].'%');
+        }
+        if (isset($search['price_min'])) {
+            $items = $items->where('price', '>', $search['price_min']);
+        }
+        if (isset($search['price_max'])) {
+            $items = $items->where('price', '<', $search['price_max']);
+        }
+        $items = $items->skip($request->input('offset', 0))->take($request->input('limit', 10))->orderBy($request->input('order', 'id'), $request->input('by', 'DESC'))->get();
+        $sellers = User::whereIn('id', $items->pluck('user_id'))->get()->keyBy('id');
+
+        return view('item.items',['items' => $items, 'type' => $type]);
+//        return response()->json(['items' => $items, 'sellers' => $sellers, 'search' => $search]);
+    }
 }

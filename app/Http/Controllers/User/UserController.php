@@ -101,6 +101,7 @@ class UserController extends Controller
     }
     public function address (Request $request)
     {
-        return view('user.my.address');
+        $info = UserProfile::where('user_id', Session::get('userid'))->orderBy('id','desc')->first();
+        return view('user.my.address',['info' => $info]);
     }
 }

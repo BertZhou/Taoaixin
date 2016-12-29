@@ -58,30 +58,36 @@ $(function () {
             $('#myModal').modal('show');
          },
          error: function () {
-            debugger
          }
       })
    });
 
 //   点击提交订单按钮
    $('.btn-submit').bind('click', function () {
+
       var lastIndex = window.location.href.lastIndexOf('=') + 1;
       var number =  window.location.href.substr(lastIndex);
       var itemID = $('input[name="itemID"]').val();
       var note = $('input[name="note"]').val();
       var url = '/item/' + itemID + '/pay';
-      $.ajax({
-         url: '/my/order',
-         method: 'POST',
-         data: {
-            number: number,
-            item_id: itemID,
-            note: note
-         },
-         success: function () {
-            window.location.href = url;
-         }
-      })
+       var name = $('input[name="name"]').val();
+       if(!name) {
+           $('#failModal').modal('show');
+       }else {
+           $.ajax({
+               url: '/my/order',
+               method: 'POST',
+               data: {
+                   number: number,
+                   item_id: itemID,
+                   note: note
+               },
+               success: function () {
+                   window.location.href = 'http://' + window.location.host + url;
+               }
+           })
+
+       }
    });
 //   点击添加到购物车
 

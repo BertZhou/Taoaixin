@@ -1,4 +1,28 @@
 ;$(function () {
+    //搜索
+    $('.search_btn').bind('click', function () {
+        var type = location2obj(window.location.href);
+        var name = $('.search_text').val();
+       $.ajax ({
+           url: 'search',
+           data: {
+               name: name
+           },
+           success:function () {
+               window.location.href = 'http://' + window.location.host + '/search?type=' + type.type + '&name=' + name;
+           }
+       })
+    });
+
+    //上侧栏选中效果
+    $('.col-lg-3 a').each(function () {
+        var selectedValue = $('#selectedMenu').val();
+        var this_val = $(this).data('type');
+        if(this_val == selectedValue && selectedValue != undefined) {
+            $(this).toggleClass('active');
+        }
+    });
+
     //点击添加到购物车
 	$('.btn-cart').bind('click', function () {
 		var itemId = $('input[name="itemID"]').val();
@@ -103,4 +127,19 @@ var setURL = function (amount) {
 	var id = getId();
 	var url = '/item/'+ id + '/buy?amount=' + amount;
 	$('.btn-buy').attr('href', url);
+};
+var  location2obj = function(url) {
+    url = url || window.location.href;
+    if (url.indexOf('?') == -1) {
+        return {};
+    }
+    url = url.substr(url.indexOf('?') + 1);
+    url = url.substring(0, url.lastIndexOf('#') == -1 ? undefined : url.lastIndexOf('#'));
+    var params = url.split('&');
+    var obj = {};
+    for ( var i = 0, len = params.length; i < len; i++) {
+        var ps = params[i].split('=');
+        obj[ps[0]] = decodeURI(ps.slice(1).join('='));
+    }
+    return obj;
 };
