@@ -60,7 +60,8 @@ class ItemController extends Controller
     {
         $order = Order::find($order_id);
         $item = Item::find($order->item_id);
-        return view('user.buy.rate', ['item' => $item, 'orderId' => $order->id]);
+        $rates = ItemRate::where('item_id', $item->id)->skip($request->input('offset', 0))->take($request->input('limit', 10))->get()->keyBy('id');
+        return view('user.buy.rate', ['item' => $item, 'orderId' => $order->id, 'rates' => $rates]);
     }
     public function buy(Request $request,$id)
     {

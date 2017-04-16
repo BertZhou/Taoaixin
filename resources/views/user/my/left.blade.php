@@ -16,6 +16,7 @@
             <dd><a href="#">网站提醒</a></dd>
             <dd><a href="#">应用授权</a></dd>
             <dd><a href="#">分享设定</a></dd>
+            <dd><a href="{{url('my/ambassador')}}" data-content="ambassador">爱心大使</a></dd>
         </dl>
     </div>
 </div>

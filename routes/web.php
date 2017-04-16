@@ -48,6 +48,7 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth', 'namespace' => 'User'], 
     Route::resource('report', 'ReportController', ['only' => ['index', 'show', 'create', 'store']]);
     Route::resource('favorite', 'FavoriteController', ['only' => ['index', 'store', 'destroy']]);
     Route::resource('verification', 'VerificationController', ['only' => ['index', 'create', 'store']]);
+    Route::resource('ambassador', 'AmbassadorController', ['only' => ['index', 'create', 'store']]);
     Route::get('order/{id}/tradesuccess','OrderController@tradeSuccess');
     Route::get('message','UserController@message');
     Route::get('address','UserController@address');

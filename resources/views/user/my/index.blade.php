@@ -18,7 +18,18 @@
                     </ul>
                 </div>
             </div>
-
+            <div class="panel panel-default">
+            <div class="panel-heading">
+                爱心大使
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">等级：<span  style="color:red;margin-right: 20px";>LV4 </span>成长值: <span  style="color:red";>15926</span></li>
+                    <li class="list-group-item">大使特权: <a href="#"><span style="word-spacing:40px; color: red">查看特权     发布特权     购买特权<br></span></a></li>
+                    <li class="list-group-item">联系QQ： <span>191995762</span></li>
+                </ul>
+            </div>
+        </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">

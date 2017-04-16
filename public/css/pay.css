@@ -181,7 +181,7 @@ div1{
 /*导航*/
 .navBox{height:35px; /*background-color:#AF1B21;*/ color:#fff;}
 .navBoxother{height:35px; background-color:#AF1B21; color:#fff;}
-.shopClass{width:190px;position:relative;background-color:#AF1B21;}
+.shopClass{width:162px;position:relative;background-color:#AF1B21;}
 .shopClass h3{text-align:center; line-height:35px;}
 .shopClass_icon{width:11px; height:7px; overflow:hidden; background-position:0 -39px; display:inline-block; margin-left:11px;}
 /*1200px  主页*/

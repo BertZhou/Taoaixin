@@ -20,7 +20,7 @@
         </ol>
 @endsection
 @section('content')
-            {{--<div class="shopdetail tb-rate-mb-m">--}}
+            <!-- {{--<div class="shopdetail tb-rate-mb-m">--}}
                 {{--<div class="hd"><p>店铺优惠</p></div>--}}
                 {{--<div class="bd">--}}
                     {{--<a class="shop-logo"><img width="70" height="70" src="/img/evaluation/taxpj-1.png"></a>--}}
@@ -30,7 +30,7 @@
                         {{--<dd>宝贝与描述相符：<span class="c-value-no c-value-4d9"><em></em></span>4.9</dd>--}}
                     {{--</dl>--}}
                 {{--</div>--}}
-            {{--</div>--}}
+            {{--</div>--}} -->
             <input type="hidden" value="{{$orderId}}" name="orderId">
             <div class="itemlist tb-rate-mb-m" style="border: 1px solid #DDD;">
                 <div class="listhd">
@@ -121,21 +121,21 @@
                         <div class="score_num">
                             4.7<i></i>
                         </div>
-                        <p>共18939位网友参与评分</p>
+                        <p>共{{count($rates)}}位网友参与评分</p>
                     </div>
                 </div>
                 <div class="review_tab">
                     <ul class="review fl">
                         <li><a href="#" class="active">全部</a></li>
-                        <li><a href="#">满意（3121）</a></li>
+                        <!-- <li><a href="#">满意（3121）</a></li>
                         <li><a href="#">一般（321）</a></li>
-                        <li><a href="#">不满意（1121）</a></li>
+                        <li><a href="#">不满意（1121）</a></li> -->
                     </ul>
                     <div class="review_sort fr">
                         <a href="#" class="review_time">时间排序</a><a href="#" class="review_reco">推荐排序</a>
                     </div>
                 </div>
-                <div class="review_listBox">
+                <!-- <div class="review_listBox">
                     <div class="review_list clearfix">
                         <div class="review_userHead fl">
                             <div class="review_user">
@@ -169,7 +169,29 @@
                             <p>东西很好，好评</p>
                             <p><a href="#" class="ding">顶(0)</a><a href="#" class="cai">踩(0)</a></p>
                         </div>
+                    </div> -->
+                
+                <!--实时评论部分-->
+                @foreach($rates as $rate)
+                    <div class="review_list clearfix">
+                        <div class="review_userHead fl">
+                            <div class="review_user">
+                                <img src="/img/logo/taxyh-2.jpg" alt="">
+                                <p>{{$rate['name']}}</p>
+                                <p>爱心会员</p>
+                            </div>
+                        </div>
+                        <div class="review_cont">
+                            <div class="review_t clearfix">
+                                <div class="starsBox fl"><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span></div>
+                                <span class="stars_text fl">{{$rate['stars']}}分 满意</span>
+                            </div>
+                            <p>{{$rate['content']}}</p>
+                            <p><a href="#" class="ding">顶(0)</a><a href="#" class="cai">踩(0)</a></p>
+                        </div>
                     </div>
+                @endforeach
+
                     <div class="hr_25"></div>
                 </div>
             </div>

@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="/css/main.css">
     <link type="text/css" rel="stylesheet" href="/css/main2.css">
     <link type="text/css" rel="stylesheet" href="/css/main.min.css">
+    <link type="text/css" rel="stylesheet" href="/css/paySuccess.css">
     <link rel="shortcut icon" href="/img/logo/tax-logo.ico" />
 </head>
 <body>

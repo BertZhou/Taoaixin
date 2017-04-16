@@ -12,7 +12,7 @@
 </head>
 
 
-<body>
+<body style="margin-top: 0;">
 <div class="headerBar">
 	<div class="logoBar reg_logo">
 		<div class="comWidth clearfix">

@@ -12,4 +12,29 @@ $(function () {
             $(this).toggleClass('active');
         }
     });
+    //爱心大使认证方式
+    $('.yonghu').bind("change",function(){
+        if($(this).val()=="0"){
+            $('.integral').show();
+            $('.personalUser').show();
+            $('.deposit').hide();
+            $('.enterpriseUser').hide();
+        }
+        else if($(this).val()=="1"){
+            $('.deposit').hide();
+            $('.integral').hide();
+            $('.personalUser').hide();
+            $('.enterpriseUser').show();
+        }
+    });
+    $('.authentication').bind("change",function(){
+    	if($(this).val()=="0"){
+    		$('.integral').show();
+    		$('.deposit').hide();
+    	}
+    	else if($(this).val()=="1"){
+    		$('.deposit').show();
+    		$('.integral').hide();
+    	}
+    });
 });

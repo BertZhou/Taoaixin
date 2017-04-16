@@ -1,7 +1,10 @@
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -51,11 +54,14 @@
     "config": {
         "preferred-install": "dist"
     },
-     "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "vcs",
-            "url": "https://github.com/nikolaynesov/roles.git" 
+            "url": "https://github.com/nikolaynesov/roles.git"
+        },
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
         }
-    ]
-
+    }
 }

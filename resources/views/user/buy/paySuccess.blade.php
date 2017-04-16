@@ -90,7 +90,7 @@
                     <li><a href="#" class="var2-left fr">根据你最近的浏览发现</a></li>
                 </ul>
             </div>
-            <div class="fav-item3 fl">
+            <!--<div class="fav-item3 fl">
                 <div class="fav-list3">
                     <a href="#"><img src="/img/favourite/danpin/danpin1.jpg" alt="taoaixin">
                     </a>
@@ -125,7 +125,56 @@
                     <a href="#"><img src="/img/favourite/danpin/danpin1.jpg" alt="taoaixin">
                     </a>
                 </div>
+            </div>-->
+
+            <!--猜你喜欢部分-->
+        <div class="paySuccess_item clearfix  ">
+            <div class="paySuccess_list2">
+                <a href="{{'/item/5'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/gao.jpg" alt="taoaixin">
+                </a>
+                <div class="pro-message">
+                    <div class=""><span class="pro-price"><strong>￥10.00</strong></span></div>
+                    <span><a href="">高数</a></span>
+                    <div class="pro-detail">
+                        <p>同济版高等数学二手9成新</p>
+                    </div>
+                </div>
             </div>
+            <div class="paySuccess_list2">
+                <a href="{{'/item/16'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/app.jpg" alt="taoaixin">
+                </a>
+                <div class="pro-message">
+                    <div class=""><span class="pro-price"><strong>￥10/小时</strong></span></div>
+                    <span><a href="">app推广</a></span>
+                    <div class="pro-detail">
+                        <p>网易严选APP推广员 日结 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="paySuccess_list2">
+                <a href="{{'/item/3'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/dongzao.jpg" alt="taoaixin">
+                </a>
+                <div class="pro-message">
+                    <div class=""><span class="pro-price"><strong>￥45.00</strong></span></div>
+                    <span><a href="">冬枣</a></span>
+                    <div class="pro-detail">
+                        <p>红枣夹核桃仁包邮特级新疆大枣包核桃葡萄干人气独立包装特产500g </p>
+                    </div>
+                </div>
+            </div>
+            <div class="paySuccess_list2">
+                <a href="{{'/item/19'}}"><img src="http://o7jajeu9a.bkt.clouddn.com/doc.jpg" alt="taoaixin">
+                </a>
+                <div class="pro-message">
+                    <div class=""><span class="pro-price"><strong>￥30.00/小时</strong></span></div>
+                    <span><a href="">文案编辑</a></span>
+                    <div class="pro-detail">
+                        <p>弗雷德艾肯金座1022室急招文案编辑 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </div>
     </div>
     <div class="xiafangzhanshi">

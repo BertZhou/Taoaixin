@@ -9,7 +9,7 @@
 
     <title>淘爱心登录</title>
 </head>
-<body>
+<body style="margin-top: 0;">
 <div class="headerBar">
     <div class="logoBar login_logo">
         <div class="comWidth clearfix">

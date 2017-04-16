@@ -1,6 +1,6 @@
 
  @if(Session::get('name'))
- <div class="topBar">
+ <div class="topBar" style="position:fixed;top:0px;z-index: 200;margin:0 auto;left:0;right:0;">
     <div class="comWidth clearfix">
         <div class="leftArea">
             <!-- <a href="#" class="collection">收藏淘爱心</a> -->
@@ -68,7 +68,7 @@
     </div>
 </div>
     @else
-    <div class="topBar">
+    <div class="topBar" style="position:fixed;top:0px;z-index: 200;margin:0 auto;left:0;right:0;">
         <div class="comWidth clearfix">
             <div class="leftArea">
                 <a href="#" class="collection">收藏淘爱心</a>

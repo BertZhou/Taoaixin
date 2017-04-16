@@ -45,7 +45,7 @@
                                 @elseif($item['type'] == 'confirmed')
                                 <p>订单关闭</p>
                                 @else
-                                <p>订单已取消</p>
+                                <p>订单已完成</p>
                             @endif
                         </div>
                     </div>
