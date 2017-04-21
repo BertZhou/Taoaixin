@@ -35,10 +35,10 @@
 				<div><label>用户名:</label><input id="username" name="username" type="text"/></div>
 				<div><label>密码:</label><input id="pass" name="password" type="password"/></div>
 				<div><label>确认密码:</label><input id="passagain" name="password" type="password"/></div>
-				{{--<div><label>手机号:</label><input type="tel" name="telphone" maxlength="11">--}}
+				<!-- {{--<div><label>手机号:</label><input type="tel" name="telphone" maxlength="11">--}}
 				{{--<input type="button" id="regGetcodeBtn" class="regGetcodeBtn regGetcodeBtnColorCCC" value="获取验证码">--}}
 				{{--</div>--}}
-				{{--<div><label>验证码:</label><input type="text" name="number" data-ideal="required"></div>--}}
+				{{--<div><label>验证码:</label><input type="text" name="number" data-ideal="required"></div>--}} -->
 				<div><label>我的身份:</label>
 					<label><input type="radio" name="radio" checked class="student" data-id	="1"/>学生</label>
 					<label><input type="radio" name="radio" class="business" data-id="0"/>非学生</label>
@@ -49,7 +49,7 @@
 		</form>
 			<div style="margin-left:-134px;text-align: center;">
 				<span>
-				<button type="submit" class="btn col-md-12 btn-submit">提交</button>
+				<button type="submit" id="submitButton" class="btn col-md-12 btn-submit">提交</button>
 					已有账号？<a href="{{url('signin')}}" class="go-signin">去登录</a>
 					</span>
 			</div>
@@ -131,6 +131,12 @@
     $validateCode.bind('click',function() {
 		var _self = this;
 		counter(_self);
+    });
+
+    $('body').keydown(function(){
+    	if(event.keyCode == "13"){
+    		$('#submitButton').click();
+    	}
     });
 
 

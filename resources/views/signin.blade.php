@@ -142,6 +142,13 @@
 <!--<script type="text/javascript" src="js/easyPay.js"></script>!-->
 <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/myjs.js"></script>
+<script type="text/javascript">
+    $('body').keydown(function(){
+        if(event.keyCode == "13"){
+            $('.login_btn').click();
+        }
+    });
+</script>
 
 </body>
 </html>
