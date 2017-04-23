@@ -256,7 +256,7 @@
     font-family: accountFont;
     font-size: 12px;
     color: #9C9C9C;
-    vertical-align: top;
+    vertical-align: baseline;
     font-weight: 100;
     margin-right: -18px;
 }
