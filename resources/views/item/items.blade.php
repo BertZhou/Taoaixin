@@ -74,8 +74,21 @@
                     </div>
                 </div>
                 @endforeach
+                <div class="col-md-8 col-md-offset-2  text-center">
+                <ul class="pagination pagination-sm">
+                      <li><a href="#">&laquo;第一页</a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a>...</a></li>
+                      <li><a href="#">5</a></li>
+                      <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+                </ul>
+            </div> 
             </div>
-            {{--<div class="text-center">--}}
+
+            <!-- {{--<div class="text-center">--}}
                 {{--<ul class="pagination ">--}}
                     {{--<li><a href="#">&laquo;</a></li>--}}
                     {{--<li><a href="#">1</a></li>--}}
@@ -85,7 +98,7 @@
                     {{--<li><a href="#">5</a></li>--}}
                     {{--<li><a href="#">&raquo;</a></li>--}}
                 {{--</ul>--}}
-            {{--</div>--}}
+            {{--</div>--}} -->
         </div>
     </div>
 @endsection

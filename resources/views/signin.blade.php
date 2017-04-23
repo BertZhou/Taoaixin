@@ -44,7 +44,7 @@
                     </div> -->
                     <div class="error col-md-offset-3 col-md-10"
                          ng-show="signin.username.$dirty && signin.username.$invalid">
-                        {{--<small class="error"--}}
+                        <!-- {{--<small class="error"--}}
                                {{--ng-show="signin.username.$error.required">--}}
                             {{--用户名不能为空--}}
                         {{--</small>--}}
@@ -55,7 +55,7 @@
                         {{--<small class="error"--}}
                                {{--ng-show="signin.username.$error.maxlength">--}}
                             {{--用户名长度不能超多20个字符--}}
-                        {{--</small>--}}
+                        {{--</small>--}} -->
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@
                     </div> -->
                     <div class="error col-md-offset-3 col-md-10"
                          ng-show="signin.password.$dirty && signin.password.$invalid">
-                        {{--<small class="error"--}}
+                        <!-- {{--<small class="error"--}}
                                {{--ng-show="signin.password.$error.required">--}}
                             {{--密码不能为空--}}
                         {{--</small>--}}
@@ -87,7 +87,7 @@
                         {{--<small class="error"--}}
                                {{--ng-show="signin.password.$error.maxlength">--}}
                             {{--密码长度不能超多20个字符--}}
-                        {{--</small>--}}
+                        {{--</small>--}} -->
                     </div>
                 </div>
 

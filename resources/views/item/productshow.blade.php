@@ -8,14 +8,18 @@
                     <!-- <div class="big">
                         <img src="../img/details/taxxq-1.jpg" alt="">
                     </div> -->
-                    <div class="jqzoom"><img src="{{$item->url}}" class="fs" alt=""  jqimg="../img/pro_img/blue_one_big.jpg" id="bigImg"/></div>
+                    <div class="jqzoom"><img src="{{$item->url}}" class="fs bigbigimg" alt=""  jqimg="../img/pro_img/blue_one_big.jpg" id="bigImg"/></div>
                     <ul class="des_smimg clearfix">
                         <!-- <li><img src="../img/details/taxxq-2.jpg" class="active" alt=""></li> -->
-                        {{--<li><img src="../img/pro_img/blue_one.jpg" alt=""></li>--}}
+                        <!-- {{--<li><img src="../img/pro_img/blue_one.jpg" alt=""></li>--}}
                         {{--<li><img src="../img/pro_img/blue_two.jpg" alt=""></li>--}}
-                        {{--<li><img src="../img/pro_img/blue_three.jpg" alt=""></li>--}}
+                        {{--<li><img src="../img/pro_img/blue_three.jpg" alt=""></li>--}} -->
                         <!-- <li><img src="../img/details/taxxq-2.jpg" alt=""></li> -->
                     </ul>
+                    <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:201;width:200%;height:200%;display:none;">
+                        <div id="innerdiv" style="position:absolute;"><img id="bigimg" style="border:5px solid #fff;" src="" />
+                        </div>
+                    </div> 
                 </div>
             </div>
             <div class="rightArea">
@@ -36,10 +40,10 @@
                             </span>
                         </div>
                     </div>
-                    {{--<div class="dl clearfix">--}}
+                    <!-- {{--<div class="dl clearfix">--}}
                         {{--<div class="dt">优惠</div>--}}
                         {{--<div class="dd clearfix"><span class="hg"><i class="hg_icon">满换购</i><em>购ipad加价优惠够配件或USB充电插座</em></span></div>--}}
-                    {{--</div>--}}
+                    {{--</div>--}} -->
                     <div class="dl clearfix">
                         <div class="dt">交易成功</div>
                         <div class="dd clearfix"><span class="hg"><i class="hg_icon">笔数</i><em>{{$item->sold}}</em></span></div>
@@ -47,7 +51,7 @@
                         <div class="dd clearfix"><span class="hg"><i class="hg_icon">昵称</i><a href=""><em>{{$seller->name}}</em></a></span></div>
                     </div>
                     <div class="des_position">
-                        {{--<div class="dl clearfix">--}}
+                        <!-- {{--<div class="dl clearfix">--}}
                             {{--<div class="dt">送到</div>--}}
                             {{--<div class="dd clearfix">--}}
                                 {{--<div class="select">--}}
@@ -60,7 +64,7 @@
                                 {{--</div>--}}
                                 {{--<span class="theGoods">有货，可当日出货</span>--}}
                             {{--</div>--}}
-                        {{--</div>--}}
+                        {{--</div>--}} -->
                         <div class="dl">
                             <div class="dt des_num">数量</div>
                             <div class="dd clearfix">
@@ -109,4 +113,3 @@
         </div>
     </div>
 </div>
-

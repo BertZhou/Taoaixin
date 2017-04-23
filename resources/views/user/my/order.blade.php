@@ -5,8 +5,8 @@
     <div class="col-md-10 p-right">
         <div class="row nav-top">
             <div class="col-md-2"><a href="" class="active">所有订单{{count($items)}}</a></div>
-            <div class="col-md-2"><a href="">代付款</a></div>
-            <div class="col-md-2"><a href="">代发货</a></div>
+            <div class="col-md-2"><a href="">待付款</a></div>
+            <div class="col-md-2"><a href="">待发货</a></div>
             <div class="col-md-2"><a href="">待收货</a></div>
             <div class="col-md-2"><a href="">待评价</a></div>
         </div>
@@ -52,7 +52,9 @@
                 </div>
                 @endforeach
         @endif
-        {{--<div class="text-center">--}}
+      
+
+        <!-- {{--<div class="text-center">--}}
             {{--<ul class="pagination ">--}}
                 {{--<li><a href="#">&laquo;</a></li>--}}
                 {{--<li><a href="#">1</a></li>--}}
@@ -62,6 +64,18 @@
                 {{--<li><a href="#">5</a></li>--}}
                 {{--<li><a href="#">&raquo;</a></li>--}}
             {{--</ul>--}}
-        {{--</div>--}}
+        {{--</div>--}} -->
+            <div class="col-md-8 col-md-offset-2  text-center">
+                <ul class="pagination pagination-sm">
+                      <li><a href="#">&laquo;第一页</a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li><a href="#">4</a></li>
+                      <li><a>...</a></li>
+                      <li><a href="#">5</a></li>
+                      <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+                </ul>
+            </div>  
     </div>
 @endsection

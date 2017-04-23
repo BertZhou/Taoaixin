@@ -26,6 +26,7 @@ class OrderController extends Controller
         $orders = $orders->toArray();
         $items = $items->toArray();
 
+
         foreach ($orders as $order) {
             $items[$order['item_id']]['type'] = $order['type'];
             $items[$order['item_id']]['created'] = $order['created_at'];
@@ -39,8 +40,7 @@ class OrderController extends Controller
 //        foreach( $items as $item) {
 //            $item->sum = $order['number'] * $order['price'];
 //        }
-
-        return view('user.my.order', ['items' => $items]);
+        return view('user.my.order', ['items' => $items] );
     }
 
     public function show(Request $request, $order_id)
