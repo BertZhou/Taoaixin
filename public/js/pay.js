@@ -16,5 +16,6 @@ $(function() {
   	}).mouseout(function (e) {
       $('#zhifu_tupian_fangda').remove();
   	});
+
 })
 

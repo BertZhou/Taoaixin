@@ -37,4 +37,25 @@ $(function () {
     		$('.integral').hide();
     	}
     });
+    // $('.daifukuan').click(function(){
+    //     $('.suoyou').hide();
+    //     $('.meiyou').show();
+    // });
+    // $('.daifahuo').click(function(){
+    //     $('.suoyou').hide();
+    //     $('.meiyou').show();
+    // });
+    // $('.daishouhuo').click(function(){
+    //     $('.suoyou').hide();
+    //     $('.meiyou').show();
+    // });
+    // $('.daipingjia').click(function(){
+    //     $('.suoyou').hide();
+    //     $('.meiyou').show();
+    // });
+    // $('.suoyoudingdan').click(function(){
+    //     $('meiyou').hide();
+    //     $('suoyou').show();
+    // });
+
 });
