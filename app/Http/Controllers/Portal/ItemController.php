@@ -47,13 +47,14 @@ class ItemController extends Controller
         return view('item.show',['item' => $item, 'seller' => $seller, 'rates' => $rates]);
     }
     public function showAll(Request $request)
-    {
+    {   
         $type = $request->get("type");
         $this->validate($request, [
             'offset'    =>  'integer|min:0',
             'limit'     =>  'integer|min:0'
         ]);
-        $items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 10))->orderBy('id','desc')->get()->keyBy('id');
+        //$items = Item::where('type', $type)->skip($request->input('offset', 0))->take($request->input('limit', 6))->orderBy('id','desc')->get()->keyBy('id');
+        $items = Item::where('type', $type)->orderBy('id','desc')->paginate(6);
         return view('item.items',['items' => $items, 'type' => $type]);
     }
     public function rateShow(Request $request, $order_id)
