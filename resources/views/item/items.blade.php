@@ -84,10 +84,11 @@
                     </div>
                 </div>
                 @endforeach
-                <div class=" col-md-8 col-md-offset-2  text-center">
-                    {{ $items->appends(["type" => $type])->links() }}
+
+                <div class="pagination-sm col-md-8 col-md-offset-2  text-center">
+                    {{ $items->appends(["type" => $type]) -> links()}}
                 </div>
-                
+
             </div>
 
            

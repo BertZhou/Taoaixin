@@ -818,7 +818,7 @@ $.idealforms.errors = {
   dob: 'Must be a valid date of birth.',
   exclude: '"{0}" is not available.',
   excludeOption: '{0}',
-  equalto: 'Must be the same value as <strong>"{0}"</strong>',
+  equalto: '两次密码输入不一致',
   extension: 'File(s) must have a valid extension. <em>(e.g. "{0}")</em>',
   ajaxSuccess: '<strong>{0}</strong> is not available.',
   ajaxError: 'Server error...'
