@@ -34,7 +34,7 @@
         $(".bigbigimg").click(function(){  
             var _this = $(this);//将当前的pimg元素作为_this传入函数  
             imgShow("#outerdiv", "#innerdiv", "#bigimg", _this);  
-        });  
+        });
     });
     function imgShow(outerdiv, innerdiv, bigimg, _this){  
         var src = _this.attr("src");//获取当前点击的pimg元素中的src属性  
@@ -73,7 +73,39 @@
         $(outerdiv).click(function(){//再次点击淡出消失弹出层  
             $(this).fadeOut("fast");  
     });  
+    
 }  
-</script>  
+
+$(function(){
+    //items页商品网格显示和列表显示的切换
+    //用了部分我的订单里的样式
+    $('.viewlist').click(function(){
+        if($('.item_lists').hasClass('col-lg-4')){
+            $('.item_lists').removeClass('col-lg-4 col-md-4 col-sm-6').addClass('col-lg-12 col-md-12');
+            $('.product-item').addClass('panel-body');
+            $('.product-img').addClass('col-md-3');
+            $('.product-img img').css({'width':'193','height':'110'});
+            $('.product-info').addClass('col-md-9');
+            $('.product-info .title').addClass('col-md-5 content');
+            $('.metas .price').parent().addClass('col-md-3 col-md-offset-2');
+            $('.metas .num').parent().addClass('col-md-2');
+        }
+    });
+
+    $('.viewgallery').click(function(){
+        if($('.item_lists').hasClass('col-lg-12')){
+            $('.item_lists').removeClass('col-lg-12 col-md-12').addClass('col-lg-4 col-md-4 col-sm-6');
+            $('.product-item').removeClass('panel-body');
+            $('.product-img').removeClass('col-md-3');
+            $('.product-img img').removeAttr('style');
+            $('.product-info').removeClass('col-md-9');
+            $('.product-info .title').removeClass('col-md-5 content');
+            $('.metas .price').parent().removeClass('col-md-3 col-md-offset-2');
+            $('.metas .num').parent().removeClass('col-md-2');
+        }
+    });
+});
+    
+</script> 
 </body>
 </html>

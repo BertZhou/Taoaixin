@@ -43,27 +43,37 @@
                         <li class="col-lg-3"><a href="{{url('item?type=3')}}" data-type="3">爱心岗位</a></li>
                         <li class="col-lg-3"><a href="{{url('item?type=2')}}" data-type="2">爱心时间</a></li>
                     </ul>
+                    <div style="margin:-10px 0 10px 95%">
+                        <a class="viewgallery"><img src="img/icon/ViewGallery.png"></a>
+                        <a class="viewlist"><img src="img/icon/Viewlist.png"></a>
+                    </div>
                 </div>
                 @foreach($items as $item)
+                <!-- 商品网格显示和列表显示js写在layout.tao.index下 -->
                     <input type="hidden" id="selectedMenu" value="{{$type}}">
-                <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-4 col-sm-6 item_lists">
                     <div class="product-item">
                         <div class="product-img">
                             <a href="{{url('item',$item->id)}}" class="link-dark">
                                 <img src="{{url($item->url)}}" class="img-responsive">
                             </a>
+                            <!-- 图片路径和商品链接 -->
                         </div>
                         <div class="product-info">
                             <div class="title">
                                 <a href="{{url('item',$item->id)}}" class="link-dark">{{$item->content}}</a>
                             </div>
+                            <!-- 商品描述 -->
                             <p class="text-line"></p>
                             <div class="metas clearfix">
                                 @if($item->type == 2 || $item->type == 3)
                                     <span class="price">￥{{$item->price}}/小时</span>
                                     @else
                                     <span class="price">￥{{$item->price}}</span>
+                                    <!-- 商品价格 --> 
                                 @endif
+                            </div>
+                            <div class="metas clearfix">
                                 @if($item->type == 3)
                                     <span class="num">{{$item->sold}}人已申请</span>
                                     @else
@@ -74,31 +84,13 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="col-md-8 col-md-offset-2  text-center">
-                <ul class="pagination pagination-sm">
-                      <li><a href="#">&laquo;第一页</a></li>
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a>...</a></li>
-                      <li><a href="#">5</a></li>
-                      <li class="disabled"><a href="#">最后一页&raquo;</a></li>
-                </ul>
-            </div> 
+                <div class=" col-md-8 col-md-offset-2  text-center">
+                    {{ $items->appends(["type" => $type])->links() }}
+                </div>
+                
             </div>
 
-            <!-- {{--<div class="text-center">--}}
-                {{--<ul class="pagination ">--}}
-                    {{--<li><a href="#">&laquo;</a></li>--}}
-                    {{--<li><a href="#">1</a></li>--}}
-                    {{--<li><a href="#">2</a></li>--}}
-                    {{--<li><a href="#">3</a></li>--}}
-                    {{--<li><a href="#">4</a></li>--}}
-                    {{--<li><a href="#">5</a></li>--}}
-                    {{--<li><a href="#">&raquo;</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}} -->
+           
         </div>
     </div>
 @endsection
