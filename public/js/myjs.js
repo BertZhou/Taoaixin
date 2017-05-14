@@ -171,8 +171,9 @@
 		});
 		
 	});
-	/*点击登录*/
+	
 	;$(function () {
+		/*点击登录*/
 		$('.login_btn').bind('click', function () {
 			var username = $('#username').val();
 			var password = $('#password').val();
@@ -195,5 +196,36 @@
 				}
 			})
 		});
+
+
+		//支付判断密码，用的登录接口
+		$('.myButton').click(function(){
+	        var username = $('.leftArea').find('span:first').text();
+	        var password = $('.zhifu_mimabox').val();
+	        var url_ = window.location.href;
+	        var success_url = url_.substring(0,url_.length-3);
+
+	        if(password == ''){
+	            alert("您还没有输入密码！");
+	            return false;
+	        }
+
+	        $.ajax({
+	            url:'/signin_check',
+	            method:'POST',
+	            data:{
+	                username:username,
+	                password:password
+	            },
+	            success:function(json){
+	                if(json.message == "success"){
+	                    window.location.href = success_url + 'paysuccess';
+	                }else {
+	                    alert("您输入的密码不正确，请重新输入。");
+	                    return false;
+	                }
+	            }
+	        })
+	    });
 	});
 
