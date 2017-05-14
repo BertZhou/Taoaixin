@@ -97,6 +97,7 @@ class UserController extends Controller
                 $count++;
             }
         }
+  //      $items = Item::orderBy('id','desc')->paginate(6);
         return view('user.my.message',['items' => $items, 'count' => $count]);
     }
     public function address (Request $request)

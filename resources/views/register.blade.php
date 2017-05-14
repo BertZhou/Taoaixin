@@ -35,10 +35,10 @@
 				<div><label>用户名:</label><input id="username" name="username" type="text"/></div>
 				<div><label>密码:</label><input id="pass" name="password" type="password"/></div>
 				<div><label>确认密码:</label><input id="passagain" name="password" type="password"/></div>
-				<!-- {{--<div><label>手机号:</label><input type="tel" name="telphone" maxlength="11">--}}
-				{{--<input type="button" id="regGetcodeBtn" class="regGetcodeBtn regGetcodeBtnColorCCC" value="获取验证码">--}}
-				{{--</div>--}}
-				{{--<div><label>验证码:</label><input type="text" name="number" data-ideal="required"></div>--}} -->
+				<!--<div><label>手机号:</label><input type="tel" name="telphone" maxlength="11">
+				<input type="button" id="regGetcodeBtn" class="regGetcodeBtn regGetcodeBtnColorCCC" value="获取验证码">
+				</div>
+				<div><label>验证码:</label><input type="text" name="verify"/><img src="/img/getVerify.php" alt=""/></div>!-->
 				<div><label>我的身份:</label>
 					<label><input type="radio" name="radio" checked class="student" data-id	="1"/>学生</label>
 					<label><input type="radio" name="radio" class="business" data-id="0"/>非学生</label>
@@ -115,29 +115,25 @@
 		}
 	});
 
-	var num = 60;
-	var counter = function(_self) {
-		num--;
-		$(_self).val(num + '秒后重新获取');
-		var timer = setTimeout(function(){
-			counter(_self);
-		}, 1000);
-		if(num == 0) {
-			clearTimeout(timer);
-			$(_self).val('重新获取').css({'color':'#ff552e'});
-		}
-	};
-
-    $validateCode.bind('click',function() {
-		var _self = this;
-		counter(_self);
-    });
-
-    $('body').keydown(function(){
-    	if(event.keyCode == "13"){
-    		$('#submitButton').click();
-    	}
-    });
+	
+    var wait=60;
+        document.getElementById("regGetcodeBtn").disabled = false;   
+        function time(o) {
+                if (wait == 0) {
+                    o.removeAttribute("disabled");           
+                    o.value="获取验证码";
+                    wait =60;
+                } else {
+                    o.setAttribute("disabled", true);
+                    o.value="重新发送(" + wait + ")";
+                    wait--;
+                    setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+                }
+            }
+        document.getElementById("regGetcodeBtn").onclick=function(){time(this);}
 
 
 

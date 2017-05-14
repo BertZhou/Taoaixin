@@ -180,6 +180,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
 
         'ImageTool' => Intervention\Image\Facades\Image::class,
         'Carbon' => Carbon\Carbon::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
     ],
 
 ];

@@ -26,7 +26,7 @@
 <div class="loginBox">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal"  name="signin" ng-controller="userInfoController">
+            <form action="dologin.php" class="form-horizontal"  name="signin" ng-controller="userInfoController">
                 <div class="form-group">
                     <label class="col-md-3 control-label" for="username">
                         用户名
@@ -90,7 +90,17 @@
                         {{--</small>--}} -->
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label class="col-md-3 control-label" for="Verify">验证码:</label>
+                    <div class="col-md-7">
+                    <input class="form-control getVerify" type="text" name="Verify" ng-model="userInfo.verify" placeholder="请输入验证码/点击图片刷新验证码" required name="Verify"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="error col-md-offset-3 col-md-10"
+                         ng-show=""><img src="/img/getVerify.php" alt="" onclick="javascript:this.src='/img/getVerify.php?tm='+Math.random()"/>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-md-offset-3 col-md-4">
                         <div class="checkbox">

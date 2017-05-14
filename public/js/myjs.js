@@ -176,7 +176,6 @@
 		$('.login_btn').bind('click', function () {
 			var username = $('#username').val();
 			var password = $('#password').val();
-
 			$.ajax({
 				url:'signin_check',
 				method:'POST',

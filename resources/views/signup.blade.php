@@ -38,7 +38,7 @@
 		<div class="login_cont">
 			<ul class="login">
 				<li><span class="reg_item"><i>*</i>用户名: </span>
-					<div class="input_item"><input type="text" name="user" class="login_input user_icon username"></div></li>
+					<div class="input_item"><input type="text" name="user" class="login_input user_icon username"><img src="getVerify.php" alt=""/></div></li>
 				<li><span class="reg_item"><i>*</i>请设置密码: </span>
 					<div class="input_item"><input type="password" name="pass1" class="login_input user_icon password"></div></li>
 				<li><span class="reg_item"><i>*</i>请确认密码: </span>

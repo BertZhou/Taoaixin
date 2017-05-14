@@ -15,6 +15,7 @@ class MyController extends Controller
     {
         $username=$request->get("username");
         $password=$request->get("password");
+//        $Verify=$request->get("Verify");
 //        $items=DB::select("select * from items");
         $items = Item::skip($request->input('offset', 0))->take($request->input('limit', 16))->get();
         $get= DB::table("users")->where("email",$username)
@@ -43,7 +44,22 @@ class MyController extends Controller
                 return response()->json(["message" => "fail", "data"=>"密码错误"]);
 //                return view("signin",["fail2"=>"密码错误"]);
             }
-        }  
+        }
+//        else
+//        {
+//            $Verify1=$get->Verify;
+//            if ($Verify==$Verify1)
+//             {
+//                $id=$get->id;
+//                Session::put("userid",$id);
+//                Session::put("name",$username);
+//                return response()->json(['message' => 'success']);
+//            }
+//            else
+//            {
+//                return response()->json(["message" => "fail", "data"=>"验证码错误"]);
+//            }
+//        }  
     }
     public function  signup_check(Request $request)
     {
@@ -52,7 +68,8 @@ class MyController extends Controller
     	$inputs["name"] = $message['username'];
     	$inputs["email"]= $message['email'];
     	$inputs["password"]= $message['password'];
-//    	$inputs["password"]= $message['passwordagain'];
+//        $inputs["Verify"]= $message['Verify'];
+//        $inputs["password"]= $message['passwordagain'];
     	$inputs["is_student"]= $message['identity'];
 
     	$results1=DB::table("users")->where("name",$inputs["name"])->first();
